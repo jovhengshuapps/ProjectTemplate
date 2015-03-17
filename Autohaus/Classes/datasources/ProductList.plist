@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Collections</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>Tops</string>
+			<key>image</key>
+			<string>collections_tops_iPhone</string>
+			<key>list</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Shorts &amp; Trousers</string>
+			<key>image</key>
+			<string>collections_shorts_and_trousers_iPhone</string>
+			<key>list</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>Bow Printed Jeans</string>
+					<key>images</key>
+					<array>
+						<string>image_bow_jeans_detail_1_iPhone</string>
+						<string>image_bow_jeans_detail_2_iPhone</string>
+						<string>image_bow_jeans_detail_3_iPhone</string>
+					</array>
+					<key>price</key>
+					<string>40</string>
+					<key>desc</key>
+					<string>&lt;b&gt;Material :&lt;/b&gt; Jeans&lt;br&gt;
+&lt;b&gt;Flexibility :&lt;/b&gt; Moderate&lt;br&gt; &lt;b&gt;Size &lt;/b&gt;: 27 28 29&lt;br&gt;&lt;br&gt;
+ &lt;b&gt;Tile Measurement Size:&lt;/b&gt;&lt;br&gt; &lt;b&gt;27:&lt;/b&gt;Waist:70cm Hip:82cm Front Files:21.5cm After Files:28.5cm Thigh:45cm Leg opening:25.5cm Length:96.5cm&lt;br&gt; &lt;b&gt;28:&lt;/b&gt;Waist:72cm Hip:84cm Front Files:22cm After Files:29cm Thigh:46cm Leg opening:26cm Length:97cm&lt;br&gt; &lt;b&gt;29:&lt;/b&gt;Waist:74cm Hip:86cm Front Files:22.5cm After Files:29.5cm Thigh:47cm Leg opening:26.5cm Length:97.5cm&lt;br&gt;&lt;br&gt;
+ There maybe tolerance of 2cm if by different measurement method.</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Bow Printed Jeans</string>
+					<key>images</key>
+					<array>
+						<string>image_bow_jeans_detail_1_iPhone</string>
+						<string>image_bow_jeans_detail_2_iPhone</string>
+						<string>image_bow_jeans_detail_3_iPhone</string>
+					</array>
+					<key>price</key>
+					<string>40</string>
+					<key>desc</key>
+					<string>&lt;b&gt;Material :&lt;/b&gt; Jeans&lt;br&gt;
+&lt;b&gt;Flexibility :&lt;/b&gt; Moderate&lt;br&gt; &lt;b&gt;Size &lt;/b&gt;: 27 28 29&lt;br&gt;&lt;br&gt;
+ &lt;b&gt;Tile Measurement Size:&lt;/b&gt;&lt;br&gt; &lt;b&gt;27:&lt;/b&gt;Waist:70cm Hip:82cm Front Files:21.5cm After Files:28.5cm Thigh:45cm Leg opening:25.5cm Length:96.5cm&lt;br&gt; &lt;b&gt;28:&lt;/b&gt;Waist:72cm Hip:84cm Front Files:22cm After Files:29cm Thigh:46cm Leg opening:26cm Length:97cm&lt;br&gt; &lt;b&gt;29:&lt;/b&gt;Waist:74cm Hip:86cm Front Files:22.5cm After Files:29.5cm Thigh:47cm Leg opening:26.5cm Length:97.5cm&lt;br&gt;&lt;br&gt;
+ There maybe tolerance of 2cm if by different measurement method.</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>Bow Plated Simple Ribbon Key Jeans</string>
+					<key>images</key>
+					<array>
+						<string>image_bow_jeans_detail_1_iPhone</string>
+						<string>image_bow_jeans_detail_2_iPhone</string>
+						<string>image_bow_jeans_detail_3_iPhone</string>
+					</array>
+					<key>price</key>
+					<string>25</string>
+					<key>desc</key>
+					<string>&lt;b&gt;Material :&lt;/b&gt; Jeans&lt;br&gt;
+&lt;b&gt;Flexibility :&lt;/b&gt; Moderate&lt;br&gt; &lt;b&gt;Size &lt;/b&gt;: 27 28 29&lt;br&gt;&lt;br&gt;
+ &lt;b&gt;Tile Measurement Size:&lt;/b&gt;&lt;br&gt; &lt;b&gt;27:&lt;/b&gt;Waist:70cm Hip:82cm Front Files:21.5cm After Files:28.5cm Thigh:45cm Leg opening:25.5cm Length:96.5cm&lt;br&gt; &lt;b&gt;28:&lt;/b&gt;Waist:72cm Hip:84cm Front Files:22cm After Files:29cm Thigh:46cm Leg opening:26cm Length:97cm&lt;br&gt; &lt;b&gt;29:&lt;/b&gt;Waist:74cm Hip:86cm Front Files:22.5cm After Files:29.5cm Thigh:47cm Leg opening:26.5cm Length:97.5cm&lt;br&gt;&lt;br&gt;
+ There maybe tolerance of 2cm if by different measurement method.</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Skirts</string>
+			<key>image</key>
+			<string>collections_skirts_iPhone</string>
+			<key>list</key>
+			<array/>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>On Sale</string>
+			<key>image</key>
+			<string>collections_on_sale_iPhone</string>
+			<key>list</key>
+			<array/>
+		</dict>
+	</array>
+</dict>
+</plist>
