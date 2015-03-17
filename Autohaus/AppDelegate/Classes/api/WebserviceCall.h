@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "Reachability.h"
 #import "AFNetworking.h"
+#import "WebserviceCallURL.h"
 
 
 typedef NS_ENUM(NSInteger, WebserviceCallResponse) {

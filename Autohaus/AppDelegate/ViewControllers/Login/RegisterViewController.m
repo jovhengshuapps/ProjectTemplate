@@ -32,29 +32,29 @@
     
     self.title = @"Create an Account";
     self.navigationItem.leftBarButtonItem.title = @"Cancel";
-    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kSWATCH_NavItemText,NSForegroundColorAttributeName,kFONT_HelveticaNeueLight(16),NSFontAttributeName, nil] forState:UIControlStateNormal];
+    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:NAV_ITEM_COLOR,NSForegroundColorAttributeName,kFONT_HelveticaNeueLight(16),NSFontAttributeName, nil] forState:UIControlStateNormal];
     
     
     self.viewAccountDetails.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"textfield_sign_up_iPhone"]];
     
     
     self.textFieldFullName.font = kFONT_HelveticaNeueThinItalic(16.0f);
-    self.textFieldFullName.textColor = kSWATCH_Gray102;
+    self.textFieldFullName.textColor = COLOR_GRAY(102.0f);
     self.textFieldEmailAddress.font = kFONT_HelveticaNeueThinItalic(16.0f);
-    self.textFieldEmailAddress.textColor = kSWATCH_Gray102;
+    self.textFieldEmailAddress.textColor = COLOR_GRAY(102.0f);
     self.textFieldPassword.font = kFONT_HelveticaNeueThinItalic(16.0f);
-    self.textFieldPassword.textColor = kSWATCH_Gray102;
+    self.textFieldPassword.textColor = COLOR_GRAY(102.0f);
     self.textFieldConfirmPassword.font = kFONT_HelveticaNeueThinItalic(16.0f);
-    self.textFieldConfirmPassword.textColor = kSWATCH_Gray102;
+    self.textFieldConfirmPassword.textColor = COLOR_GRAY(102.0f);
     self.textFieldCountry.font = kFONT_HelveticaNeueThinItalic(16.0f);
-    self.textFieldCountry.textColor = kSWATCH_Gray102;
+    self.textFieldCountry.textColor = COLOR_GRAY(102.0f);
     self.textFieldPhoneNumber.font = kFONT_HelveticaNeueThinItalic(16.0f);
-    self.textFieldPhoneNumber.textColor = kSWATCH_Gray102;
+    self.textFieldPhoneNumber.textColor = COLOR_GRAY(102.0f);
     self.textFieldAreaCode.font = kFONT_HelveticaNeue(16.0f);
-    self.textFieldAreaCode.textColor = kSWATCH_Gray30;
+    self.textFieldAreaCode.textColor = COLOR_GRAY(30.0f);
     
     self.btnSignUp.layer.cornerRadius = 2.0f;
-    self.btnSignUp.backgroundColor = kSWATCH_BlueButton;
+    self.btnSignUp.backgroundColor = LOGIN_BUTTON_COLOR;
     [self.btnSignUp setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
@@ -109,27 +109,27 @@
         switch (textField.tag) {
             case 1:
                 self.textFieldFullName.font = kFONT_HelveticaNeueThinItalic(16.0f);
-                self.textFieldFullName.textColor = kSWATCH_Gray102;
+                self.textFieldFullName.textColor = COLOR_GRAY(102.0f);
                 break;
             case 2:
                 self.textFieldEmailAddress.font = kFONT_HelveticaNeueThinItalic(16.0f);
-                self.textFieldEmailAddress.textColor = kSWATCH_Gray102;
+                self.textFieldEmailAddress.textColor = COLOR_GRAY(102.0f);
                 break;
             case 3:
                 self.textFieldPassword.font = kFONT_HelveticaNeueThinItalic(16.0f);
-                self.textFieldPassword.textColor = kSWATCH_Gray102;
+                self.textFieldPassword.textColor = COLOR_GRAY(102.0f);
                 break;
             case 4:
                 self.textFieldConfirmPassword.font = kFONT_HelveticaNeueThinItalic(16.0f);
-                self.textFieldConfirmPassword.textColor = kSWATCH_Gray102;
+                self.textFieldConfirmPassword.textColor = COLOR_GRAY(102.0f);
                 break;
             case 5:
                 self.textFieldCountry.font = kFONT_HelveticaNeueThinItalic(16.0f);
-                self.textFieldCountry.textColor = kSWATCH_Gray102;
+                self.textFieldCountry.textColor = COLOR_GRAY(102.0f);
                 break;
             case 6:
                 self.textFieldPhoneNumber.font = kFONT_HelveticaNeueThinItalic(16.0f);
-                self.textFieldPhoneNumber.textColor = kSWATCH_Gray102;
+                self.textFieldPhoneNumber.textColor = COLOR_GRAY(102.0f);
                 break;
             default:
                 break;
@@ -143,27 +143,27 @@
         switch (textField.tag) {
             case 1:
                 self.textFieldFullName.font = kFONT_HelveticaNeue(16.0f);
-                self.textFieldFullName.textColor = kSWATCH_Gray30;
+                self.textFieldFullName.textColor = COLOR_GRAY(30.0f);
                 break;
             case 2:
                 self.textFieldEmailAddress.font = kFONT_HelveticaNeue(16.0f);
-                self.textFieldEmailAddress.textColor = kSWATCH_Gray30;
+                self.textFieldEmailAddress.textColor = COLOR_GRAY(30.0f);
                 break;
             case 3:
                 self.textFieldPassword.font = kFONT_HelveticaNeue(16.0f);
-                self.textFieldPassword.textColor = kSWATCH_Gray30;
+                self.textFieldPassword.textColor = COLOR_GRAY(30.0f);
                 break;
             case 4:
                 self.textFieldConfirmPassword.font = kFONT_HelveticaNeue(16.0f);
-                self.textFieldConfirmPassword.textColor = kSWATCH_Gray30;
+                self.textFieldConfirmPassword.textColor = COLOR_GRAY(30.0f);
                 break;
             case 5:
                 self.textFieldCountry.font = kFONT_HelveticaNeue(16.0f);
-                self.textFieldCountry.textColor = kSWATCH_Gray30;
+                self.textFieldCountry.textColor = COLOR_GRAY(30.0f);
                 break;
             case 6:
                 self.textFieldPhoneNumber.font = kFONT_HelveticaNeue(16.0f);
-                self.textFieldPhoneNumber.textColor = kSWATCH_Gray30;
+                self.textFieldPhoneNumber.textColor = COLOR_GRAY(30.0f);
                 break;
             default:
                 break;

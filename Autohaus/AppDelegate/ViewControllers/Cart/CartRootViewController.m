@@ -70,8 +70,8 @@
     
     self.labelCheckout.font             = kFONT_HelveticaNeueMedium(16);
     self.labelTotalCheckout.font        = kFONT_HelveticaNeueMedium(18);
-    self.labelCheckout.textColor        = kSWATCH_Gray63;
-    self.labelTotalCheckout.textColor   = kSWATCH_GreenSectionBar;
+//    self.labelCheckout.textColor        = kSWATCH_Gray63;
+//    self.labelTotalCheckout.textColor   = kSWATCH_GreenSectionBar;
 }
 
 - (void)updateDatasource{

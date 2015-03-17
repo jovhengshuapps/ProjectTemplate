@@ -37,27 +37,9 @@
 //----EXTENDED SHORTCUTS
 #define kToPrice(v)             [NSString stringWithFormat:@"$ %.2f", [(v) floatValue]]
 
-//----SWATCHES
-#define kSWATCH_NavBG           [UIColor colorWithRed:45.0f/255.0f    green:45.0f/255.0f     blue:48.0f/255.0f  alpha:1.0]
-#define kSWATCH_TabBG           [UIColor colorWithRed:45.0f/255.0f    green:45.0f/255.0f     blue:48.0f/255.0f  alpha:1.0]
-
-#define kSWATCH_NavTitle        [UIColor colorWithRed:35.0f/255.0f    green:175.0f/255.0f    blue:229.0f/255.0f alpha:1.0]
-#define kSWATCH_NavItemText     [UIColor colorWithRed:154.0f/255.0f    green:167.0f/255.0f    blue:196.0f/255.0f alpha:1.0]
-#define kSWATCH_TabTitleSel     [UIColor colorWithRed:35.0f/255.0f    green:175.0f/255.0f    blue:229.0f/255.0f alpha:1.0]
-#define kSWATCH_TabTitle        [UIColor colorWithRed:224.0f/255.0f    green:224.0f/255.0f    blue:224.0f/255.0f alpha:1.0]
-
-#define kSWATCH_Gray102         [UIColor colorWithRed:102.0f/255.0f    green:102.0f/255.0f    blue:102.0f/255.0f alpha:1.0]
-#define kSWATCH_Gray63          [UIColor colorWithRed:63.0f/255.0f    green:63.0f/255.0f    blue:63.0f/255.0f alpha:1.0]
-#define kSWATCH_Gray80          [UIColor colorWithRed:80.0f/255.0f    green:80.0f/255.0f    blue:80.0f/255.0f alpha:1.0]
-#define kSWATCH_Gray230         [UIColor colorWithRed:230.0f/255.0f    green:230.0f/255.0f    blue:230.0f/255.0f alpha:1.0]
-#define kSWATCH_Gray224         [UIColor colorWithRed:224.0f/255.0f    green:224.0f/255.0f    blue:224.0f/255.0f alpha:1.0]
-#define kSWATCH_Gray30          [UIColor colorWithRed:30.0f/255.0f    green:30.0f/255.0f    blue:30.0f/255.0f alpha:1.0]
-#define kSWATCH_Gray28          [UIColor colorWithRed:28.0f/255.0f    green:28.0f/255.0f    blue:28.0f/255.0f alpha:1.0]
-#define kSWATCH_BlueButton      [UIColor colorWithRed:42.0f/255.0f    green:65.0f/255.0f    blue:127.0f/255.0f alpha:1.0]
-#define kSWATCH_GreenSectionBar [UIColor colorWithRed:69.0f/255.0f    green:178.0f/255.0f    blue:118.0f/255.0f alpha:1.0]
-
+//----COLOR SHORTCUTS
 #define COLOR_GRAY(v)           [UIColor colorWithRed:v/255.0f    green:v/255.0f    blue:v/255.0f alpha:1.0]
-
+#define COLOR_RGB(r,g,b)        [UIColor colorWithRed:r/255.0f    green:g/255.0f    blue:b/255.0f alpha:1.0]
 
 
 
@@ -78,7 +60,7 @@
 
 
 
-//--Configuration
+//--CONFIGURATION
 
 #define TABVIEW_SHOW_HOME                                   1
 #define TABVIEW_SHOW_SHOP                                   1
@@ -88,13 +70,13 @@
 
 
 #define NAV_TITLE_FONT                                      kFONT_HelveticaNeue(16.0f)
-#define NAV_TITLE_COLOR                                     kSWATCH_NavTitle
+#define NAV_TITLE_COLOR                                     COLOR_RGB(35.0f,175.0f,229.0f)
 #define NAV_ITEM_FONT                                       kFONT_HelveticaNeueLight(16.0f)
-#define NAV_ITEM_COLOR                                      kSWATCH_NavItemText
-#define NAV_BAR_COLOR                                       kSWATCH_NavBG
-#define TAB_BAR_COLOR                                       kSWATCH_TabBG
-#define TAB_BAR_ITEM_NORMAL                                 kSWATCH_Gray224
-#define TAB_BAR_ITEM_SELECTED                               kSWATCH_BlueButton
+#define NAV_ITEM_COLOR                                      COLOR_RGB(154.0f,167.0f,196.0f)
+#define NAV_BAR_COLOR                                       COLOR_RGB(45.0f,45.0f,48.0f)
+#define TAB_BAR_COLOR                                       COLOR_RGB(45.0f,45.0f,48.0f)
+#define TAB_BAR_ITEM_NORMAL                                 COLOR_GRAY(224.0f)
+#define TAB_BAR_ITEM_SELECTED                               COLOR_RGB(35.0f,175.0f,229.0f)
 
 #define TAB_HOME_LOGO_NORMAL                                [UIImage imageNamed:@"tab_home_iPhone"]
 #define TAB_HOME_LOGO_SELECTED                              [UIImage imageNamed:@"tab_home_selected_iPhone"]
@@ -107,36 +89,45 @@
 #define TAB_MORE_LOGO_NORMAL                                [UIImage imageNamed:@"tab_more_iPhone"]
 #define TAB_MORE_LOGO_SELECTED                              [UIImage imageNamed:@"tab_more_selected_iPhone"]
 
-#define LOGIN_BUTTON_FONT                                   kFONT_HelveticaNeueCondensedBold(16.0f)
+#define LOGIN_BUTTON_FONT                                   kFONT_HelveticaNeueCondensedBold(20.0f)
 #define LOGIN_BUTTON_TEXTCOLOR                              [UIColor whiteColor]
-#define LOGIN_BUTTON_COLOR                                  kSWATCH_BlueButton
+#define LOGIN_BUTTON_COLOR                                  COLOR_RGB(42.0f,65.0f,127.0f)
 #define LOGIN_BUTTON_CORNER                                 6.0f
 #define LOGIN_MAIN_LOGO                                     [UIImage imageNamed:@"login_logo_iPhone"]
 #define LOGIN_TERMS                                         [UIImage imageNamed:@"button_terms_iPhone"]
 
 #define HOME_ABOUT_IMAGE                                    [UIImage imageNamed:@"image_about_home_iPhone"]
-#define HOME_SECTION_TEXTFONT                               kFONT_HelveticaNeueCondensedBold(14.0f)
+#define HOME_ABOUT_TEXT                                     @"Autohaus is an automotive parts and accessories retailer that is dedicated in bringing both value and quality to its customers."
+#define HOME_SECTION_TEXTFONT                               kFONT_HelveticaNeueCondensedBold(18.0f)
 #define HOME_SECTION_TEXTCOLOR                              [UIColor whiteColor]
-#define HOME_SECTION_BARCOLOR                               kSWATCH_GreenSectionBar
-#define HOME_CELL_BGCOLOR                                   kSWATCH_Gray230
+#define HOME_SECTION_BARCOLOR                               COLOR_RGB(69.0f,178.0f,118.0f)
+#define HOME_CELL_BGCOLOR                                   COLOR_GRAY(230.0f)
 #define HOME_CELL_TEXTFONT                                  kFONT_HelveticaNeueMedium(16.0f)
-#define HOME_CELL_TEXTCOLOR                                 kSWATCH_Gray63
+#define HOME_CELL_TEXTCOLOR                                 COLOR_GRAY(63.0f)
 #define HOME_CELL_CORNER                                    6.0f
 
+#define SHOP_SECTION_BGCOLOR                                COLOR_GRAY(230.0f)
+#define SHOP_SECTION_CORNER                                 6.0f
+#define SHOP_SECTION_CELL_FONT                              kFONT_HelveticaNeueMedium(18.0f)
+#define SHOP_SECTION_CELL_COLOR                             COLOR_GRAY(63.0f)
+#define SHOP_SEPARATOR_COLOR                                COLOR_GRAY(230.0f)
+#define SHOP_SEPARATOR_SIZE                                 4.0f
+
+
 #define TESTIMONIAL_BOX_CORNER                              6.0f
-#define TESTIMONIAL_BOX_COLOR                               kSWATCH_Gray230
-#define TESTIMONIAL_MSG_FONT                                kFONT_HelveticaNeueMedium(16.0f)
-#define TESTIMONIAL_MSG_COLOR                               kSWATCH_Gray63
-#define TESTIMONIAL_NAME_FONT                               kFONT_HelveticaNeueCondensedBold(14.0f)
-#define TESTIMONIAL_NAME_COLOR                              kSWATCH_GreenSectionBar
-#define TESTIMONIAL_TITLE_FONT                              kFONT_HelveticaNeueLight(14.0f)
-#define TESTIMONIAL_TITLE_COLOR                             kSWATCH_Gray63
+#define TESTIMONIAL_BOX_COLOR                               COLOR_GRAY(230.0f)
+#define TESTIMONIAL_MSG_FONT                                kFONT_HelveticaNeueMedium(14.0f)
+#define TESTIMONIAL_MSG_COLOR                               COLOR_GRAY(63.0f)
+#define TESTIMONIAL_NAME_FONT                               kFONT_HelveticaNeueCondensedBold(16.0f)
+#define TESTIMONIAL_NAME_COLOR                              COLOR_RGB(69.0f,178.0f,118.0f)
+#define TESTIMONIAL_TITLE_FONT                              kFONT_HelveticaNeueLight(16.0f)
+#define TESTIMONIAL_TITLE_COLOR                             COLOR_GRAY(63.0f)
 
 #define MORE_SECTION_FONT                                   kFONT_HelveticaNeueCondensedBold(18.0f)
 #define MORE_SECTION_COLOR                                  [UIColor whiteColor]
-#define MORE_SECTION_BAR_COLOR                              kSWATCH_GreenSectionBar
+#define MORE_SECTION_BAR_COLOR                              COLOR_RGB(69.0f,178.0f,118.0f)
 #define MORE_CELL_FONT                                      kFONT_HelveticaNeueMedium(16.0f)
-#define MORE_CELL_BOX_COLOR                                 kSWATCH_Gray230
-#define MORE_CELL_COLOR                                     kSWATCH_Gray63
+#define MORE_CELL_BOX_COLOR                                 COLOR_GRAY(230.0f)
+#define MORE_CELL_COLOR                                     COLOR_GRAY(63.0f)
 #define MORE_CELL_CORNER                                    6.0f
 #endif

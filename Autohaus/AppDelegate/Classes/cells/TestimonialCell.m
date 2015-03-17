@@ -18,10 +18,12 @@
     self.labelName.textColor = TESTIMONIAL_NAME_COLOR;
     self.labelTitle.font = TESTIMONIAL_TITLE_FONT;
     self.labelTitle.textColor = TESTIMONIAL_TITLE_COLOR;
+    self.textViewMessage.editable = YES;
     self.textViewMessage.font = TESTIMONIAL_MSG_FONT;
-    self.textViewMessage.textColor = TESTIMONIAL_MSG_COLOR;
-    self.viewTestimonialBox.backgroundColor = TESTIMONIAL_BOX_COLOR;
     self.textViewMessage.textAlignment = NSTextAlignmentCenter;
+    self.textViewMessage.textColor = TESTIMONIAL_MSG_COLOR;
+    self.textViewMessage.editable = NO;
+    self.viewTestimonialBox.backgroundColor = TESTIMONIAL_BOX_COLOR;
     
     
 }

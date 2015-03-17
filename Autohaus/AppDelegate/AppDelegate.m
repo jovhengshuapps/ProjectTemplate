@@ -48,19 +48,19 @@
     // Start Monitoring
     [reachability startNotifier];
     
-    [[UINavigationBar appearance] setBarTintColor:kSWATCH_NavBG];
-    [[UINavigationBar appearance] setTintColor:kSWATCH_NavItemText];
+    [[UINavigationBar appearance] setBarTintColor:NAV_BAR_COLOR];
+    [[UINavigationBar appearance] setTintColor:NAV_ITEM_COLOR];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     
-    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kSWATCH_NavTitle,NSForegroundColorAttributeName,kFONT_HelveticaNeue(16),NSFontAttributeName, nil]];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:NAV_TITLE_COLOR,NSForegroundColorAttributeName,kFONT_HelveticaNeue(16),NSFontAttributeName, nil]];
     
     self.window.backgroundColor = [UIColor lightGrayColor];
         
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
      setTitleTextAttributes:
-     @{NSForegroundColorAttributeName:kSWATCH_NavItemText,
+     @{NSForegroundColorAttributeName:NAV_ITEM_COLOR,
        NSFontAttributeName:kFONT_HelveticaNeueLight(16.0f)
        }
      forState:UIControlStateNormal];

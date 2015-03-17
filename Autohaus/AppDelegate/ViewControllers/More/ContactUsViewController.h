@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 #import "Constants.h"
 
-@interface ContactUsViewController : UIViewController
+@interface ContactUsViewController : UIViewController<MFMailComposeViewControllerDelegate>
 
 @end

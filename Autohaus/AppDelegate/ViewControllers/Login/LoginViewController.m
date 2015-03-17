@@ -31,28 +31,30 @@
 
     self.title = @"Login";
     
-    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kSWATCH_NavItemText,NSForegroundColorAttributeName,kFONT_HelveticaNeueLight(16),NSFontAttributeName, nil] forState:UIControlStateNormal];
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:NAV_ITEM_COLOR,NSForegroundColorAttributeName,kFONT_HelveticaNeueLight(16),NSFontAttributeName, nil] forState:UIControlStateNormal];
     
     self.viewEmailPassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"textfield_login_iPhone"]];
     
     self.textFieldEmail.font = kFONT_HelveticaNeueThinItalic(16.0f);
     self.textFieldPassword.font = kFONT_HelveticaNeueThinItalic(16.0f);
-    self.textFieldEmail.textColor = kSWATCH_Gray102;
-    self.textFieldPassword.textColor = kSWATCH_Gray102;
+    self.textFieldEmail.textColor = COLOR_GRAY(102.0f);
+    self.textFieldPassword.textColor = COLOR_GRAY(102.0f);
         
     self.btnLogin.layer.cornerRadius = LOGIN_BUTTON_CORNER;
     self.btnLogin.backgroundColor = LOGIN_BUTTON_COLOR;
     self.btnLogin.titleLabel.font = LOGIN_BUTTON_FONT;
     [self.btnLogin setTitleColor:LOGIN_BUTTON_TEXTCOLOR forState:UIControlStateNormal];
+    [self.btnLogin setTintColor:LOGIN_BUTTON_COLOR];
     
     
     self.lblNotMember.font = kFONT_HelveticaNeueLight(16.0f);
-    self.lblNotMember.textColor = kSWATCH_Gray80;
+    self.lblNotMember.textColor = COLOR_GRAY(80.0f);
     
     self.btnCreateAccount.layer.cornerRadius = LOGIN_BUTTON_CORNER;
     self.btnCreateAccount.backgroundColor = LOGIN_BUTTON_COLOR;
     self.btnCreateAccount.titleLabel.font = LOGIN_BUTTON_FONT;
     [self.btnCreateAccount setTitleColor:LOGIN_BUTTON_TEXTCOLOR forState:UIControlStateNormal];
+    [self.btnCreateAccount setTintColor:LOGIN_BUTTON_COLOR];
     
     self.imageViewLogo.image = LOGIN_MAIN_LOGO;
 }
@@ -92,7 +94,7 @@
     
     WebserviceCall *call = [[WebserviceCall alloc] init];
     
-    [call initCallWithServiceURL:@"http://autohaus.com.sg/services/?type=login" withParameters:@{@"user_login":self.textFieldEmail.text,@"user_pass":self.textFieldPassword.text} withCompletionHandler:^(id responseObject) {
+    [call initCallWithServiceURL:WS_LOGIN withParameters:@{@"user_login":self.textFieldEmail.text,@"user_pass":self.textFieldPassword.text} withCompletionHandler:^(id responseObject) {
         NSError *error = nil;
         NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
         
@@ -130,22 +132,22 @@
         
         if ([textField isEqual:self.textFieldEmail]) {
             self.textFieldEmail.font = kFONT_HelveticaNeueThinItalic(16.0f);
-            self.textFieldEmail.textColor = kSWATCH_Gray102;
+            self.textFieldEmail.textColor = COLOR_GRAY(102.0f);
         }
         else {
             self.textFieldPassword.font = kFONT_HelveticaNeueThinItalic(16.0f);
-            self.textFieldPassword.textColor = kSWATCH_Gray102;
+            self.textFieldPassword.textColor = COLOR_GRAY(102.0f);
         }
         
     }
     else {
         if ([textField isEqual:self.textFieldEmail]) {
             self.textFieldEmail.font = kFONT_HelveticaNeue(16.0f);
-            self.textFieldEmail.textColor = kSWATCH_Gray30;
+            self.textFieldEmail.textColor = COLOR_GRAY(30.0f);
         }
         else {
             self.textFieldPassword.font = kFONT_HelveticaNeue(16.0f);
-            self.textFieldPassword.textColor = kSWATCH_Gray30;
+            self.textFieldPassword.textColor = COLOR_GRAY(30.0f);
         }
     }
     
@@ -156,11 +158,11 @@
 - (BOOL)textFieldShouldClear:(UITextField *)textField {
     if ([textField isEqual:self.textFieldEmail]) {
         self.textFieldEmail.font = kFONT_HelveticaNeueThinItalic(16.0f);
-        self.textFieldEmail.textColor = kSWATCH_Gray102;
+        self.textFieldEmail.textColor = COLOR_GRAY(102.0f);
     }
     else {
         self.textFieldPassword.font = kFONT_HelveticaNeueThinItalic(16.0f);
-        self.textFieldPassword.textColor = kSWATCH_Gray102;
+        self.textFieldPassword.textColor = COLOR_GRAY(102.0f);
     }
     return YES;
 }

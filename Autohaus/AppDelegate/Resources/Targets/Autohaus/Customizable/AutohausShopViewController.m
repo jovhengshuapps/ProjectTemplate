@@ -34,18 +34,8 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    if ([segue.identifier isEqualToString:@"pushList"]) {
-//        CollectionListTableViewController *list = segue.destinationViewController;
-//        
-//        NSString *key = [[self.datasource allKeys] objectAtIndex:indexPath.section];
-//        NSInteger objectTag = indexPath.row;
-//        
-//        if ([[[[self.datasource objectForKey:
-//                
-//        list.selected   = [datasource[objectTag] valueForKey:@"list"];
-//        list.title      = [datasource[objectTag] valueForKey:@"name"];
-//    }
 }
+
 #pragma mark - Custom Methods
 - (void) getDataSource {
     [super getDataSource];
@@ -123,7 +113,7 @@
     
     UIView *container = [[UIView alloc] initWithFrame:CGRectMake(15.0f, 10.0f, tableView.frame.size.width-30.0f, 44.0f)];
     container.layer.cornerRadius = 2.0f;
-    container.backgroundColor = kSWATCH_Gray230;
+//    container.backgroundColor = kSWATCH_Gray230;
     container.tag = section;
     
     UILabel *labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, container.frame.size.width - 50.0f, 44.0f)];

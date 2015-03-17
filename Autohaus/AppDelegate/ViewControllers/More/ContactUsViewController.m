@@ -61,10 +61,37 @@
 }
 */
 
+#pragma mark - MFMailComposeViewController Delegate
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    [controller dismissViewControllerAnimated:YES completion:^{
+        [self.tabBarController.tabBar setTranslucent:YES];
+    }];
+}
 
 - (IBAction)callPressed:(id)sender {
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:kAppTelNumber]]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kAppTelNumber]];
+    }else{
+        NSString *errMessage = @"This device is incapable of placing a call.";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Call Failed"
+                                                        message:errMessage
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Okay"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 
 - (IBAction)emailPressed:(id)sender {
+    
+    MFMailComposeViewController *mailer = [MFMailComposeViewController new];
+    [mailer setMailComposeDelegate:self];
+    [mailer setSubject:@""];
+    [mailer setToRecipients:kAppEmail];
+    [self presentViewController:mailer animated:YES completion:^{
+        [self.tabBarController.tabBar setTranslucent:NO];
+    }];
+    
 }
 @end

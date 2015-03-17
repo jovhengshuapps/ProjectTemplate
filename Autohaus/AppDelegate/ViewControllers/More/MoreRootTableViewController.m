@@ -200,32 +200,10 @@
     
 }
 
-#pragma mark - MFMailComposeViewController Delegate
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
-{
-    [controller dismissViewControllerAnimated:YES completion:^{
-        [self.tabBarController.tabBar setTranslucent:YES];
-    }];
-}
 
 #pragma mark - UIAlertView Delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if ([alertView.title isEqualToString:kAppName]) {
-        if (buttonIndex == 0) {
-            if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:kAppTelNumber]]) {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kAppTelNumber]];
-            }else{
-                NSString *errMessage = @"This device is incapable of placing a call.";
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"FAIL"
-                                                                message:errMessage
-                                                               delegate:Nil
-                                                      cancelButtonTitle:@"Okay"
-                                                      otherButtonTitles:nil, nil];
-                [alert show];
-            }
-        }
-    }
-    else if([alertView.title isEqualToString:@"Log out"]) {
+    if([alertView.title isEqualToString:@"Log out"]) {
         switch (buttonIndex) {
             case 0:
                 NSLog(@"Log out");

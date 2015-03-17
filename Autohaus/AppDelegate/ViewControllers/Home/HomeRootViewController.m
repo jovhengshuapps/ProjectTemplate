@@ -7,8 +7,14 @@
 //
 
 #import "HomeRootViewController.h"
+#import "CollectionCellText.h"
 
 @interface HomeRootViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *btnAbout;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewAbout;
+@property (weak, nonatomic) IBOutlet UILabel *labelAbout;
+- (IBAction)viewAbout:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *viewForAbout;
 @end
 
 @implementation HomeRootViewController
@@ -30,7 +36,10 @@
 {
     [super viewDidLoad];
     [self initAppTheme];
-//    [self loadBannerItems];
+    
+    self.arrayOfCollection = [self getData];
+    
+    [self setupAbout];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,56 +56,100 @@
 }
 
 
+- (void) setupAbout {
+    self.imageViewAbout.image = HOME_ABOUT_IMAGE;
+    NSString *aboutText = HOME_ABOUT_TEXT;
+    NSRange range = [aboutText rangeOfString:kAppName];
+    NSMutableAttributedString * string = [[NSMutableAttributedString alloc] initWithString:aboutText];
+    [string addAttribute:NSFontAttributeName value:kFONT_HelveticaNeueBold(18.0f) range:range];
+    [string addAttribute:NSFontAttributeName value:kFONT_HelveticaNeue(18.0f) range:NSMakeRange(range.length, aboutText.length - range.length)];
+    
+    self.labelAbout.attributedText = string;
+}
+
+- (NSArray*) getData {
+    
+    NSDictionary *item1 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Engine Care",@"text",@"",@"image", nil];
+    NSDictionary *item2 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Car Accessories",@"text",@"",@"image", nil];
+    NSDictionary *item3 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Car Care",@"text",@"",@"image", nil];
+    
+    NSArray *list = [NSArray arrayWithObjects:item1, item2, item3, nil];
+    
+    NSDictionary *section = [NSDictionary dictionaryWithObjectsAndKeys:@"Product Categories", @"title", list, @"list", nil];
+    
+    NSArray *resultArray = [NSArray arrayWithObjects:section, nil];
+    
+    
+    return resultArray;
+}
+
 #pragma mark - UICollection Data Source
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-//    return [self.arrayOfCollection count];
-//}
-//
-//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-//    return [[[self.arrayOfCollection objectAtIndex:section] objectForKey:@"list"]count];
-//}
-//
-//- (UIEdgeInsets)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-//    return UIEdgeInsetsMake(0, 5, 0, 5); // top, left, bottom, right
-//}
-//
-//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-//    
-//    return 0.0;
-//}
-//
-//
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-//{
-//    UICollectionReusableView *reusableview = nil;
-//    
-//    if (kind == UICollectionElementKindSectionHeader) {
-//        CollectionHeaderLabel *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
-//        NSString *title = [[NSString alloc]initWithFormat:@"Featured #%li", indexPath.section + 1];
-//        headerView.labelHeader.text = title;
-//        headerView.labelHeader.font = kFONT_CentGothicBold(18);
-//        
-//        reusableview = headerView;
-//    }
-//    
-//    if (kind == UICollectionElementKindSectionFooter) {
-//        UICollectionReusableView *footerview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
-//        
-//        reusableview = footerview;
-//    }
-//    
-//    return reusableview;
-//}
-//
-//
-//
-//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-//    NSString *identifier = @"Cell";
-//    
-//    CollectionCellImage *cell = (CollectionCellImage *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-//    
-//    
-//    return cell;
-//}
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return [self.arrayOfCollection count];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [[[self.arrayOfCollection objectAtIndex:section] objectForKey:@"list"]count];
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(10, 10, 0, 10); // top, left, bottom, right
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    
+    return 0.0;
+}
+
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusableview = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+        CollectionHeaderLabel *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        NSString *title = [[NSString alloc]initWithFormat:@"%@", [[self.arrayOfCollection objectAtIndex:indexPath.section] objectForKey:@"title"]];
+        headerView.labelHeader.text = title;
+        headerView.labelHeader.font = HOME_SECTION_TEXTFONT;
+        headerView.labelHeader.textColor = HOME_SECTION_TEXTCOLOR;
+        headerView.backgroundColor = HOME_SECTION_BARCOLOR;
+        
+        reusableview = headerView;
+    }
+    
+    if (kind == UICollectionElementKindSectionFooter) {
+        UICollectionReusableView *footerview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
+        
+        reusableview = footerview;
+    }
+    
+    return reusableview;
+}
+
+
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *identifier = @"Cell";
+    
+    CollectionCellText *cell = (CollectionCellText *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    
+    NSDictionary *item = [[[self.arrayOfCollection objectAtIndex:indexPath.section] objectForKey:@"list"] objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [item objectForKey:@"text"];
+    cell.textLabel.font = HOME_CELL_TEXTFONT;
+    cell.textLabel.textColor = HOME_CELL_TEXTCOLOR;
+    
+    cell.backgroundColor = HOME_CELL_BGCOLOR;
+    cell.layer.cornerRadius = HOME_CELL_CORNER;
+    
+    return cell;
+}
+
+- (IBAction)viewAbout:(id)sender {
+    
+    UIViewController *vc = kStoryboard(@"aboutVC");
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 
 @end

@@ -14,7 +14,6 @@
 		338704B21AB53B0B00D21E0C /* TestimonialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 338704B11AB53B0B00D21E0C /* TestimonialsViewController.m */; };
 		338704B81AB53C7400D21E0C /* TestimonialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 338704B71AB53C7400D21E0C /* TestimonialCell.m */; };
 		33876E8B1AB6EB9700E7F927 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33876E891AB6EB9700E7F927 /* Main.storyboard */; };
-		33BA16F71AB3C93A00DDD5CA /* AutohausShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33BA16F61AB3C93A00DDD5CA /* AutohausShopViewController.m */; };
 		443B1CA91AB64A3F0090FFFA /* WebserviceCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CA81AB64A3F0090FFFA /* WebserviceCall.m */; };
 		443B1CAB1AB64A7F0090FFFA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443B1CAA1AB64A7F0090FFFA /* SystemConfiguration.framework */; };
 		443B1CAE1AB64B1D0090FFFA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CAD1AB64B1D0090FFFA /* Reachability.m */; };
@@ -63,7 +62,6 @@
 		44453B9A1AB0FF66001A127E /* CollectionRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B761AB0FF66001A127E /* CollectionRootTableViewController.m */; };
 		44453B9B1AB0FF66001A127E /* HomeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B791AB0FF66001A127E /* HomeRootViewController.m */; };
 		44453B9C1AB0FF66001A127E /* MoreRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B7C1AB0FF66001A127E /* MoreRootTableViewController.m */; };
-		444EDF4C1AB24F2E007B8354 /* AutohausHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 444EDF4B1AB24F2E007B8354 /* AutohausHomeViewController.m */; };
 		444EDF4F1AB24F9E007B8354 /* CollectionCellText.m in Sources */ = {isa = PBXBuildFile; fileRef = 444EDF4E1AB24F9E007B8354 /* CollectionCellText.m */; };
 		44EEC4A21AB10CAA00DA1CA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44EEC4951AB10CAA00DA1CA9 /* Images.xcassets */; };
 		44EEC4A31AB10CAA00DA1CA9 /* image_skirt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EEC4981AB10CAA00DA1CA9 /* image_skirt1.png */; };
@@ -100,8 +98,7 @@
 		338704B61AB53C7400D21E0C /* TestimonialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestimonialCell.h; sourceTree = "<group>"; };
 		338704B71AB53C7400D21E0C /* TestimonialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestimonialCell.m; sourceTree = "<group>"; };
 		33876E8A1AB6EB9700E7F927 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		33BA16F51AB3C93A00DDD5CA /* AutohausShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutohausShopViewController.h; sourceTree = "<group>"; };
-		33BA16F61AB3C93A00DDD5CA /* AutohausShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutohausShopViewController.m; sourceTree = "<group>"; };
+		338CA4371AB8366100C91ACD /* WebserviceCallURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebserviceCallURL.h; sourceTree = "<group>"; };
 		33CA89111AB19D11008B4145 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		443B1CA61AB648D80090FFFA /* BaseConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseConfig.h; sourceTree = "<group>"; };
 		443B1CA71AB64A3F0090FFFA /* WebserviceCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebserviceCall.h; sourceTree = "<group>"; };
@@ -199,8 +196,6 @@
 		44453B791AB0FF66001A127E /* HomeRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeRootViewController.m; sourceTree = "<group>"; };
 		44453B7B1AB0FF66001A127E /* MoreRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreRootTableViewController.h; sourceTree = "<group>"; };
 		44453B7C1AB0FF66001A127E /* MoreRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreRootTableViewController.m; sourceTree = "<group>"; };
-		444EDF4A1AB24F2E007B8354 /* AutohausHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutohausHomeViewController.h; sourceTree = "<group>"; };
-		444EDF4B1AB24F2E007B8354 /* AutohausHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutohausHomeViewController.m; sourceTree = "<group>"; };
 		444EDF4D1AB24F9E007B8354 /* CollectionCellText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCellText.h; sourceTree = "<group>"; };
 		444EDF4E1AB24F9E007B8354 /* CollectionCellText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCellText.m; sourceTree = "<group>"; };
 		44EEC4951AB10CAA00DA1CA9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -582,22 +577,11 @@
 			path = Targets;
 			sourceTree = "<group>";
 		};
-		444EDF491AB24EF8007B8354 /* Customizable */ = {
-			isa = PBXGroup;
-			children = (
-				444EDF4A1AB24F2E007B8354 /* AutohausHomeViewController.h */,
-				444EDF4B1AB24F2E007B8354 /* AutohausHomeViewController.m */,
-				33BA16F51AB3C93A00DDD5CA /* AutohausShopViewController.h */,
-				33BA16F61AB3C93A00DDD5CA /* AutohausShopViewController.m */,
-			);
-			path = Customizable;
-			sourceTree = "<group>";
-		};
 		44EEC4921AB10CAA00DA1CA9 /* Autohaus */ = {
 			isa = PBXGroup;
 			children = (
-				444EDF491AB24EF8007B8354 /* Customizable */,
 				33CA89111AB19D11008B4145 /* Constants.h */,
+				338CA4371AB8366100C91ACD /* WebserviceCallURL.h */,
 				44EEC4951AB10CAA00DA1CA9 /* Images.xcassets */,
 				44EEC4961AB10CAA00DA1CA9 /* ProductsImages */,
 			);
@@ -773,7 +757,6 @@
 				443B1CE41AB6566A0090FFFA /* UIRefreshControl+AFNetworking.m in Sources */,
 				44453B951AB0FF66001A127E /* CartRootViewController.m in Sources */,
 				3370BD521AB71851009D47AB /* MyLocation.m in Sources */,
-				444EDF4C1AB24F2E007B8354 /* AutohausHomeViewController.m in Sources */,
 				44453B891AB0FF66001A127E /* GingerDolls.xcdatamodeld in Sources */,
 				443B1CE01AB6566A0090FFFA /* UIAlertView+AFNetworking.m in Sources */,
 				443B1CE21AB6566A0090FFFA /* UIImageView+AFNetworking.m in Sources */,
@@ -792,7 +775,6 @@
 				443B1CE81AB6956A0090FFFA /* TabBarViewController.m in Sources */,
 				443B1CCA1AB655AF0090FFFA /* AFURLResponseSerialization.m in Sources */,
 				44453B811AB0FF66001A127E /* GalleryCell.m in Sources */,
-				33BA16F71AB3C93A00DDD5CA /* AutohausShopViewController.m in Sources */,
 				443B1CC51AB655AF0090FFFA /* AFHTTPSessionManager.m in Sources */,
 				44EEC4AC1AB1101300DA1CA9 /* LoginViewController.m in Sources */,
 				44453B2F1AB0FF3D001A127E /* AppDelegate.m in Sources */,

@@ -99,7 +99,7 @@
     [textView.layoutManager ensureLayoutForTextContainer:textView.textContainer];
     CGRect usedRect = [textView.layoutManager usedRectForTextContainer:textView.textContainer];
     return ceilf(usedRect.size.height + textView.textContainerInset.top
-                 +textView.textContainerInset.bottom)*1.5f;
+                 +textView.textContainerInset.bottom) + 65.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
