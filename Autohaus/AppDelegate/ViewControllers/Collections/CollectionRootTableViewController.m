@@ -11,12 +11,15 @@
 #define kSegue_List     @"pushList"
 
 @interface CollectionRootTableViewController ()
-
+@property (strong, nonatomic) NSMutableArray *sectionKeys;
+@property (strong, nonatomic) NSDictionary *allProducts;
 @end
 
 @implementation CollectionRootTableViewController
 @synthesize datasource;
 @synthesize arrayCollapsedSection;
+@synthesize sectionKeys;
+@synthesize allProducts;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -58,8 +61,11 @@
 - (void) getDataSource {
     self.arrayCollapsedSection = nil;
     self.datasource = nil;
+    self.sectionKeys = nil;
     self.arrayCollapsedSection = [[NSMutableArray alloc] init];
     self.datasource = [[NSMutableDictionary alloc] init];
+    self.sectionKeys = [[NSMutableArray alloc] init];
+    
     
 #warning implement webservice here
     //Plist to Dictionary
@@ -77,16 +83,43 @@
         }
     }
     
-    NSDictionary *allProducts =[NSDictionary dictionaryWithObjectsAndKeys:list,@"All Products", nil];
+    self.allProducts = [NSDictionary dictionaryWithObjectsAndKeys:list,@"list",@"All Products",@"name", nil];
     
-    [self.datasource addEntriesFromDictionary:allProducts];
     
+    //setup table header view
+    UIView *viewHeader = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.frame.size.width, 54.0f)];
+    
+    
+    UIView *container = [[UIView alloc] initWithFrame:CGRectMake(15.0f, 10.0f, self.tableView.frame.size.width-30.0f, 44.0f)];
+    container.layer.cornerRadius = SHOP_SECTION_CORNER;
+    container.backgroundColor = SHOP_SECTION_BGCOLOR;
+    
+    UILabel *labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, container.frame.size.width - 50.0f, 44.0f)];
+    labelTitle.text = @"All Products";
+    labelTitle.font = SHOP_SECTION_CELL_FONT;
+    labelTitle.textColor = SHOP_SECTION_CELL_COLOR;
+    labelTitle.tag = 1;
+    [container addSubview:labelTitle];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_disclosure_iPhone"]];
+    imageView.frame = CGRectMake(labelTitle.frame.size.width, 7.0f, 30.0f, 30.0f);
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    imageView.tag = 2;
+    [container addSubview:imageView];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewAllProducts:)];
+    [container addGestureRecognizer:tap];
+    
+    [viewHeader addSubview:container];
+    self.tableView.tableHeaderView = viewHeader;
+    
+    [self.sectionKeys addObjectsFromArray:[product allKeys]];
     [self.datasource addEntriesFromDictionary:product];
     
 }
 
 - (NSString*)stringTitleForSection:(NSInteger)section {
-    NSString *key = [[self.datasource allKeys] objectAtIndex:section];
+    NSString *key = [self.sectionKeys objectAtIndex:section];
     return key;
 }
 
@@ -106,19 +139,27 @@
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationFade];
 }
 
+- (void) viewAllProducts:(UITapGestureRecognizer *)tap {
+    
+    CollectionListTableViewController *list = kStoryboard(@"CollectionListTableViewController");
+    
+    list.selected   = [self.allProducts  valueForKey:@"list"];
+    list.title      = [self.allProducts  valueForKey:@"name"];
+    
+    [self.navigationController pushViewController:list animated:YES];
+}
 
 #pragma  mark - UITableView DataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSMutableArray *arraykeys = [[NSMutableArray alloc] initWithArray:[self.datasource allKeys]];
-        
-    return [arraykeys count];
+    return [self.sectionKeys count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSString *key = [[self.datasource allKeys] objectAtIndex:section];
+    
+    NSString *key = [self.sectionKeys objectAtIndex:section];
     if ([self.arrayCollapsedSection containsObject:[NSNumber numberWithInteger:section]]) {
         return 0;
     }
@@ -142,11 +183,10 @@
     labelTitle.tag = 1;
     [container addSubview:labelTitle];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_expand_iPhone"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_collapse_iPhone"]];
     if ([self.arrayCollapsedSection containsObject:[NSNumber numberWithInteger:section]]) {
-        imageView.image = [UIImage imageNamed:@"icon_collapse_iPhone"];
+        imageView.image = [UIImage imageNamed:@"icon_expand_iPhone"];
     }
-    imageView.center = container.center;
     imageView.frame = CGRectMake(labelTitle.frame.size.width, 7.0f, 30.0f, 30.0f);
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.tag = 2;
@@ -172,13 +212,22 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CollectionRootCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    NSString *key = [[self.datasource allKeys] objectAtIndex:indexPath.section];
+    NSString *key = [self.sectionKeys objectAtIndex:indexPath.section];
     NSDictionary *item = [[self.datasource objectForKey:key] objectAtIndex:indexPath.row];
     cell.textLabel.text = [item objectForKey:@"name"];
     cell.textLabel.font = SHOP_SECTION_CELL_FONT;
     cell.textLabel.textColor = SHOP_SECTION_CELL_COLOR;
     cell.indentationLevel = 2;
     cell.indentationWidth = 20.0f;
+    
+    if ([item objectForKey:@"list"] && [[item objectForKey:@"list"] count]) {
+//        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_disclosure_iPhone"]];
+//        imageView.frame = CGRectMake(0.0f, 7.0f, 30.0f, 30.0f);
+//        imageView.contentMode = UIViewContentModeScaleAspectFit;
+//        
+//        cell.accessoryView = imageView;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
     
     UIView *backgroundView = [[UIView alloc] initWithFrame:cell.frame];
     backgroundView.backgroundColor = SHOP_SECTION_BGCOLOR;
@@ -191,7 +240,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSString *key = [[self.datasource allKeys] objectAtIndex:indexPath.section];
+    NSString *key = [self.sectionKeys objectAtIndex:indexPath.section];
     NSInteger objectTag = indexPath.row;
     
     //CHECK IF EMPTY
@@ -205,12 +254,12 @@
         
         [self.navigationController pushViewController:list animated:YES];
     }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kAppName
-                                                        message:@"Collection is empty. Please try something else"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Okay"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kAppName
+//                                                        message:@"Collection is empty. Please try something else"
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"Okay"
+//                                              otherButtonTitles:nil, nil];
+//        [alert show];
     }
     
 }

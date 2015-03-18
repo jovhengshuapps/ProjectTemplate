@@ -33,6 +33,7 @@
 #define kSCREEN_iPHONE5         ([[UIScreen mainScreen] bounds].size.height == 568)?TRUE:FALSE
 #define kAppSystemVersion       [[[UIDevice currentDevice] systemVersion] floatValue]
 #define kStoryboard(v)          [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:(v)]
+#define _CONFIG                 [[NSBundle mainBundle] objectForInfoDictionaryKey:@"Configuration"]
 
 //----EXTENDED SHORTCUTS
 #define kToPrice(v)             [NSString stringWithFormat:@"$ %.2f", [(v) floatValue]]

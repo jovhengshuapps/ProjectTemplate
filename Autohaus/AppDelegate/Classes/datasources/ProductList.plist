@@ -17,7 +17,7 @@
 			<array>
 				<dict>
 					<key>name</key>
-					<string>Bluetooth Earpiece</string>
+					<string>Page up</string>
 					<key>image</key>
 					<string>http:\/\/bptrade.asia\/staging\/cst_trading\/wp-content\/uploads\/2014\/12\/mmexport1418819592037.jpg</string>
 					<key>price</key>
@@ -27,7 +27,7 @@
 				</dict>
 				<dict>
 					<key>name</key>
-					<string>Bluetooth Earpiece</string>
+					<string>Capslock</string>
 					<key>image</key>
 					<string>http:\/\/bptrade.asia\/staging\/cst_trading\/wp-content\/uploads\/2014\/12\/mmexport1418819592037.jpg</string>
 					<key>price</key>
@@ -37,7 +37,7 @@
 				</dict>
 				<dict>
 					<key>name</key>
-					<string>Bluetooth Earpiece</string>
+					<string>Print Screen</string>
 					<key>image</key>
 					<string>http:\/\/bptrade.asia\/staging\/cst_trading\/wp-content\/uploads\/2014\/12\/mmexport1418819592037.jpg</string>
 					<key>price</key>
@@ -47,7 +47,7 @@
 				</dict>
 				<dict>
 					<key>name</key>
-					<string>Bluetooth Earpiece</string>
+					<string>Tilde</string>
 					<key>image</key>
 					<string>http:\/\/bptrade.asia\/staging\/cst_trading\/wp-content\/uploads\/2014\/12\/mmexport1418819592037.jpg</string>
 					<key>price</key>
