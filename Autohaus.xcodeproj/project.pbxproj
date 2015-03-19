@@ -34,6 +34,7 @@
 		443B1CE41AB6566A0090FFFA /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CDB1AB6566A0090FFFA /* UIRefreshControl+AFNetworking.m */; };
 		443B1CE51AB6566A0090FFFA /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CDD1AB6566A0090FFFA /* UIWebView+AFNetworking.m */; };
 		443B1CE81AB6956A0090FFFA /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CE71AB6956A0090FFFA /* TabBarViewController.m */; };
+		443EF9DF1ABB76F000D16AF7 /* APIAccessPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 443EF9DE1ABB76F000D16AF7 /* APIAccessPoint.m */; };
 		443FA6271AB0FD6C000EFD81 /* AutohausTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 443FA6261AB0FD6C000EFD81 /* AutohausTests.m */; };
 		44453B2F1AB0FF3D001A127E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B2E1AB0FF3D001A127E /* AppDelegate.m */; };
 		44453B7D1AB0FF66001A127E /* BlurringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B331AB0FF66001A127E /* BlurringView.m */; };
@@ -142,6 +143,8 @@
 		443B1CDD1AB6566A0090FFFA /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		443B1CE61AB6956A0090FFFA /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		443B1CE71AB6956A0090FFFA /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		443EF9DD1ABB76F000D16AF7 /* APIAccessPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIAccessPoint.h; sourceTree = "<group>"; };
+		443EF9DE1ABB76F000D16AF7 /* APIAccessPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIAccessPoint.m; sourceTree = "<group>"; };
 		443FA6041AB0FD6C000EFD81 /* Autohaus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autohaus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		443FA6201AB0FD6C000EFD81 /* AutohausTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutohausTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		443FA6251AB0FD6C000EFD81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -244,6 +247,8 @@
 		443B1CA41AB646170090FFFA /* api */ = {
 			isa = PBXGroup;
 			children = (
+				443EF9DD1ABB76F000D16AF7 /* APIAccessPoint.h */,
+				443EF9DE1ABB76F000D16AF7 /* APIAccessPoint.m */,
 				443B1CAF1AB655AF0090FFFA /* AFNetworking */,
 				443B1CAC1AB64B1D0090FFFA /* Reachability.h */,
 				443B1CAD1AB64B1D0090FFFA /* Reachability.m */,
@@ -766,6 +771,7 @@
 				443B1CC81AB655AF0090FFFA /* AFURLConnectionOperation.m in Sources */,
 				44453B881AB0FF66001A127E /* Cart.m in Sources */,
 				443B1CCB1AB655AF0090FFFA /* AFURLSessionManager.m in Sources */,
+				443EF9DF1ABB76F000D16AF7 /* APIAccessPoint.m in Sources */,
 				443B1CC91AB655AF0090FFFA /* AFURLRequestSerialization.m in Sources */,
 				443B1CA91AB64A3F0090FFFA /* WebserviceCall.m in Sources */,
 				44453B941AB0FF66001A127E /* AboutRootViewController.m in Sources */,
