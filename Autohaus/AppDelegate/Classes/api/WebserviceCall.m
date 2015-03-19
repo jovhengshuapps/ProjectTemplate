@@ -12,45 +12,60 @@
 
 -(void)initCallWithServiceURL:(NSString*)url withParameters:(NSDictionary *)parameters withCompletionHandler:(void(^)(id responseObject))completion{
     
+    NSURL *urlURL = [NSURL URLWithString:url];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[urlURL standardizedURL]];
+    request.HTTPMethod = @"POST";
+    NSData *postData = [@"user_login=blah&user_pass=blah" dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[@"user" dataUsingEncoding:NSUTF8StringEncoding] forKey:@"user_login"];
+    [request setValue:[@"pass" dataUsingEncoding:NSUTF8StringEncoding] forKey:@"user_pass"];
+//    [request setHTTPBody:postData];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+
+//    [[manager POST:@"http://autohaus.com.sg/services/?type=products" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        completion(responseObject);
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data"
+//                                                            message:[error localizedDescription]
+//                                                           delegate:nil
+//                                                  cancelButtonTitle:@"Ok"
+//                                                  otherButtonTitles:nil];
+//        [alertView show];
+//    }] start];
+
+    
+    [manager POST:WS_LOGIN parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFormData:[@"user" dataUsingEncoding:NSUTF8StringEncoding] name:@"user_login"];
+        [formData appendPartWithFormData:[@"pass" dataUsingEncoding:NSUTF8StringEncoding] name:@"user_pass"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         completion(responseObject);
-        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        NSLog(@"Response = %@", operation);
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data"
                                                             message:[error localizedDescription]
                                                            delegate:nil
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil];
         [alertView show];
-        
+
     }];
-//    
-//    
-//        NSURL *urlURL = [NSURL URLWithString:url];
-//        NSURLRequest *request = [NSURLRequest requestWithURL:urlURL];
-//        
-//        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-//        operation.responseSerializer = [AFHTTPResponseSerializer serializer];
-//        
-//        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-//            
-//            completion(responseObject);
-//            
-//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//            
-//            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Weather"
-//                                                                message:[error localizedDescription]
-//                                                               delegate:nil
-//                                                      cancelButtonTitle:@"Ok"
-//                                                      otherButtonTitles:nil];
-//            [alertView show];
-//        }];
-//        
-//        [operation start];
+    
+    
+//    [[manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        completion(responseObject);
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Data"
+//                                                            message:[error localizedDescription]
+//                                                           delegate:nil
+//                                                  cancelButtonTitle:@"Ok"
+//                                                  otherButtonTitles:nil];
+//        [alertView show];
+//    }] start];
     
     
         
