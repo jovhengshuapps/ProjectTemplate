@@ -70,14 +70,15 @@
 #define TABVIEW_SHOW_MORE                                   1
 
 
-#define NAV_TITLE_FONT                                      kFONT_HelveticaNeue(16.0f)
+#define NAV_TITLE_FONT                                      kFONT_HelveticaNeue(22.0f)
 #define NAV_TITLE_COLOR                                     COLOR_RGB(35.0f,175.0f,229.0f)
-#define NAV_ITEM_FONT                                       kFONT_HelveticaNeueLight(16.0f)
+#define NAV_ITEM_FONT                                       kFONT_HelveticaNeueLight(20.0f)
 #define NAV_ITEM_COLOR                                      COLOR_RGB(154.0f,167.0f,196.0f)
 #define NAV_BAR_COLOR                                       COLOR_RGB(45.0f,45.0f,48.0f)
 #define TAB_BAR_COLOR                                       COLOR_RGB(45.0f,45.0f,48.0f)
 #define TAB_BAR_ITEM_NORMAL                                 COLOR_GRAY(224.0f)
 #define TAB_BAR_ITEM_SELECTED                               COLOR_RGB(35.0f,175.0f,229.0f)
+#define NAV_INFO_BUTTON                                     [UIImage imageNamed:@"navbar_button_details_iPhone"]
 
 #define TAB_HOME_LOGO_NORMAL                                [UIImage imageNamed:@"tab_home_iPhone"]
 #define TAB_HOME_LOGO_SELECTED                              [UIImage imageNamed:@"tab_home_selected_iPhone"]
@@ -114,6 +115,26 @@
 #define SHOP_SEPARATOR_COLOR                                COLOR_GRAY(230.0f)
 #define SHOP_SEPARATOR_SIZE                                 4.0f
 
+#define SHOP_ITEM_IMAGE_BORDERCOLOR                         COLOR_GRAY(230.0f)
+#define SHOP_ITEM_IMAGE_BORDERWIDTH                         2.0f
+#define SHOP_ITEM_NAME_FONT                                 kFONT_HelveticaNeueMedium(16.0f)
+#define SHOP_ITEM_NAME_COLOR                                COLOR_GRAY(63.0f)
+#define SHOP_ITEM_PRICE_FONT                                kFONT_HelveticaNeueLight(16.0f)
+#define SHOP_ITEM_PRICE_COLOR                               COLOR_GRAY(63.0f)
+
+#define SHOP_ITEM_DESC_TITLEFONT                            kFONT_HelveticaNeueCondensedBold(18.0f)
+#define SHOP_ITEM_DESC_TITLECOLOR                           COLOR_GRAY(63.0f)
+#define SHOP_ITEM_DESC_PRICEFONT                            kFONT_HelveticaNeueLight(18.0f)
+#define SHOP_ITEM_DESC_PRICECOLOR                           COLOR_RGB(69.0f,178.0f,118.0f)
+#define SHOP_ITEM_DESC_TEXTFONT                             kFONT_HelveticaNeue(18.0f)
+#define SHOP_ITEM_DESC_TEXTCOLOR                            COLOR_GRAY(63.0f)
+#define SHOP_ITEM_DESC_ACTIONBOX                            COLOR_GRAY(230.0f)
+#define SHOP_ITEM_DESC_ADDCARTBTNCOLOR                      COLOR_RGB(42.0f,65.0f,127.0f)
+#define SHOP_ITEM_DESC_ADDCARTBTNFONT                       kFONT_HelveticaNeueCondensedBold(20.0f)
+#define SHOP_ITEM_DESC_ADDCARTBTNTXTCLR                     [UIColor whiteColor]
+#define SHOP_ITEM_DESC_INQUIREBTNCOLOR                      COLOR_RGB(42.0f,65.0f,127.0f)
+#define SHOP_ITEM_DESC_INQUIREBTNFONT                       kFONT_HelveticaNeueCondensedBold(20.0f)
+#define SHOP_ITEM_DESC_INQUIREBTNTXTCLR                     [UIColor whiteColor]
 
 #define TESTIMONIAL_BOX_CORNER                              6.0f
 #define TESTIMONIAL_BOX_COLOR                               COLOR_GRAY(230.0f)

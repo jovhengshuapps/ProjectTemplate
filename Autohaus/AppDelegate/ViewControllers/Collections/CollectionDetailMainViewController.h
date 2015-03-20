@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MFMailComposeViewController.h>
-#import "TableCellCollection.h"
-@interface CollectionDetailMainViewController : UIViewController <UIScrollViewDelegate, MFMailComposeViewControllerDelegate, UITableViewDataSource, TableCellCollectionDelegate>
+
+@interface CollectionDetailMainViewController : UIViewController <UIScrollViewDelegate, MFMailComposeViewControllerDelegate, UITableViewDataSource>
 @property (strong, nonatomic) NSDictionary *selected;
 @end

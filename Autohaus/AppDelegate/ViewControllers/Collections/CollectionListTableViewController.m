@@ -91,9 +91,16 @@
             
             [cell.imageA addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
             [cell.imageA setTag:index];
+            cell.imageA.layer.borderColor = SHOP_ITEM_IMAGE_BORDERCOLOR.CGColor;
+            cell.imageA.layer.borderWidth = SHOP_ITEM_IMAGE_BORDERWIDTH;
             
             [cell.titleA setText:[datasource[index] valueForKey:@"name"]];
             [cell.priceA setText:kToPrice([datasource[index] valueForKey:@"price"])];
+            
+            cell.titleA.font = SHOP_ITEM_NAME_FONT;
+            cell.titleA.textColor = SHOP_ITEM_NAME_COLOR;
+            cell.priceA.font = SHOP_ITEM_PRICE_FONT;
+            cell.priceA.textColor = SHOP_ITEM_PRICE_COLOR;
             
         }else{
             if (indexPath.row + (indexPath.row + y) < [datasource count]){
@@ -105,9 +112,15 @@
                 
                 [cell.imageB addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
                 [cell.imageB setTag:index];
+                cell.imageB.layer.borderColor = SHOP_ITEM_IMAGE_BORDERCOLOR.CGColor;
+                cell.imageB.layer.borderWidth = SHOP_ITEM_IMAGE_BORDERWIDTH;
                 
                 [cell.titleB setText:[datasource[index] valueForKey:@"name"]];
                 [cell.priceB setText:kToPrice([datasource[index] valueForKey:@"price"])];
+                cell.titleB.font = SHOP_ITEM_NAME_FONT;
+                cell.titleB.textColor = SHOP_ITEM_NAME_COLOR;
+                cell.priceB.font = SHOP_ITEM_PRICE_FONT;
+                cell.priceB.textColor = SHOP_ITEM_PRICE_COLOR;
                 
                 
             }else{
