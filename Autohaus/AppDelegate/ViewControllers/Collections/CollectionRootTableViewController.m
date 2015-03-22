@@ -102,7 +102,7 @@
     [container addSubview:labelTitle];
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_disclosure_iPhone"]];
-    imageView.frame = CGRectMake(labelTitle.frame.size.width, 7.0f, 30.0f, 30.0f);
+    imageView.frame = CGRectMake(labelTitle.frame.size.width, 10.0f, 20.0f, 20.0f);
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.tag = 2;
     [container addSubview:imageView];
@@ -187,7 +187,7 @@
     if ([self.arrayCollapsedSection containsObject:[NSNumber numberWithInteger:section]]) {
         imageView.image = [UIImage imageNamed:@"icon_expand_iPhone"];
     }
-    imageView.frame = CGRectMake(labelTitle.frame.size.width, 7.0f, 30.0f, 30.0f);
+    imageView.frame = CGRectMake(labelTitle.frame.size.width, 10.0f, 20.0f, 20.0f);
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.tag = 2;
     [container addSubview:imageView];

@@ -21,7 +21,7 @@
 
 - (NSData*)imageToData:(UIImage *)image{
     NSData *imageData = UIImagePNGRepresentation(image);
-    return imageData;
+    return (imageData)?imageData:[NSData data];
 }
 
 - (UIImage*)dataToImage:(NSData *)data{

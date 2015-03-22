@@ -10,6 +10,7 @@
 #import "CollectionDetailMainViewController.h"
 #import "GalleryCell.h"
 #import "Constants.h"
+#import "Utilities.h"
 
 #define kSegue_Detail   @"pushDetail"
 
@@ -39,6 +40,7 @@
     [self initAppTheme];
     
     datasource = self.selected;
+    NSLog(@"data:%@",datasource);
 
 }
 
@@ -84,8 +86,15 @@
         
         NSInteger index= indexPath.row + (indexPath.row + y);
         
+        Utilities *convert = [Utilities new];
+        UIImage *imageProduct = [convert dataToImage:[datasource[index] valueForKey:@"images"]];
+        imageProduct = (imageProduct)?imageProduct:[UIImage imageNamed:@"login_logo_iPhone"];
+        
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        
         if (y == 0) {
-            [cell.imageA setImage:[UIImage imageNamed:[datasource[index] valueForKey:@"images"][0]] forState:UIControlStateNormal];
+            [cell.imageA setImage:imageProduct forState:UIControlStateNormal];
             
             [cell.imageA.imageView setContentMode:UIViewContentModeScaleAspectFill];
             
@@ -106,7 +115,7 @@
             if (indexPath.row + (indexPath.row + y) < [datasource count]){
                 [cell.imageB setHidden:NO];
                 
-                [cell.imageB setImage:[UIImage imageNamed:[datasource[index] valueForKey:@"images"][0]] forState:UIControlStateNormal];
+                [cell.imageB setImage:imageProduct forState:UIControlStateNormal];
                 
                 [cell.imageB.imageView setContentMode:UIViewContentModeScaleAspectFill];
                 

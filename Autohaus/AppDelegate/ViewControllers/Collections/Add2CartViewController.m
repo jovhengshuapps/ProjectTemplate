@@ -22,6 +22,7 @@ static int height   = 147;
 @property (strong, nonatomic) IBOutlet UILabel      *lblProductPrice;
 @property (strong, nonatomic) IBOutlet UIImageView  *imgProductImage;
 @property (strong, nonatomic) IBOutlet UITextField  *txtQuantity;
+@property (weak, nonatomic) IBOutlet UILabel *qtyLabel;
 
 
 @end
@@ -40,7 +41,7 @@ static int height   = 147;
 #pragma mark - View Life Cycle
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.viewAdd2Cart setHidden:YES];
+    
     
     self.navigationItem.hidesBackButton = YES;
     UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"
@@ -59,31 +60,41 @@ static int height   = 147;
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    //ANIMATE TRANSITION EFFECT();
-    CATransition *transition = [CATransition animation];
-    transition.duration = 0.3;
-    transition.type = kCATransitionFade;
-    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
-    
-    //ANIMATE CONTAINER();
-    [self.viewAdd2Cart setFrame:CGRectMake(0, 64, width, 0)];
-    
-    [UIView animateWithDuration:0.50 animations:^{
-        //SET POSITION
-        [self.viewAdd2Cart setHidden:NO];
-        [self.viewAdd2Cart setFrame:CGRectMake(0, 64, width, height)];
-    }];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.lblProductName.text    = [self.selected  valueForKey:@"name"];
-    self.lblProductPrice.text   = kToPrice([self.selected valueForKey:@"price"]);
-    self.imgProductImage.image  = [UIImage imageNamed:[self.selected valueForKey:@"images"][0]];
     
     [self initAppTheme];
+    self.lblProductName.text    = [self.selected  objectForKey:@"name"];
+    self.lblProductPrice.text   = kToPrice([self.selected objectForKey:@"price"]);
+    
+    UIImage *imageProduct = [UIImage imageNamed:[self.selected objectForKey:@"images"]];
+    imageProduct = (imageProduct)?imageProduct:[UIImage imageNamed:@"login_logo_iPhone"];
+    
+    self.imgProductImage.image  = imageProduct;
+    
+    [self.viewAdd2Cart setHidden:YES];
+    [self animateViewAdd2Cart];
+}
+
+- (void) animateViewAdd2Cart {
+    
+    //ANIMATE TRANSITION EFFECT();
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.6;
+    transition.type = kCATransitionFade;
+    [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
+    
+    //ANIMATE CONTAINER();
+    [self.viewAdd2Cart setFrame:CGRectMake(0, 0, width, 0)];
+    
+    [UIView animateWithDuration:0.50 animations:^{
+        //SET POSITION
+        [self.viewAdd2Cart setHidden:NO];
+        [self.viewAdd2Cart setFrame:CGRectMake(0, 0, width, height)];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -110,8 +121,14 @@ static int height   = 147;
     UIImageView *navBarTitle = [[UIImageView alloc] initWithImage:kAppLogo_Nav];
     [self.navigationItem setTitleView:navBarTitle];
 
-    self.lblProductName.font    = kFONT_CentGothicBold(24);
-    self.lblProductPrice.font   = kFONT_CentGothic(22);
+    self.lblProductName.font    = SHOP_ADDCART_NAME_FONT;
+    self.lblProductName.textColor = SHOP_ADDCART_NAME_COLOR;
+    self.lblProductPrice.font   = SHOP_ADDCART_PRICE_FONT;
+    self.lblProductPrice.textColor = SHOP_ADDCART_PRICE_COLOR;
+    self.qtyLabel.font = SHOP_ADDCART_QTYLABEL_FONT;
+    self.qtyLabel.textColor = SHOP_ADDCART_QTYLABEL_COLOR;
+    self.imgProductImage.layer.borderColor = SHOP_ADDCART_IMAGE_BORDERCOLOR.CGColor;
+    self.imgProductImage.layer.borderWidth = 2.0f;
 }
 
 - (void)cancelTapped:(UIBarButtonItem*)sender{
@@ -127,15 +144,15 @@ static int height   = 147;
 - (void)add2CartTapped:(UIBarButtonItem*)sender{
     Utilities *convert = [Utilities new];
     float price = [[self.selected valueForKey:@"price"] floatValue];
-    UIImage *image = [UIImage imageNamed:[self.selected objectForKey:@"images"][0]];
-    
-    
+    UIImage *image = [UIImage imageNamed:[self.selected objectForKey:@"images"]];
+    NSLog(@"price:%f[%@]",price,[self.selected valueForKey:@"price"]);
     NSDictionary *param = @{
-                            @"name" : [self.selected valueForKey:@"name"],
-                            @"image": [convert imageToData:image],
-                            @"price": [NSNumber numberWithFloat:price],
-                            @"qty"  : [NSNumber numberWithInteger:[[NSString stringWithFormat:@"%@",self.txtQuantity.text] integerValue]],
-                            };
+                                                                  @"name" : [self.selected objectForKey:@"name"],
+                                                                  @"image": [convert imageToData:image],
+                                                                  @"price": [NSNumber numberWithFloat:price],
+                                                                  @"qty"  : [NSNumber numberWithInteger:[[NSString stringWithFormat:@"%@",self.txtQuantity.text] integerValue]],
+                                                                  };
+    
     
     CartInterface *cart = [CartInterface new];
     

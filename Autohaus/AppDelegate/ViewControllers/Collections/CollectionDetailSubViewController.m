@@ -43,8 +43,6 @@
 {
     [super viewDidLoad];
     [self initAppTheme];
-    
-    self.navigationItem.hidesBackButton = YES;
     [self.webView loadHTMLString:self.content baseURL:nil];
 }
 

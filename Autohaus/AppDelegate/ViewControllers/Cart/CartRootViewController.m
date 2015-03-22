@@ -21,6 +21,8 @@
 @property (strong, nonatomic) IBOutlet UITableView  *tableView;
 @property (strong, nonatomic) IBOutlet UILabel      *labelCheckout;
 @property (strong, nonatomic) IBOutlet UILabel      *labelTotalCheckout;
+@property (strong, nonatomic) IBOutlet UIView       *viewAction;
+@property (strong, nonatomic) IBOutlet UIButton     *buttonCheckout;
 @property (strong, nonatomic) IBOutlet UISearchBar  *searchbar;
 @property (strong, nonatomic) IBOutlet UIView       *cartRelatedViews;
 
@@ -52,6 +54,7 @@
     
     self.cart = [CartInterface new];
     
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,13 +68,14 @@
     UIImageView *navBarTitle = [[UIImageView alloc] initWithImage:kAppLogo_Nav];
     [self.navigationItem setTitleView:navBarTitle];
     
-//    UIImageView *imageView = [[UIImageView alloc] initWithImage:kAppBackground];
-//    self.tableView.backgroundView = imageView;
-    
-    self.labelCheckout.font             = kFONT_HelveticaNeueMedium(16);
-    self.labelTotalCheckout.font        = kFONT_HelveticaNeueMedium(18);
-//    self.labelCheckout.textColor        = kSWATCH_Gray63;
-//    self.labelTotalCheckout.textColor   = kSWATCH_GreenSectionBar;
+    self.labelCheckout.font             = CART_ACTION_QTY_FONT;
+    self.labelTotalCheckout.font        = CART_ACTION_PRICE_FONT;
+    self.labelCheckout.textColor        = CART_ACTION_QTY_COLOR;
+    self.labelTotalCheckout.textColor   = CART_ACTION_PRICE_COLOR;
+    self.viewAction.backgroundColor = CART_ACTION_VIEW_COLOR;
+    [self.buttonCheckout setTitleColor:CART_ACTION_CHECKOUT_TEXTCOLOR forState:UIControlStateNormal];
+    [self.buttonCheckout setBackgroundColor:CART_ACTION_CHECKOUT_BTNCOLOR];
+    self.buttonCheckout.titleLabel.font = CART_ACTION_CHECKOUT_TEXTFONT;
 }
 
 - (void)updateDatasource{
@@ -79,12 +83,29 @@
     NSLog(@"datasource:%@", datasource);
     totalCheckoutItems = 0;
     totalCheckoutPrice = 0.00;
+    self.tableView.backgroundView = nil;
     for (int x = 0; x < [datasource count]; x++) {
         totalCheckoutItems = totalCheckoutItems + [[[datasource objectAtIndex:x] valueForKey:key_quantity] integerValue];
         totalCheckoutPrice = totalCheckoutPrice + ([[[datasource objectAtIndex:x] valueForKey:@"price"] doubleValue] * totalCheckoutItems);
     }
     self.labelCheckout.text = [NSString stringWithFormat:@"Total Items: %ld", (long)totalCheckoutItems];
     self.labelTotalCheckout.text = [NSString stringWithFormat:@"Total: $ %.2f", totalCheckoutPrice];
+    
+    if ([datasource count]==0) {
+        
+        UIView *backgroundView = [[UIView alloc] initWithFrame:self.tableView.frame];
+        backgroundView.backgroundColor = [UIColor clearColor];
+        
+        UILabel *labelNoResult = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.viewAction.bounds.size.width, 40.0f)];
+        labelNoResult.backgroundColor = [UIColor clearColor];
+        labelNoResult.text = @"No Items Found on Cart";
+        labelNoResult.textAlignment = NSTextAlignmentCenter;
+        
+        [backgroundView addSubview:labelNoResult];
+        
+        self.tableView.backgroundView = backgroundView;
+    }
+    
     [self.tableView reloadData];
 }
 
@@ -111,23 +132,36 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 125.0f;
+    return 64.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    CartCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     Utilities *convert = [Utilities new];
     
 //    NSLog(@"image:%@", [convert dataToImage:[[datasource objectAtIndex:indexPath.row] valueForKey:@"image"]]);
     
-    cell.title.text = [[datasource objectAtIndex:indexPath.row] valueForKey:@"name"];
-    cell.image.image= [convert dataToImage:[[datasource objectAtIndex:indexPath.row] valueForKey:@"image"]];
-    cell.qty.text   = [NSString stringWithFormat:@"Quantity: %ld",(long)[[datasource[indexPath.row] valueForKey:key_quantity] integerValue]];
-    cell.price.text = [NSString stringWithFormat:@"$ %.2f",[[datasource[indexPath.row] valueForKey:@"price"] doubleValue]];
-    cell.total.text = [NSString stringWithFormat:@"Total: %.2f",([[datasource[indexPath.row] valueForKey:@"price"] doubleValue] * [[datasource[indexPath.row] valueForKey:key_quantity] doubleValue] )];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        
+    }
+    UIImage *imageProduct = [convert dataToImage:[[datasource objectAtIndex:indexPath.row] valueForKey:@"image"]];
+    cell.imageView.image = (imageProduct)?imageProduct:[UIImage imageNamed:@"login_logo_iPhone"];
+    cell.imageView.layer.borderColor = CART_ITEM_IMAGE_BORDERCOLOR.CGColor;
+    cell.imageView.layer.borderWidth = 2.0f;
+    cell.textLabel.text = [[datasource objectAtIndex:indexPath.row] valueForKey:@"name"];
+    cell.textLabel.font = CART_ITEM_NAME_FONT;
+    cell.textLabel.textColor = CART_ITEM_NAME_COLOR;
+    
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"x%@ %@",[[datasource objectAtIndex:indexPath.row] valueForKey:@"qty"], [numberFormatter stringFromNumber:[[datasource objectAtIndex:indexPath.row] valueForKey:@"price"]]];
+    cell.detailTextLabel.font = CART_ITEM_AMOUNT_FONT;
+    cell.detailTextLabel.textColor = CART_ITEM_AMOUNT_COLOR;
     
     return cell;
 }

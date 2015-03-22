@@ -18,27 +18,14 @@
     self.labelName.textColor = TESTIMONIAL_NAME_COLOR;
     self.labelTitle.font = TESTIMONIAL_TITLE_FONT;
     self.labelTitle.textColor = TESTIMONIAL_TITLE_COLOR;
-    self.textViewMessage.editable = YES;
-    self.textViewMessage.font = TESTIMONIAL_MSG_FONT;
-    self.textViewMessage.textAlignment = NSTextAlignmentCenter;
-    self.textViewMessage.textColor = TESTIMONIAL_MSG_COLOR;
-    self.textViewMessage.editable = NO;
+    self.labelMessage.font = TESTIMONIAL_MSG_FONT;
+    self.labelMessage.textAlignment = NSTextAlignmentCenter;
+    self.labelMessage.textColor = TESTIMONIAL_MSG_COLOR;
+    self.labelMessage.numberOfLines = 0;
+    self.labelMessage.lineBreakMode = NSLineBreakByWordWrapping;
     self.viewTestimonialBox.backgroundColor = TESTIMONIAL_BOX_COLOR;
     
     
-}
--(void)updateConstraints{
-//    CGRect frame = self.textViewMessage.frame;
-//    frame.size.height = [self textViewHeight:self.textViewMessage];
-//    self.textViewMessage.frame = frame;
-    [super updateConstraints];
-}
-
--(CGFloat)textViewHeight:(UITextView *)textView {
-    [textView.layoutManager ensureLayoutForTextContainer:textView.textContainer];
-    CGRect usedRect = [textView.layoutManager usedRectForTextContainer:textView.textContainer];
-    return ceilf(usedRect.size.height + textView.textContainerInset.top
-                 +textView.textContainerInset.bottom);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

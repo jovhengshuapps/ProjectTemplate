@@ -12,8 +12,7 @@
 @interface TestimonialCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIView *viewTestimonialBox;
-@property (weak, nonatomic) IBOutlet UITextView *textViewMessage;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentHeight;
+@property (weak, nonatomic) IBOutlet UILabel *labelMessage;
 @property (weak, nonatomic) IBOutlet UILabel *labelName;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @end

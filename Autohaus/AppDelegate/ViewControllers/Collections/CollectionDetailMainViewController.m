@@ -9,6 +9,7 @@
 #import "CollectionDetailMainViewController.h"
 #import "CollectionDetailSubViewController.h"
 #import "Add2CartViewController.h"
+#import "InquiryViewController.h"
 #import "BlurringView.h"
 #import "UIImage+ImageEffects.h"
 #import "Constants.h"
@@ -43,6 +44,7 @@
     [super viewWillAppear:animated];
     [self.scrollActive setZoomScale:1.0];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)viewDidLoad
@@ -50,9 +52,11 @@
     [super viewDidLoad];
     [self initAppTheme];
     
-    UIImage *image = [UIImage imageNamed:[self.selected valueForKey:@"images"]];
-    self.imageActive = [[UIImageView alloc] initWithImage:image];
-    self.imageActive.frame = CGRectMake(0.0f, 0.0f, image.size.width, image.size.height);
+    UIImage *imageProduct = [UIImage imageNamed:[self.selected valueForKey:@"images"]];
+    imageProduct = (imageProduct)?imageProduct:[UIImage imageNamed:@"login_logo_iPhone"];
+    
+    self.imageActive = [[UIImageView alloc] initWithImage:imageProduct];
+    self.imageActive.frame = CGRectMake(0.0f, 0.0f, imageProduct.size.width, imageProduct.size.height);
     [self.scrollActive addSubview:self.imageActive];
 
     self.scrollActive.minimumZoomScale = 1.0;
@@ -85,35 +89,64 @@
 
 #pragma mark IBActions
 - (IBAction)inquirePressed:(id)sender{
-    MFMailComposeViewController *mailer = [MFMailComposeViewController new];
-    if ([MFMailComposeViewController canSendMail]) {
-        [mailer setMailComposeDelegate:self];
-        [mailer setSubject:@""];
-        [mailer setToRecipients:kAppEmail];
-        [self presentViewController:mailer animated:YES completion:^{
-            [self.tabBarController.tabBar setTranslucent:NO];
-        }];
+//    InquiryViewController *inquiry = kStoryboard(@"InquiryViewController");
+//    UIImage* blur = [self.view convertViewToImage];
+//    blur = [blur applyBlurWithRadius:20
+//                           tintColor:[UIColor colorWithWhite:1.0 alpha:0.2]
+//               saturationDeltaFactor:1.3
+//                           maskImage:nil];
+//    
+//    inquiry.backgroundImage = blur;
+//    [self.navigationController pushViewController:inquiry animated:NO];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"pushInquiry"]) {
+        
+        InquiryViewController *inquiry = (InquiryViewController*)[segue destinationViewController];
+        UIImage* blur = [self.view convertViewToImage];
+        blur = [blur applyBlurWithRadius:20
+                               tintColor:[UIColor colorWithWhite:1.0 alpha:0.2]
+                   saturationDeltaFactor:1.3
+                               maskImage:nil];
+        
+        inquiry.backgroundImage = blur;
+    }
+    else if ([segue.identifier isEqualToString:@"pushAddCart"]) {
+        
+        Add2CartViewController *add2Cart = (Add2CartViewController*)[segue destinationViewController];
+        UIImage* blur = [self.view convertViewToImage];
+        blur = [blur applyBlurWithRadius:20
+                               tintColor:[UIColor colorWithWhite:1.0 alpha:0.2]
+                   saturationDeltaFactor:1.3
+                               maskImage:nil];
+        
+        
+        add2Cart.selected = [NSMutableDictionary dictionaryWithDictionary:self.selected];
+        add2Cart.blurred = blur;
     }
 }
 
-- (IBAction)add2CartPressed:(id)sender{
-    Add2CartViewController *add2Cart = kStoryboard(@"Add2CartViewController");
-    UIImage* blur = [self.view convertViewToImage];
-    blur = [blur applyBlurWithRadius:20
-                           tintColor:[UIColor colorWithWhite:1.0 alpha:0.2]
-               saturationDeltaFactor:1.3
-                           maskImage:nil];
-    
 
-    add2Cart.selected = self.selected;
-    add2Cart.blurred = blur;
-    [self.navigationController pushViewController:add2Cart animated:NO];
+- (IBAction)add2CartPressed:(id)sender{
+//    Add2CartViewController *add2Cart = kStoryboard(@"Add2CartViewController");
+//    UIImage* blur = [self.view convertViewToImage];
+//    blur = [blur applyBlurWithRadius:20
+//                           tintColor:[UIColor colorWithWhite:1.0 alpha:0.2]
+//               saturationDeltaFactor:1.3
+//                           maskImage:nil];
+//    
+//
+//    add2Cart.selected = self.selected;
+//    add2Cart.blurred = blur;
+//    [self.navigationController pushViewController:add2Cart animated:NO];
 }
 
 - (IBAction)switchTapped:(id)sender{
-    CollectionDetailSubViewController *sub = kStoryboard(@"CollectionDetailSubViewController");
-    sub.content = [self.selected objectForKey:@"desc"];
-    [self.navigationController pushViewController:sub animated:NO];
+//    CollectionDetailSubViewController *sub = kStoryboard(@"CollectionDetailSubViewController");
+//    sub.content = [self.selected objectForKey:@"desc"];
+//    [self.navigationController pushViewController:sub animated:NO];
+    [self.tableViewMain selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] animated:YES scrollPosition:UITableViewScrollPositionTop];
 }
 #pragma mark Animations
 
@@ -171,7 +204,7 @@
         labelProductPrice.font = SHOP_ITEM_DESC_PRICEFONT;
         labelProductPrice.textColor = SHOP_ITEM_DESC_PRICECOLOR;
         labelProductPrice.backgroundColor = [UIColor whiteColor];
-        labelProductPrice.text = self.selected[@"name"];
+        labelProductPrice.text = kToPrice(self.selected[@"price"]);
         [viewHeader addSubview:labelProductPrice];
     }
     else {
@@ -192,18 +225,24 @@
     return 25.0f;
 }
 
--(CGFloat)textViewHeight:(UITextView *)textView {
-    [textView.layoutManager ensureLayoutForTextContainer:textView.textContainer];
-    CGRect usedRect = [textView.layoutManager usedRectForTextContainer:textView.textContainer];
-    return ceilf(usedRect.size.height + textView.textContainerInset.top
-                 +textView.textContainerInset.bottom) + 65.0f;
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section == 0) {
+        return 20.0f;
+    }
+    return 0;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *viewHeader = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, tableView.frame.size.width, 20.0f)];
+    return viewHeader;
+}
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITextView *protoTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 252, 44)];
-    protoTextView.text = self.selected[@"desc"];
-    float height = [self textViewHeight:protoTextView];
-    return height + 65.0f;
+    
+    CGRect labelSize = [self.selected[@"desc"] boundingRectWithSize:CGSizeMake(self.tableViewMain.frame.size.width, 9999.0f) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObjectsAndKeys:SHOP_ITEM_DESC_TITLECOLOR,NSForegroundColorAttributeName,SHOP_ITEM_DESC_TITLEFONT,NSFontAttributeName, nil] context:nil];
+    
+    return labelSize.size.height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -216,23 +255,14 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    UITextView *textViewDescription = [[UITextView alloc] initWithFrame:CGRectMake(20.0f, 0.0f, cell.contentView.frame.size.width-20.0f, 44.0f)];
+    cell.textLabel.text = self.selected[@"desc"];
+    cell.textLabel.font = SHOP_ITEM_DESC_TITLEFONT;
+    cell.textLabel.textColor = SHOP_ITEM_DESC_TITLECOLOR;
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
-    textViewDescription.editable = YES;
-    textViewDescription.font = SHOP_ITEM_DESC_TITLEFONT;
-    textViewDescription.textColor = SHOP_ITEM_DESC_TITLECOLOR;
-    textViewDescription.editable = NO;
-    textViewDescription.scrollEnabled = NO;
+    [cell.textLabel sizeToFit];
     
-    
-    textViewDescription.text = self.selected[@"desc"];
-    [cell.contentView addSubview:textViewDescription];
-    CGRect frame = textViewDescription.frame;
-    frame.size.height = [self textViewHeight:textViewDescription];
-    textViewDescription.frame = frame;
-    
-    [cell setNeedsUpdateConstraints];
-    [cell updateConstraintsIfNeeded];
    
     return cell;
 }

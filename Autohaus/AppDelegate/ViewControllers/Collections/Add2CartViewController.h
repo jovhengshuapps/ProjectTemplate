@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface Add2CartViewController : UIViewController
-@property (strong, nonatomic) NSDictionary  *selected;
+@property (strong, nonatomic) NSMutableDictionary  *selected;
 @property (strong, nonatomic) UIImage       *blurred;
 @end

@@ -54,7 +54,11 @@
     
     NSDictionary *item3 = [NSDictionary dictionaryWithObjectsAndKeys:@"Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team.",@"message",@"Michaela",@"name",@"Owner of 2007 Volkswagen",@"title", nil];
     
-    return [NSArray arrayWithObjects:item1, item2, item3, nil];
+    NSDictionary *item4 = [NSDictionary dictionaryWithObjectsAndKeys:@"Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you DeAutohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you DeAutohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you DeHighly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and hi7 Volkswagen ighly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team. Highly recommend car owners who wish to purchase car parts to try out Autohaus. Thank you Derek and his team.",@"message",@"Mitch",@"name",@"Owner of 2017 Honda",@"title", nil];
+    
+    NSDictionary *item5 = [NSDictionary dictionaryWithObjectsAndKeys:@"Excellent service!!",@"message",@"Roy",@"name",@"Owner of 2000 Mazda RX",@"title", nil];
+    
+    return [NSArray arrayWithObjects:item1, item2, item3, item4, item5, nil];
 }
 
 #pragma mark - Table view data source
@@ -71,6 +75,15 @@
     return [self.arrayDataSource count];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSDictionary *item = [self.arrayDataSource objectAtIndex:indexPath.row];
+    NSString *message = [item objectForKey:@"message"];
+    
+    CGRect labelSize = [message boundingRectWithSize:CGSizeMake(self.tableView.frame.size.width - 20.0f, 9999.0f) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObjectsAndKeys:TESTIMONIAL_MSG_COLOR,NSForegroundColorAttributeName,TESTIMONIAL_MSG_FONT,NSFontAttributeName, nil] context:nil];
+    
+    return labelSize.size.height + 100.0f;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellIdentifier = @"TestimonialCell";
@@ -86,32 +99,18 @@
     
     NSString *message = [item objectForKey:@"message"];
     
-    cell.textViewMessage.text = message;
-    [cell setNeedsUpdateConstraints];
-    [cell updateConstraintsIfNeeded];
+    cell.labelMessage.text = message;
     
+    [cell.labelMessage sizeToFit];
+    
+    [cell.contentView updateConstraints];
     
     return cell;
 }
 
 
--(CGFloat)textViewHeight:(UITextView *)textView {
-    [textView.layoutManager ensureLayoutForTextContainer:textView.textContainer];
-    CGRect usedRect = [textView.layoutManager usedRectForTextContainer:textView.textContainer];
-    return ceilf(usedRect.size.height + textView.textContainerInset.top
-                 +textView.textContainerInset.bottom) + 65.0f;
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSDictionary *item = [self.arrayDataSource objectAtIndex:indexPath.row];
-    NSString *message = [item objectForKey:@"message"];
-    
-    UITextView *protoTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 252, 30)];
-    protoTextView.text = message;
-    float height = [self textViewHeight:protoTextView];
-    return height + 65.0f;
-}
-
 
 @end

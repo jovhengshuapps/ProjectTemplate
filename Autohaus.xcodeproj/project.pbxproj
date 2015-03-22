@@ -13,6 +13,7 @@
 		3370BD521AB71851009D47AB /* MyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3370BD511AB71851009D47AB /* MyLocation.m */; };
 		338704B21AB53B0B00D21E0C /* TestimonialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 338704B11AB53B0B00D21E0C /* TestimonialsViewController.m */; };
 		338704B81AB53C7400D21E0C /* TestimonialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 338704B71AB53C7400D21E0C /* TestimonialCell.m */; };
+		33C2B7001ABD2A1F0027EEDB /* InquiryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C2B6FF1ABD2A1F0027EEDB /* InquiryViewController.m */; };
 		443B1CA91AB64A3F0090FFFA /* WebserviceCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CA81AB64A3F0090FFFA /* WebserviceCall.m */; };
 		443B1CAB1AB64A7F0090FFFA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443B1CAA1AB64A7F0090FFFA /* SystemConfiguration.framework */; };
 		443B1CAE1AB64B1D0090FFFA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CAD1AB64B1D0090FFFA /* Reachability.m */; };
@@ -99,6 +100,8 @@
 		338704B11AB53B0B00D21E0C /* TestimonialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestimonialsViewController.m; sourceTree = "<group>"; };
 		338704B61AB53C7400D21E0C /* TestimonialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestimonialCell.h; sourceTree = "<group>"; };
 		338704B71AB53C7400D21E0C /* TestimonialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestimonialCell.m; sourceTree = "<group>"; };
+		33C2B6FE1ABD2A1F0027EEDB /* InquiryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InquiryViewController.h; sourceTree = "<group>"; };
+		33C2B6FF1ABD2A1F0027EEDB /* InquiryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InquiryViewController.m; sourceTree = "<group>"; };
 		443B1CA61AB648D80090FFFA /* BaseConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseConfig.h; sourceTree = "<group>"; };
 		443B1CA71AB64A3F0090FFFA /* WebserviceCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebserviceCall.h; sourceTree = "<group>"; };
 		443B1CA81AB64A3F0090FFFA /* WebserviceCall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebserviceCall.m; sourceTree = "<group>"; };
@@ -511,6 +514,8 @@
 			children = (
 				44453B6D1AB0FF66001A127E /* Add2CartViewController.h */,
 				44453B6E1AB0FF66001A127E /* Add2CartViewController.m */,
+				33C2B6FE1ABD2A1F0027EEDB /* InquiryViewController.h */,
+				33C2B6FF1ABD2A1F0027EEDB /* InquiryViewController.m */,
 				44453B6F1AB0FF66001A127E /* CollectionDetailMainViewController.h */,
 				44453B701AB0FF66001A127E /* CollectionDetailMainViewController.m */,
 				44453B711AB0FF66001A127E /* CollectionDetailSubViewController.h */,
@@ -774,6 +779,7 @@
 				443EF9DF1ABB76F000D16AF7 /* APIAccessPoint.m in Sources */,
 				443B1CC91AB655AF0090FFFA /* AFURLRequestSerialization.m in Sources */,
 				443B1CA91AB64A3F0090FFFA /* WebserviceCall.m in Sources */,
+				33C2B7001ABD2A1F0027EEDB /* InquiryViewController.m in Sources */,
 				44453B941AB0FF66001A127E /* AboutRootViewController.m in Sources */,
 				444C8C481ABA2E64008A8F0E /* main.m in Sources */,
 				443B1CE11AB6566A0090FFFA /* UIButton+AFNetworking.m in Sources */,
