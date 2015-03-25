@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Constants.h"
+#import "BaseConfig.h"
 
 @interface TestimonialsViewController : UITableViewController
 -(void)initAppTheme;

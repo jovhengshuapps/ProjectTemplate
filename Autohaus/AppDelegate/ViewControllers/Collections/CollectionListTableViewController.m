@@ -9,7 +9,7 @@
 #import "CollectionListTableViewController.h"
 #import "CollectionDetailMainViewController.h"
 #import "GalleryCell.h"
-#import "Constants.h"
+#import "BaseConfig.h"
 #import "Utilities.h"
 
 #define kSegue_Detail   @"pushDetail"

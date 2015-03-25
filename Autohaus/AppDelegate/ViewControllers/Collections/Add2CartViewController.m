@@ -10,7 +10,7 @@
 #import "CartInterface.h"
 #import "Utilities.h"
 #import "Cart.h"
-#import "Constants.h"
+#import "BaseConfig.h"
 
 static int width    = 320;
 static int height   = 147;

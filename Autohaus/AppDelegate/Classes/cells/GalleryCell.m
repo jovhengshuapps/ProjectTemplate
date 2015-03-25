@@ -7,7 +7,7 @@
 //
 
 #import "GalleryCell.h"
-#import "Constants.h"
+#import "BaseConfig.h"
 
 @implementation GalleryCell
 

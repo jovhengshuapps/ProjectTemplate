@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CollectionRootCell.h"
 #import "CollectionListTableViewController.h"
-#import "Constants.h"
+#import "BaseConfig.h"
 
 @interface CollectionRootTableViewController : UITableViewController
 @property (strong, nonatomic) NSMutableDictionary     *datasource;

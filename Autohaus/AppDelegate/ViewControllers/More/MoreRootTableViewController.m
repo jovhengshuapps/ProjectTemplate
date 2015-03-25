@@ -7,7 +7,7 @@
 //
 
 #import "MoreRootTableViewController.h"
-#import "Constants.h"
+#import "BaseConfig.h"
 
 @interface MoreRootTableViewController ()
 

@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum {
-    TabViewControllerHome = 0,
-    TabViewControllerShop,
-    TabViewControllerCart,
-    TabViewControllerTestimonial,
-    TabViewControllerMore
-}TabViewController;
+//typedef enum {
+//    TabViewControllerHome = 0,
+//    TabViewControllerShop,
+//    TabViewControllerCart,
+//    TabViewControllerTestimonial,
+//    TabViewControllerMore
+//}TabViewController;
 
 @interface TabBarViewController : UITabBarController
 

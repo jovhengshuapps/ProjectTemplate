@@ -10,7 +10,7 @@
 #import "CartCell.h"
 #import "CartInterface.h"
 #import "Utilities.h"
-#import "Constants.h"
+#import "BaseConfig.h"
 
 @interface CartRootViewController (){
     NSMutableArray  *datasource;

@@ -62,17 +62,74 @@
 		44453B9C1AB0FF66001A127E /* MoreRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B7C1AB0FF66001A127E /* MoreRootTableViewController.m */; };
 		444C8C331ABA2E64008A8F0E /* century gothic bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C0A1ABA2E64008A8F0E /* century gothic bold.ttf */; };
 		444C8C341ABA2E64008A8F0E /* century gothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C0B1ABA2E64008A8F0E /* century gothic.ttf */; };
-		444C8C3E1ABA2E64008A8F0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C201ABA2E64008A8F0E /* Images.xcassets */; };
 		444C8C3F1ABA2E64008A8F0E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C211ABA2E64008A8F0E /* Info.plist */; };
-		444C8C401ABA2E64008A8F0E /* image_skirt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C241ABA2E64008A8F0E /* image_skirt1.png */; };
-		444C8C411ABA2E64008A8F0E /* image_tops1.png in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C261ABA2E64008A8F0E /* image_tops1.png */; };
-		444C8C421ABA2E64008A8F0E /* image_tops2.png in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C271ABA2E64008A8F0E /* image_tops2.png */; };
-		444C8C431ABA2E64008A8F0E /* image_bow_jeans_detail_1_iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C2A1ABA2E64008A8F0E /* image_bow_jeans_detail_1_iPhone@2x.png */; };
-		444C8C441ABA2E64008A8F0E /* image_bow_jeans_detail_2_iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C2B1ABA2E64008A8F0E /* image_bow_jeans_detail_2_iPhone@2x.png */; };
-		444C8C451ABA2E64008A8F0E /* image_bow_jeans_detail_3_iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C2C1ABA2E64008A8F0E /* image_bow_jeans_detail_3_iPhone@2x.png */; };
 		444C8C461ABA2E64008A8F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C2F1ABA2E64008A8F0E /* Main.storyboard */; };
 		444C8C481ABA2E64008A8F0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C8C321ABA2E64008A8F0E /* main.m */; };
 		444EDF4F1AB24F9E007B8354 /* CollectionCellText.m in Sources */ = {isa = PBXBuildFile; fileRef = 444EDF4E1AB24F9E007B8354 /* CollectionCellText.m */; };
+		449DD27F1AC2307000906318 /* app_headers in Resources */ = {isa = PBXBuildFile; fileRef = 449DD27E1AC2307000906318 /* app_headers */; };
+		449DD2831AC2327700906318 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CD91AB6566A0090FFFA /* UIProgressView+AFNetworking.m */; };
+		449DD2841AC2327700906318 /* CollectionCellText.m in Sources */ = {isa = PBXBuildFile; fileRef = 444EDF4E1AB24F9E007B8354 /* CollectionCellText.m */; };
+		449DD2851AC2327700906318 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CDB1AB6566A0090FFFA /* UIRefreshControl+AFNetworking.m */; };
+		449DD2861AC2327700906318 /* CartRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B6B1AB0FF66001A127E /* CartRootViewController.m */; };
+		449DD2871AC2327700906318 /* MyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3370BD511AB71851009D47AB /* MyLocation.m */; };
+		449DD2881AC2327700906318 /* GingerDolls.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 44453B511AB0FF66001A127E /* GingerDolls.xcdatamodeld */; };
+		449DD2891AC2327700906318 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CD21AB6566A0090FFFA /* UIAlertView+AFNetworking.m */; };
+		449DD28A1AC2327700906318 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CD61AB6566A0090FFFA /* UIImageView+AFNetworking.m */; };
+		449DD28B1AC2327700906318 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CBC1AB655AF0090FFFA /* AFURLConnectionOperation.m */; };
+		449DD28C1AC2327700906318 /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B501AB0FF66001A127E /* Cart.m */; };
+		449DD28D1AC2327700906318 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CC21AB655AF0090FFFA /* AFURLSessionManager.m */; };
+		449DD28E1AC2327700906318 /* APIAccessPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 443EF9DE1ABB76F000D16AF7 /* APIAccessPoint.m */; };
+		449DD28F1AC2327700906318 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CBE1AB655AF0090FFFA /* AFURLRequestSerialization.m */; };
+		449DD2901AC2327700906318 /* WebserviceCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CA81AB64A3F0090FFFA /* WebserviceCall.m */; };
+		449DD2911AC2327700906318 /* InquiryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C2B6FF1ABD2A1F0027EEDB /* InquiryViewController.m */; };
+		449DD2921AC2327700906318 /* AboutRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B681AB0FF66001A127E /* AboutRootViewController.m */; };
+		449DD2931AC2327700906318 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C8C321ABA2E64008A8F0E /* main.m */; };
+		449DD2941AC2327700906318 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CD41AB6566A0090FFFA /* UIButton+AFNetworking.m */; };
+		449DD2951AC2327700906318 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B351AB0FF66001A127E /* UIImage+ImageEffects.m */; };
+		449DD2961AC2327700906318 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CBA1AB655AF0090FFFA /* AFSecurityPolicy.m */; };
+		449DD2971AC2327700906318 /* CollectionListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B741AB0FF66001A127E /* CollectionListTableViewController.m */; };
+		449DD2981AC2327700906318 /* CollectionHeaderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B431AB0FF66001A127E /* CollectionHeaderLabel.m */; };
+		449DD2991AC2327700906318 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CB81AB655AF0090FFFA /* AFNetworkReachabilityManager.m */; };
+		449DD29A1AC2327700906318 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CE71AB6956A0090FFFA /* TabBarViewController.m */; };
+		449DD29B1AC2327700906318 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CC01AB655AF0090FFFA /* AFURLResponseSerialization.m */; };
+		449DD29C1AC2327700906318 /* GalleryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B3C1AB0FF66001A127E /* GalleryCell.m */; };
+		449DD29D1AC2327700906318 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CB51AB655AF0090FFFA /* AFHTTPSessionManager.m */; };
+		449DD29E1AC2327700906318 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EEC4AB1AB1101300DA1CA9 /* LoginViewController.m */; };
+		449DD29F1AC2327700906318 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B2E1AB0FF3D001A127E /* AppDelegate.m */; };
+		449DD2A01AC2327700906318 /* CartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B381AB0FF66001A127E /* CartCell.m */; };
+		449DD2A11AC2327700906318 /* TableCellCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B3E1AB0FF66001A127E /* TableCellCollection.m */; };
+		449DD2A21AC2327700906318 /* CollectionDetailMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B701AB0FF66001A127E /* CollectionDetailMainViewController.m */; };
+		449DD2A31AC2327700906318 /* TestimonialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 338704B11AB53B0B00D21E0C /* TestimonialsViewController.m */; };
+		449DD2A41AC2327700906318 /* PurchaseHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3370BD481AB7092E009D47AB /* PurchaseHistoryViewController.m */; };
+		449DD2A51AC2327700906318 /* CollectionRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B761AB0FF66001A127E /* CollectionRootTableViewController.m */; };
+		449DD2A61AC2327700906318 /* PurchaseHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3370BD4B1AB70B18009D47AB /* PurchaseHistoryCell.m */; };
+		449DD2A71AC2327700906318 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CCE1AB6566A0090FFFA /* AFNetworkActivityIndicatorManager.m */; };
+		449DD2A81AC2327700906318 /* CollectionDetailSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B721AB0FF66001A127E /* CollectionDetailSubViewController.m */; };
+		449DD2A91AC2327700906318 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EEC4AE1AB111BE00DA1CA9 /* RegisterViewController.m */; };
+		449DD2AA1AC2327700906318 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CB11AB655AF0090FFFA /* AFHTTPRequestOperation.m */; };
+		449DD2AB1AC2327700906318 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B4C1AB0FF66001A127E /* Utilities.m */; };
+		449DD2AC1AC2327700906318 /* BlurringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B331AB0FF66001A127E /* BlurringView.m */; };
+		449DD2AD1AC2327700906318 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CDD1AB6566A0090FFFA /* UIWebView+AFNetworking.m */; };
+		449DD2AE1AC2327700906318 /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3370BD4E1AB70E88009D47AB /* ContactUsViewController.m */; };
+		449DD2AF1AC2327700906318 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CD01AB6566A0090FFFA /* UIActivityIndicatorView+AFNetworking.m */; };
+		449DD2B01AC2327700906318 /* MoreRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B7C1AB0FF66001A127E /* MoreRootTableViewController.m */; };
+		449DD2B11AC2327700906318 /* HomeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B791AB0FF66001A127E /* HomeRootViewController.m */; };
+		449DD2B21AC2327700906318 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CAD1AB64B1D0090FFFA /* Reachability.m */; };
+		449DD2B31AC2327700906318 /* CollectionCellImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B411AB0FF66001A127E /* CollectionCellImage.m */; };
+		449DD2B41AC2327700906318 /* Add2CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B6E1AB0FF66001A127E /* Add2CartViewController.m */; };
+		449DD2B51AC2327700906318 /* TestimonialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 338704B71AB53C7400D21E0C /* TestimonialCell.m */; };
+		449DD2B61AC2327700906318 /* CartInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B4A1AB0FF66001A127E /* CartInterface.m */; };
+		449DD2B71AC2327700906318 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 443B1CB31AB655AF0090FFFA /* AFHTTPRequestOperationManager.m */; };
+		449DD2B81AC2327700906318 /* CollectionRootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B3A1AB0FF66001A127E /* CollectionRootCell.m */; };
+		449DD2BA1AC2327700906318 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443B1CAA1AB64A7F0090FFFA /* SystemConfiguration.framework */; };
+		449DD2BD1AC2327700906318 /* century gothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C0B1ABA2E64008A8F0E /* century gothic.ttf */; };
+		449DD2C01AC2327700906318 /* century gothic bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C0A1ABA2E64008A8F0E /* century gothic bold.ttf */; };
+		449DD2C11AC2327700906318 /* ProductList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44453B451AB0FF66001A127E /* ProductList.plist */; };
+		449DD2C21AC2327700906318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C2F1ABA2E64008A8F0E /* Main.storyboard */; };
+		449DD2C71AC23A8E00906318 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 449DD27A1AC22DF700906318 /* Info.plist */; };
+		449DD2CD1AC23D6900906318 /* app_headers in Resources */ = {isa = PBXBuildFile; fileRef = 449DD2CC1AC23D6900906318 /* app_headers */; };
+		449DD2CF1AC241BA00906318 /* CST_TradingImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449DD2CE1AC241BA00906318 /* CST_TradingImages.xcassets */; };
+		449DD2D11AC241F000906318 /* AutohausImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449DD2D01AC241F000906318 /* AutohausImages.xcassets */; };
 		44EEC4AC1AB1101300DA1CA9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EEC4AB1AB1101300DA1CA9 /* LoginViewController.m */; };
 		44EEC4AF1AB111BE00DA1CA9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EEC4AE1AB111BE00DA1CA9 /* RegisterViewController.m */; };
 /* End PBXBuildFile section */
@@ -198,21 +255,18 @@
 		44453B7C1AB0FF66001A127E /* MoreRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreRootTableViewController.m; sourceTree = "<group>"; };
 		444C8C0A1ABA2E64008A8F0E /* century gothic bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "century gothic bold.ttf"; sourceTree = "<group>"; };
 		444C8C0B1ABA2E64008A8F0E /* century gothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "century gothic.ttf"; sourceTree = "<group>"; };
-		444C8C1A1ABA2E64008A8F0E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		444C8C201ABA2E64008A8F0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		444C8C211ABA2E64008A8F0E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		444C8C241ABA2E64008A8F0E /* image_skirt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_skirt1.png; sourceTree = "<group>"; };
-		444C8C261ABA2E64008A8F0E /* image_tops1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_tops1.png; sourceTree = "<group>"; };
-		444C8C271ABA2E64008A8F0E /* image_tops2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_tops2.png; sourceTree = "<group>"; };
-		444C8C2A1ABA2E64008A8F0E /* image_bow_jeans_detail_1_iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_bow_jeans_detail_1_iPhone@2x.png"; sourceTree = "<group>"; };
-		444C8C2B1ABA2E64008A8F0E /* image_bow_jeans_detail_2_iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_bow_jeans_detail_2_iPhone@2x.png"; sourceTree = "<group>"; };
-		444C8C2C1ABA2E64008A8F0E /* image_bow_jeans_detail_3_iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_bow_jeans_detail_3_iPhone@2x.png"; sourceTree = "<group>"; };
-		444C8C2D1ABA2E64008A8F0E /* WebserviceCallURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebserviceCallURL.h; sourceTree = "<group>"; };
 		444C8C301ABA2E64008A8F0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		444C8C311ABA2E64008A8F0E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		444C8C321ABA2E64008A8F0E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		444EDF4D1AB24F9E007B8354 /* CollectionCellText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCellText.h; sourceTree = "<group>"; };
 		444EDF4E1AB24F9E007B8354 /* CollectionCellText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCellText.m; sourceTree = "<group>"; };
+		449DD27A1AC22DF700906318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		449DD27E1AC2307000906318 /* app_headers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app_headers; sourceTree = "<group>"; };
+		449DD2C61AC2327700906318 /* CST_Trading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CST_Trading.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		449DD2CC1AC23D6900906318 /* app_headers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app_headers; sourceTree = "<group>"; };
+		449DD2CE1AC241BA00906318 /* CST_TradingImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CST_TradingImages.xcassets; sourceTree = "<group>"; };
+		449DD2D01AC241F000906318 /* AutohausImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AutohausImages.xcassets; sourceTree = "<group>"; };
 		44EEC4AA1AB1101300DA1CA9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		44EEC4AB1AB1101300DA1CA9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		44EEC4AD1AB111BE00DA1CA9 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -232,6 +286,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		449DD2B91AC2327700906318 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				449DD2BA1AC2327700906318 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +397,7 @@
 			children = (
 				443FA6041AB0FD6C000EFD81 /* Autohaus.app */,
 				443FA6201AB0FD6C000EFD81 /* AutohausTests.xctest */,
+				449DD2C61AC2327700906318 /* CST_Trading.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -573,6 +636,7 @@
 		444C8C181ABA2E64008A8F0E /* Targets */ = {
 			isa = PBXGroup;
 			children = (
+				449DD2751AC22DF700906318 /* CST_Trading */,
 				444C8C191ABA2E64008A8F0E /* Autohaus */,
 			);
 			path = Targets;
@@ -581,58 +645,11 @@
 		444C8C191ABA2E64008A8F0E /* Autohaus */ = {
 			isa = PBXGroup;
 			children = (
-				444C8C1A1ABA2E64008A8F0E /* Constants.h */,
-				444C8C201ABA2E64008A8F0E /* Images.xcassets */,
+				449DD2D01AC241F000906318 /* AutohausImages.xcassets */,
+				449DD27E1AC2307000906318 /* app_headers */,
 				444C8C211ABA2E64008A8F0E /* Info.plist */,
-				444C8C221ABA2E64008A8F0E /* ProductsImages */,
-				444C8C2D1ABA2E64008A8F0E /* WebserviceCallURL.h */,
 			);
 			path = Autohaus;
-			sourceTree = "<group>";
-		};
-		444C8C221ABA2E64008A8F0E /* ProductsImages */ = {
-			isa = PBXGroup;
-			children = (
-				444C8C231ABA2E64008A8F0E /* skirts */,
-				444C8C251ABA2E64008A8F0E /* tops */,
-				444C8C281ABA2E64008A8F0E /* trousers */,
-			);
-			path = ProductsImages;
-			sourceTree = "<group>";
-		};
-		444C8C231ABA2E64008A8F0E /* skirts */ = {
-			isa = PBXGroup;
-			children = (
-				444C8C241ABA2E64008A8F0E /* image_skirt1.png */,
-			);
-			path = skirts;
-			sourceTree = "<group>";
-		};
-		444C8C251ABA2E64008A8F0E /* tops */ = {
-			isa = PBXGroup;
-			children = (
-				444C8C261ABA2E64008A8F0E /* image_tops1.png */,
-				444C8C271ABA2E64008A8F0E /* image_tops2.png */,
-			);
-			path = tops;
-			sourceTree = "<group>";
-		};
-		444C8C281ABA2E64008A8F0E /* trousers */ = {
-			isa = PBXGroup;
-			children = (
-				444C8C291ABA2E64008A8F0E /* bow_printed_jeans */,
-			);
-			path = trousers;
-			sourceTree = "<group>";
-		};
-		444C8C291ABA2E64008A8F0E /* bow_printed_jeans */ = {
-			isa = PBXGroup;
-			children = (
-				444C8C2A1ABA2E64008A8F0E /* image_bow_jeans_detail_1_iPhone@2x.png */,
-				444C8C2B1ABA2E64008A8F0E /* image_bow_jeans_detail_2_iPhone@2x.png */,
-				444C8C2C1ABA2E64008A8F0E /* image_bow_jeans_detail_3_iPhone@2x.png */,
-			);
-			path = bow_printed_jeans;
 			sourceTree = "<group>";
 		};
 		444C8C2E1ABA2E64008A8F0E /* Supporting Files */ = {
@@ -643,6 +660,16 @@
 				444C8C321ABA2E64008A8F0E /* main.m */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		449DD2751AC22DF700906318 /* CST_Trading */ = {
+			isa = PBXGroup;
+			children = (
+				449DD2CE1AC241BA00906318 /* CST_TradingImages.xcassets */,
+				449DD2CC1AC23D6900906318 /* app_headers */,
+				449DD27A1AC22DF700906318 /* Info.plist */,
+			);
+			path = CST_Trading;
 			sourceTree = "<group>";
 		};
 		44EEC4A91AB10FEB00DA1CA9 /* Login */ = {
@@ -694,6 +721,23 @@
 			productReference = 443FA6201AB0FD6C000EFD81 /* AutohausTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		449DD2811AC2327700906318 /* CST Trading */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 449DD2C31AC2327700906318 /* Build configuration list for PBXNativeTarget "CST Trading" */;
+			buildPhases = (
+				449DD2821AC2327700906318 /* Sources */,
+				449DD2B91AC2327700906318 /* Frameworks */,
+				449DD2BB1AC2327700906318 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CST Trading";
+			productName = Autohaus;
+			productReference = 449DD2C61AC2327700906318 /* CST_Trading.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -727,6 +771,7 @@
 			targets = (
 				443FA6031AB0FD6C000EFD81 /* Autohaus */,
 				443FA61F1AB0FD6C000EFD81 /* AutohausTests */,
+				449DD2811AC2327700906318 /* CST Trading */,
 			);
 		};
 /* End PBXProject section */
@@ -736,18 +781,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				444C8C431ABA2E64008A8F0E /* image_bow_jeans_detail_1_iPhone@2x.png in Resources */,
-				444C8C411ABA2E64008A8F0E /* image_tops1.png in Resources */,
-				444C8C441ABA2E64008A8F0E /* image_bow_jeans_detail_2_iPhone@2x.png in Resources */,
-				444C8C3E1ABA2E64008A8F0E /* Images.xcassets in Resources */,
 				444C8C341ABA2E64008A8F0E /* century gothic.ttf in Resources */,
+				449DD27F1AC2307000906318 /* app_headers in Resources */,
 				444C8C3F1ABA2E64008A8F0E /* Info.plist in Resources */,
-				444C8C401ABA2E64008A8F0E /* image_skirt1.png in Resources */,
 				444C8C331ABA2E64008A8F0E /* century gothic bold.ttf in Resources */,
-				444C8C421ABA2E64008A8F0E /* image_tops2.png in Resources */,
 				44453B851AB0FF66001A127E /* ProductList.plist in Resources */,
 				444C8C461ABA2E64008A8F0E /* Main.storyboard in Resources */,
-				444C8C451ABA2E64008A8F0E /* image_bow_jeans_detail_3_iPhone@2x.png in Resources */,
+				449DD2D11AC241F000906318 /* AutohausImages.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -755,6 +795,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		449DD2BB1AC2327700906318 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				449DD2BD1AC2327700906318 /* century gothic.ttf in Resources */,
+				449DD2C01AC2327700906318 /* century gothic bold.ttf in Resources */,
+				449DD2CD1AC23D6900906318 /* app_headers in Resources */,
+				449DD2C11AC2327700906318 /* ProductList.plist in Resources */,
+				449DD2CF1AC241BA00906318 /* CST_TradingImages.xcassets in Resources */,
+				449DD2C71AC23A8E00906318 /* Info.plist in Resources */,
+				449DD2C21AC2327700906318 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -827,6 +881,67 @@
 			buildActionMask = 2147483647;
 			files = (
 				443FA6271AB0FD6C000EFD81 /* AutohausTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		449DD2821AC2327700906318 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				449DD2831AC2327700906318 /* UIProgressView+AFNetworking.m in Sources */,
+				449DD2841AC2327700906318 /* CollectionCellText.m in Sources */,
+				449DD2851AC2327700906318 /* UIRefreshControl+AFNetworking.m in Sources */,
+				449DD2861AC2327700906318 /* CartRootViewController.m in Sources */,
+				449DD2871AC2327700906318 /* MyLocation.m in Sources */,
+				449DD2881AC2327700906318 /* GingerDolls.xcdatamodeld in Sources */,
+				449DD2891AC2327700906318 /* UIAlertView+AFNetworking.m in Sources */,
+				449DD28A1AC2327700906318 /* UIImageView+AFNetworking.m in Sources */,
+				449DD28B1AC2327700906318 /* AFURLConnectionOperation.m in Sources */,
+				449DD28C1AC2327700906318 /* Cart.m in Sources */,
+				449DD28D1AC2327700906318 /* AFURLSessionManager.m in Sources */,
+				449DD28E1AC2327700906318 /* APIAccessPoint.m in Sources */,
+				449DD28F1AC2327700906318 /* AFURLRequestSerialization.m in Sources */,
+				449DD2901AC2327700906318 /* WebserviceCall.m in Sources */,
+				449DD2911AC2327700906318 /* InquiryViewController.m in Sources */,
+				449DD2921AC2327700906318 /* AboutRootViewController.m in Sources */,
+				449DD2931AC2327700906318 /* main.m in Sources */,
+				449DD2941AC2327700906318 /* UIButton+AFNetworking.m in Sources */,
+				449DD2951AC2327700906318 /* UIImage+ImageEffects.m in Sources */,
+				449DD2961AC2327700906318 /* AFSecurityPolicy.m in Sources */,
+				449DD2971AC2327700906318 /* CollectionListTableViewController.m in Sources */,
+				449DD2981AC2327700906318 /* CollectionHeaderLabel.m in Sources */,
+				449DD2991AC2327700906318 /* AFNetworkReachabilityManager.m in Sources */,
+				449DD29A1AC2327700906318 /* TabBarViewController.m in Sources */,
+				449DD29B1AC2327700906318 /* AFURLResponseSerialization.m in Sources */,
+				449DD29C1AC2327700906318 /* GalleryCell.m in Sources */,
+				449DD29D1AC2327700906318 /* AFHTTPSessionManager.m in Sources */,
+				449DD29E1AC2327700906318 /* LoginViewController.m in Sources */,
+				449DD29F1AC2327700906318 /* AppDelegate.m in Sources */,
+				449DD2A01AC2327700906318 /* CartCell.m in Sources */,
+				449DD2A11AC2327700906318 /* TableCellCollection.m in Sources */,
+				449DD2A21AC2327700906318 /* CollectionDetailMainViewController.m in Sources */,
+				449DD2A31AC2327700906318 /* TestimonialsViewController.m in Sources */,
+				449DD2A41AC2327700906318 /* PurchaseHistoryViewController.m in Sources */,
+				449DD2A51AC2327700906318 /* CollectionRootTableViewController.m in Sources */,
+				449DD2A61AC2327700906318 /* PurchaseHistoryCell.m in Sources */,
+				449DD2A71AC2327700906318 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				449DD2A81AC2327700906318 /* CollectionDetailSubViewController.m in Sources */,
+				449DD2A91AC2327700906318 /* RegisterViewController.m in Sources */,
+				449DD2AA1AC2327700906318 /* AFHTTPRequestOperation.m in Sources */,
+				449DD2AB1AC2327700906318 /* Utilities.m in Sources */,
+				449DD2AC1AC2327700906318 /* BlurringView.m in Sources */,
+				449DD2AD1AC2327700906318 /* UIWebView+AFNetworking.m in Sources */,
+				449DD2AE1AC2327700906318 /* ContactUsViewController.m in Sources */,
+				449DD2AF1AC2327700906318 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				449DD2B01AC2327700906318 /* MoreRootTableViewController.m in Sources */,
+				449DD2B11AC2327700906318 /* HomeRootViewController.m in Sources */,
+				449DD2B21AC2327700906318 /* Reachability.m in Sources */,
+				449DD2B31AC2327700906318 /* CollectionCellImage.m in Sources */,
+				449DD2B41AC2327700906318 /* Add2CartViewController.m in Sources */,
+				449DD2B51AC2327700906318 /* TestimonialCell.m in Sources */,
+				449DD2B61AC2327700906318 /* CartInterface.m in Sources */,
+				449DD2B71AC2327700906318 /* AFHTTPRequestOperationManager.m in Sources */,
+				449DD2B81AC2327700906318 /* CollectionRootCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -931,22 +1046,41 @@
 		443FA62B1AB0FD6C000EFD81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					AUTOHAUS,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/**",
+					"\"$(SRCROOT)/../Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/app_headers\"",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Autohaus/Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/PrivateHeaders";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "./Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/app_headers";
 			};
 			name = Debug;
 		};
 		443FA62C1AB0FD6C000EFD81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/**",
+					"\"$(SRCROOT)/../Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/app_headers\"",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Autohaus/Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/PrivateHeaders";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "./Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/app_headers";
 			};
 			name = Release;
 		};
@@ -984,6 +1118,47 @@
 			};
 			name = Release;
 		};
+		449DD2C41AC2327700906318 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App-Icon";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Launch-Image";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					CST,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/**",
+					"\"$(SRCROOT)/../Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/app_headers\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Autohaus/Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/PrivateHeaders";
+				PRODUCT_NAME = CST_Trading;
+				USER_HEADER_SEARCH_PATHS = "./Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/app_headers";
+			};
+			name = Debug;
+		};
+		449DD2C51AC2327700906318 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App-Icon";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Launch-Image";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/**",
+					"\"$(SRCROOT)/../Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/app_headers\"",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Autohaus/Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/PrivateHeaders";
+				PRODUCT_NAME = CST_Trading;
+				USER_HEADER_SEARCH_PATHS = "./Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/app_headers";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1010,6 +1185,15 @@
 			buildConfigurations = (
 				443FA62E1AB0FD6C000EFD81 /* Debug */,
 				443FA62F1AB0FD6C000EFD81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		449DD2C31AC2327700906318 /* Build configuration list for PBXNativeTarget "CST Trading" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				449DD2C41AC2327700906318 /* Debug */,
+				449DD2C51AC2327700906318 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

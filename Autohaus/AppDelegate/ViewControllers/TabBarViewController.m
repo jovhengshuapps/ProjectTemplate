@@ -7,7 +7,7 @@
 //
 
 #import "TabBarViewController.h"
-#import "Constants.h"
+#import "BaseConfig.h"
 
 @interface TabBarViewController ()
 
@@ -21,47 +21,60 @@
     
     
     NSMutableArray *viewControllers = [NSMutableArray arrayWithArray:self.viewControllers];
-    
+    NSInteger TabViewControllerIndex = 0;
     if (!TABVIEW_SHOW_HOME) {
-        [viewControllers removeObjectAtIndex:TabViewControllerHome];
+        [viewControllers removeObjectAtIndex:TabViewControllerIndex];
     }
+    else {
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).title = @"Home";
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).image = TAB_HOME_LOGO_NORMAL;
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).selectedImage = TAB_HOME_LOGO_SELECTED;
+        TabViewControllerIndex += 1;
+    }
+    
     if (!TABVIEW_SHOW_SHOP) {
-        [viewControllers removeObjectAtIndex:TabViewControllerShop];
+        [viewControllers removeObjectAtIndex:TabViewControllerIndex];
     }
+    else {
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).title = @"Shop";
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).image = TAB_SHOP_LOGO_NORMAL;
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).selectedImage = TAB_SHOP_LOGO_SELECTED;
+        TabViewControllerIndex += 1;
+    }
+    
     if (!TABVIEW_SHOW_CART) {
-        [viewControllers removeObjectAtIndex:TabViewControllerCart];
+        [viewControllers removeObjectAtIndex:TabViewControllerIndex];
     }
+    else {
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).title = @"Cart";
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).image = TAB_CART_LOGO_NORMAL;
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).selectedImage = TAB_CART_LOGO_SELECTED;
+        TabViewControllerIndex += 1;
+    }
+    
     if (!TABVIEW_SHOW_TESTIMONIAL) {
-        [viewControllers removeObjectAtIndex:TabViewControllerTestimonial];
+        [viewControllers removeObjectAtIndex:TabViewControllerIndex];
     }
+    else {
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).title = @"Testimonials";
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).image = TAB_TESTIMONIALS_LOGO_NORMAL;
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).selectedImage = TAB_TESTIMONIALS_LOGO_SELECTED;
+        TabViewControllerIndex += 1;
+    }
+    
     if (!TABVIEW_SHOW_MORE) {
-        [viewControllers removeObjectAtIndex:TabViewControllerMore];
+        [viewControllers removeObjectAtIndex:TabViewControllerIndex];
+    }
+    else {
+        
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).title = @"More";
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).image = TAB_MORE_LOGO_NORMAL;
+        ((UITabBarItem*)self.tabBar.items[TabViewControllerIndex]).selectedImage = TAB_MORE_LOGO_SELECTED;
     }
     
     
     [self setViewControllers: viewControllers];
     
-    //setup tab bar icons
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerHome]).title = @"Home";
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerHome]).image = TAB_HOME_LOGO_NORMAL;
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerHome]).selectedImage = TAB_HOME_LOGO_SELECTED;
-    
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerShop]).title = @"Shop";
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerShop]).image = TAB_SHOP_LOGO_NORMAL;
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerShop]).selectedImage = TAB_SHOP_LOGO_SELECTED;
-    
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerCart]).title = @"Cart";
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerCart]).image = TAB_CART_LOGO_NORMAL;
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerCart]).selectedImage = TAB_CART_LOGO_SELECTED;
-    
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerTestimonial]).title = @"Testimonials";
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerTestimonial]).image = TAB_TESTIMONIALS_LOGO_NORMAL;
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerTestimonial]).selectedImage = TAB_TESTIMONIALS_LOGO_SELECTED;
-    
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerMore]).title = @"More";
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerMore]).image = TAB_MORE_LOGO_NORMAL;
-    ((UITabBarItem*)self.tabBar.items[TabViewControllerMore]).selectedImage = TAB_MORE_LOGO_SELECTED;
-
 }
 
 - (void)didReceiveMemoryWarning {

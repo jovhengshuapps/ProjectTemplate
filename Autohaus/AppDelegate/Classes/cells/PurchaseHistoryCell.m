@@ -7,7 +7,7 @@
 //
 
 #import "PurchaseHistoryCell.h"
-#import "Constants.h"
+#import "BaseConfig.h"
 
 @implementation PurchaseHistoryCell
 

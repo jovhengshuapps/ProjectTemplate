@@ -7,7 +7,7 @@
 //
 
 #import "PurchaseHistoryViewController.h"
-#import "Constants.h"
+#import "BaseConfig.h"
 #import "PurchaseHistoryCell.h"
 
 @interface PurchaseHistoryViewController ()

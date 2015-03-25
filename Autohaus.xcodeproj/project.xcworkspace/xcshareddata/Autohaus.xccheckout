@@ -10,43 +10,43 @@
 	<string>Autohaus</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>6757B425C84854514E8D1BC53A074A252BB91DC5</key>
-		<string>https://github.com/jovhengshuapps/AgentBridge.git</string>
+		<key>19CDF5E92D8102745A34EFDE054B2129221A763A</key>
+		<string>https://github.com/jovhengshuapps/ProjectTemplate.git</string>
 		<key>6F977CC95E17EFDC3F5A20B3DE6ACA9914F309FF</key>
-		<string>https://github.com/jovhengshuapps/Autohaus.git</string>
+		<string>https://github.com/jovhengshuapps/AgentBridge.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Autohaus/Autohaus.xcodeproj</string>
+	<string>Autohaus.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>6757B425C84854514E8D1BC53A074A252BB91DC5</key>
-		<string>../../../..</string>
+		<key>19CDF5E92D8102745A34EFDE054B2129221A763A</key>
+		<string>../..</string>
 		<key>6F977CC95E17EFDC3F5A20B3DE6ACA9914F309FF</key>
-		<string>../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/jovhengshuapps/Autohaus.git</string>
+	<string>https://github.com/jovhengshuapps/ProjectTemplate.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>6F977CC95E17EFDC3F5A20B3DE6ACA9914F309FF</string>
+	<string>19CDF5E92D8102745A34EFDE054B2129221A763A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>6757B425C84854514E8D1BC53A074A252BB91DC5</string>
+			<string>6F977CC95E17EFDC3F5A20B3DE6ACA9914F309FF</string>
 			<key>IDESourceControlWCCName</key>
-			<string></string>
+			<string>..</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>6F977CC95E17EFDC3F5A20B3DE6ACA9914F309FF</string>
+			<string>19CDF5E92D8102745A34EFDE054B2129221A763A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Autohaus</string>
+			<string>ProjectTemplate</string>
 		</dict>
 	</array>
 </dict>

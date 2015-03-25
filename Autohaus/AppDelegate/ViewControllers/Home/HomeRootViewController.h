@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Constants.h"
+#import "BaseConfig.h"
 #import "CollectionHeaderLabel.h"
 #import "CollectionCellImage.h"
 

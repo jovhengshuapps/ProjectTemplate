@@ -7,7 +7,7 @@
 //
 
 #import "AboutRootViewController.h"
-#import "Constants.h"
+#import "BaseConfig.h"
 
 @interface AboutRootViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView  *background;

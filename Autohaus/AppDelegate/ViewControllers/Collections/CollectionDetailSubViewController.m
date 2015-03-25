@@ -7,7 +7,7 @@
 //
 
 #import "CollectionDetailSubViewController.h"
-#import "Constants.h"
+#import "BaseConfig.h"
 
 @interface CollectionDetailSubViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView  *background;

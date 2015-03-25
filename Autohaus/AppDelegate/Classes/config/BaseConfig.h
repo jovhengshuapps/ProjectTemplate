@@ -17,4 +17,13 @@
 
 #define _CONFIG_DOUBLE_(ARG, DEFAULT_VALUE)	([[NSUserDefaults standardUserDefaults] objectForKey:ARG] != nil ? [[NSUserDefaults standardUserDefaults] doubleForKey:ARG] : DEFAULT_VALUE)
 
+
+
+#endif
+
+
+#ifdef AUTOHAUS
+#import <Autohaus/app_headers/Constants.h>
+#elif CST
+#import <CST_Trading/app_headers/Constants.h>
 #endif
