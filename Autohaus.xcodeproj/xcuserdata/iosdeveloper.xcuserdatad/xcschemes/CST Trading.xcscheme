@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "449DD2811AC2327700906318"
-               BuildableName = "Autohaus copy.app"
+               BuildableName = "CST_Trading.app"
                BlueprintName = "CST Trading"
                ReferencedContainer = "container:Autohaus.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "449DD2811AC2327700906318"
-            BuildableName = "Autohaus copy.app"
+            BuildableName = "CST_Trading.app"
             BlueprintName = "CST Trading"
             ReferencedContainer = "container:Autohaus.xcodeproj">
          </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "449DD2811AC2327700906318"
-            BuildableName = "Autohaus copy.app"
+            BuildableName = "CST_Trading.app"
             BlueprintName = "CST Trading"
             ReferencedContainer = "container:Autohaus.xcodeproj">
          </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "449DD2811AC2327700906318"
-            BuildableName = "Autohaus copy.app"
+            BuildableName = "CST_Trading.app"
             BlueprintName = "CST Trading"
             ReferencedContainer = "container:Autohaus.xcodeproj">
          </BuildableReference>
