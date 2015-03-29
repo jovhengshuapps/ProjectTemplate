@@ -69,6 +69,10 @@
 
 - (NSArray*) getData {
     
+    [[WebserviceCall new] getProductsCompletion:^(id response) {
+        NSLog(@"response:%@",response);
+    }];
+    
     NSDictionary *item1 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Engine Care",@"text",@"",@"image", nil];
     NSDictionary *item2 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Car Accessories",@"text",@"",@"image", nil];
     NSDictionary *item3 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Car Care",@"text",@"",@"image", nil];

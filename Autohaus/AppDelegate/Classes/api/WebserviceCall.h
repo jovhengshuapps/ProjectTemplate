@@ -8,25 +8,23 @@
 
 #import <Foundation/Foundation.h>
 #import "BaseConfig.h"
-#import "Reachability.h"
-#import "AFNetworking.h"
+#import "APIAccessPoint.h"
 #import "WebserviceCallURL.h"
 
 
-typedef NS_ENUM(NSInteger, WebserviceCallResponse) {
-    WebserviceCallResponseNotFound,
-    WebserviceCallResponseSuccessful,
-    WebserviceCallResponseDuplicateEntry,
-    WebserviceCallResponseSavingError,
-    WebserviceCallResponseEmailFailed,
-    WebserviceCallResponseWrongCredentials
+typedef NS_ENUM(NSInteger, APIResponse) {
+    APIResponseNotFound,             /*0 - action not defined or no post found*/
+    APIResponseSuccessful,           /*1 - successful*/
+    APIResponseDuplicateEntry,       /*2 - duplicate entry*/
+    APIResponseSavingError,          /*3 - error on saving*/
+    APIResponseEmailFailed,          /*4 - email not sent*/
+    APIResponseWrongCredentials      /*5 - wrong credentials*/
 };
 
+@interface WebserviceCall : APIAccessPoint
+@property (strong, nonatomic) APIAccessPoint *accessPoint;
 
-@interface WebserviceCall : NSObject <NSURLConnectionDelegate>{
-    NSMutableData *_responseData;
-}
-
--(void)initCallWithServiceURL:(NSString*)url withParameters:(NSDictionary *)parameters withCompletionHandler:(void(^)(id responseObject))completion;
+- (void)loginWithParameters:(NSDictionary*)parameters completion:(void (^)(id response)) completion;
+- (void)getProductsCompletion:(void (^)(id response)) completion;
 
 @end

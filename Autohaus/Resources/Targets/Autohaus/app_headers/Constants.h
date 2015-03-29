@@ -79,6 +79,7 @@
 #define TAB_BAR_ITEM_NORMAL                                 COLOR_GRAY(224.0f)
 #define TAB_BAR_ITEM_SELECTED                               COLOR_RGB(35.0f,175.0f,229.0f)
 #define NAV_INFO_BUTTON                                     [UIImage imageNamed:@"navbar_button_details_iPhone"]
+#define STATUSBAR_STYLE                                     UIBarStyleBlack
 
 #define TAB_HOME_LOGO_NORMAL                                [UIImage imageNamed:@"tab_home_iPhone"]
 #define TAB_HOME_LOGO_SELECTED                              [UIImage imageNamed:@"tab_home_selected_iPhone"]
@@ -97,6 +98,10 @@
 #define LOGIN_BUTTON_CORNER                                 6.0f
 #define LOGIN_MAIN_LOGO                                     [UIImage imageNamed:@"login_logo_iPhone"]
 #define LOGIN_TERMS                                         [UIImage imageNamed:@"button_terms_iPhone"]
+#define LOGIN_CELLTEXT_FONT                                 kFONT_HelveticaNeueThinItalic(16.0f)
+#define LOGIN_CELLTEXT_COLOR                                COLOR_GRAY(102.0f)
+#define LOGIN_NOTMEMBER_FONT                                kFONT_HelveticaNeueLight(16.0f)
+#define LOGIN_NOTMEMBER_COLOR                                COLOR_GRAY(80.0f)
 
 #define HOME_ABOUT_IMAGE                                    [UIImage imageNamed:@"image_about_home_iPhone"]
 #define HOME_ABOUT_TEXT                                     @"Autohaus is an automotive parts and accessories retailer that is dedicated in bringing both value and quality to its customers."

@@ -7,7 +7,7 @@
 #define Autohaus_Constants_h
 
 //APP Constants
-#define kAppName                @"CST Trading"
+#define kAppName                @"CST Trade and marketing"
 #define kAppEmail               @[@"enquiry@gingerdoll.sg"]
 #define kAppTelNumber           @"tel://+65 9450 9516"
 #define kAppAddress_Title       kAppName
@@ -71,14 +71,15 @@
 
 
 #define NAV_TITLE_FONT                                      kFONT_HelveticaNeue(22.0f)
-#define NAV_TITLE_COLOR                                     COLOR_RGB(35.0f,175.0f,229.0f)
+#define NAV_TITLE_COLOR                                     COLOR_RGB(35.0f,32.0f,33.0f)
 #define NAV_ITEM_FONT                                       kFONT_HelveticaNeueLight(20.0f)
-#define NAV_ITEM_COLOR                                      COLOR_RGB(154.0f,167.0f,196.0f)
-#define NAV_BAR_COLOR                                       COLOR_RGB(45.0f,45.0f,48.0f)
-#define TAB_BAR_COLOR                                       COLOR_RGB(45.0f,45.0f,48.0f)
-#define TAB_BAR_ITEM_NORMAL                                 COLOR_GRAY(224.0f)
-#define TAB_BAR_ITEM_SELECTED                               COLOR_RGB(35.0f,175.0f,229.0f)
+#define NAV_ITEM_COLOR                                      COLOR_RGB(45.0f,45.0f,45.0f)
+#define NAV_BAR_COLOR                                       COLOR_RGB(230.0f,230.0f,230.0f)
+#define TAB_BAR_COLOR                                       COLOR_RGB(230.0f,230.0f,230.0f)
+#define TAB_BAR_ITEM_NORMAL                                 COLOR_RGB(163.0f,98.0f,4.0f)
+#define TAB_BAR_ITEM_SELECTED                               COLOR_RGB(35.0f,32.0f,33.0f)
 #define NAV_INFO_BUTTON                                     [UIImage imageNamed:@"navbar_button_details_iPhone"]
+#define STATUSBAR_STYLE                                     UIBarStyleDefault
 
 #define TAB_HOME_LOGO_NORMAL                                [UIImage imageNamed:@"tab_home_iPhone"]
 #define TAB_HOME_LOGO_SELECTED                              [UIImage imageNamed:@"tab_home_selected_iPhone"]
@@ -91,15 +92,19 @@
 #define TAB_MORE_LOGO_NORMAL                                [UIImage imageNamed:@"tab_more_iPhone"]
 #define TAB_MORE_LOGO_SELECTED                              [UIImage imageNamed:@"tab_more_selected_iPhone"]
 
-#define LOGIN_BUTTON_FONT                                   kFONT_HelveticaNeueCondensedBold(20.0f)
+#define LOGIN_BUTTON_FONT                                   kFONT_HelveticaNeue(20.0f)
 #define LOGIN_BUTTON_TEXTCOLOR                              [UIColor whiteColor]
-#define LOGIN_BUTTON_COLOR                                  COLOR_RGB(6.0f,6.0f,6.0f)
+#define LOGIN_BUTTON_COLOR                                  COLOR_RGB(35.0f,32.0f,33.0f)
 #define LOGIN_BUTTON_CORNER                                 6.0f
 #define LOGIN_MAIN_LOGO                                     [UIImage imageNamed:@"login_logo_iPhone"]
 #define LOGIN_TERMS                                         [UIImage imageNamed:@"button_terms_iPhone"]
+#define LOGIN_CELLTEXT_FONT                                 kFONT_HelveticaNeueThinItalic(16.0f)
+#define LOGIN_CELLTEXT_COLOR                                COLOR_GRAY(102.0f)
+#define LOGIN_NOTMEMBER_FONT                                kFONT_HelveticaNeueLight(16.0f)
+#define LOGIN_NOTMEMBER_COLOR                                COLOR_GRAY(80.0f)
 
 #define HOME_ABOUT_IMAGE                                    [UIImage imageNamed:@"image_about_home_iPhone"]
-#define HOME_ABOUT_TEXT                                     @"Autohaus is an automotive parts and accessories retailer that is dedicated in bringing both value and quality to its customers."
+#define HOME_ABOUT_TEXT                                     @"CST Trade and marketing is established in 2014 We are committed to bring the latest handphone accessories at the best price."
 #define HOME_SECTION_TEXTFONT                               kFONT_HelveticaNeueCondensedBold(18.0f)
 #define HOME_SECTION_TEXTCOLOR                              [UIColor whiteColor]
 #define HOME_SECTION_BARCOLOR                               COLOR_RGB(69.0f,178.0f,118.0f)

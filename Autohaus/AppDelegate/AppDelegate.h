@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "BaseConfig.h"
 #import <CoreData/CoreData.h>
-#import "Reachability.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

@@ -20,7 +20,8 @@
 @property (nonatomic)           BOOL            willShowCustomLoadingIndicator;
 @property (nonatomic)           BOOL            isLoading;
 
-- (void)connectWithCompletion:(void (^)(NSArray *response)) completion;
+- (void)connectWithCompletion:(void (^)(id response)) completion;
+- (void)stopAPIRequest;
 - (void)alert:(NSString*)title message:(NSString*)message;
 
 // ----- APP SPECIFIC METHODS (like login, logout, save etc etc)

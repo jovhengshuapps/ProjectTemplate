@@ -35,10 +35,10 @@
     
     self.viewEmailPassword.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"textfield_login_iPhone"]];
     
-    self.textFieldEmail.font = kFONT_HelveticaNeueThinItalic(16.0f);
-    self.textFieldPassword.font = kFONT_HelveticaNeueThinItalic(16.0f);
-    self.textFieldEmail.textColor = COLOR_GRAY(102.0f);
-    self.textFieldPassword.textColor = COLOR_GRAY(102.0f);
+    self.textFieldEmail.font = LOGIN_CELLTEXT_FONT;
+    self.textFieldPassword.font = LOGIN_CELLTEXT_FONT;
+    self.textFieldEmail.textColor = LOGIN_CELLTEXT_COLOR;
+    self.textFieldPassword.textColor = LOGIN_CELLTEXT_COLOR;
         
     self.btnLogin.layer.cornerRadius = LOGIN_BUTTON_CORNER;
     self.btnLogin.backgroundColor = LOGIN_BUTTON_COLOR;
@@ -47,8 +47,8 @@
     [self.btnLogin setTintColor:LOGIN_BUTTON_COLOR];
     
     
-    self.lblNotMember.font = kFONT_HelveticaNeueLight(16.0f);
-    self.lblNotMember.textColor = COLOR_GRAY(80.0f);
+    self.lblNotMember.font = LOGIN_NOTMEMBER_FONT;
+    self.lblNotMember.textColor = LOGIN_NOTMEMBER_COLOR;
     
     self.btnCreateAccount.layer.cornerRadius = LOGIN_BUTTON_CORNER;
     self.btnCreateAccount.backgroundColor = LOGIN_BUTTON_COLOR;
@@ -92,27 +92,19 @@
 
 - (IBAction)loginPressed:(id)sender {
     
-    WebserviceCall *call = [[WebserviceCall alloc] init];
-    
-    [call initCallWithServiceURL:WS_LOGIN withParameters:@{@"user_login":self.textFieldEmail.text,@"user_pass":self.textFieldPassword.text} withCompletionHandler:^(id responseObject) {
-        NSError *error = nil;
-        NSLog(@"data:%@",[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error]);
-//        NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
-//        
-//        WebserviceCallResponse response = (WebserviceCallResponse)[[[jsonResponse objectForKey:@"response"] objectForKey:@"status"] integerValue];
-//        
-//        if (response == WebserviceCallResponseNotFound) {
-//            NSLog(@"notfound");
-//        }
-//        else if (response == WebserviceCallResponseWrongCredentials) {
-//            NSLog(@"wrong login");
-//        }
-//        else if (response == WebserviceCallResponseSuccessful) {
-//            NSLog(@"success");
-//        }
-//        
-//        NSLog(@"[%li]error:%@\n\nresponse:%@",response,error,jsonResponse);
+    [[WebserviceCall new] loginWithParameters:@{@"user_login":self.textFieldEmail.text,@"user_pass":self.textFieldPassword.text} completion:^(id response) {
         
+        APIResponse responseAPI = (APIResponse)[[[response objectForKey:@"response"] objectForKey:@"status"] integerValue];
+        
+        if (responseAPI == APIResponseNotFound) {
+            NSLog(@"notfound");
+        }
+        else if (responseAPI == APIResponseWrongCredentials) {
+            NSLog(@"wrong login");
+        }
+        else if (responseAPI == APIResponseSuccessful) {
+            NSLog(@"success");
+        }
     }];
     
 }

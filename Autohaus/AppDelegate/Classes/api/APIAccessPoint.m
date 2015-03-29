@@ -21,7 +21,7 @@
 
 @implementation APIAccessPoint{
     UIView          *loadingView;
-
+    NSOperationQueue *mainOperationQueue;
 }
 
 #pragma mark - INIT Methods
@@ -30,12 +30,13 @@
     if (self = [super init])
     {
         self.isLoading = NO;
+        mainOperationQueue = [NSOperationQueue mainQueue];
     }
     return self;
 }
 
 #pragma mark - Custom Methods
-- (void)connectWithCompletion:(void (^)(NSArray *response)) completion{
+- (void)connectWithCompletion:(void (^)(id response)) completion{
     
     if ([self isInternetAvailable]!=0) {
         if (!self.isLoading) {
@@ -77,7 +78,7 @@
             
             
             [NSURLConnection sendAsynchronousRequest:request
-                                               queue:[NSOperationQueue mainQueue]
+                                               queue:mainOperationQueue
                                    completionHandler:
              ^(NSURLResponse *response, NSData *data, NSError *error)
              {
@@ -111,6 +112,11 @@
     }else{
         [self alert_NO_INTERNET];
     }
+}
+
+- (void)stopAPIRequest {
+    [mainOperationQueue cancelAllOperations];
+    self.isLoading = NO;
 }
 
 - (void)shouldPresentLoadingScreen:(BOOL)option message:(NSString*)loadingMessage{

@@ -24,35 +24,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    // Initialize Reachability
-    Reachability *reachability = [Reachability reachabilityWithHostname:@"www.google.com"];
-    
-    reachability.reachableBlock = ^(Reachability *reachability) {
-        NSLog(@"Network is reachable.");
-    };
-    
-    reachability.unreachableBlock = ^(Reachability *reachability) {
-        NSLog(@"Network is unreachable.");
-    };
-    
-    // Tell the reachability that we DON'T want to be reachable on 3G/EDGE/CDMA
-    reachability.reachableOnWWAN = NO;
-    
-    // Here we set up a NSNotification observer. The Reachability that caused the notification
-    // is passed in the object parameter
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reachabilityChanged:)
-                                                 name:kReachabilityChangedNotification
-                                               object:nil];
-    
-    // Start Monitoring
-    [reachability startNotifier];
-    
     [[UINavigationBar appearance] setBarTintColor:NAV_BAR_COLOR];
     [[UINavigationBar appearance] setTintColor:NAV_ITEM_COLOR];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UINavigationBar appearance] setBarStyle:STATUSBAR_STYLE];
     
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:NAV_TITLE_COLOR,NSForegroundColorAttributeName,kFONT_HelveticaNeue(16),NSFontAttributeName, nil]];
     
@@ -193,13 +168,4 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
-- (void)reachabilityChanged:(NSNotification *)notification {
-    Reachability *reachability = (Reachability *)[notification object];
-    
-    if ([reachability isReachable]) {
-        NSLog(@"Reachable");
-    } else {
-        NSLog(@"Unreachable");
-    }
-}
 @end
