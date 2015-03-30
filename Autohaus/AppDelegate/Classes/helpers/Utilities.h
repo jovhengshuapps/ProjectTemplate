@@ -13,6 +13,7 @@
 
 - (NSData*)imageToData:(UIImage*)image;
 - (UIImage*)dataToImage:(NSData*)data;
+- (UIImage*)URLToImage:(NSString *)urlPath;
 - (BOOL)NSStringIsValidEmail:(NSString *)checkString;
 -(void)setFontFamily:(NSString*)fontFamily forView:(UIView*)view andSubViews:(BOOL)isSubViews;
 

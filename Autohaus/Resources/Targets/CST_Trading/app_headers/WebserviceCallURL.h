@@ -17,7 +17,7 @@
 #define WS_GET_CART                      @"http://www.csttrade.sg/services/?type=getcart"
 #define WS_ADD_TO_CART                   @"http://www.csttrade.sg/services/?type=add_cart"
 //#define WS_COUNTRY                       @"http://autohaus.com.sg/services/?type=Country"
-//#define WS_CATEGORY                      @"http://autohaus.com.sg/services/?type=category"
+#define WS_CATEGORY                      @"http://www.csttrade.sg/services/?type=category"
 //#define WS_CM_SUBCATEGORY                @"http://autohaus.com.sg/services/?type=sub_category"
 #define WS_REGISTER                      @"http://www.csttrade.sg/services?type=register"
 #define WS_PRODUCTS                      @"http://www.csttrade.sg/services/?type=products"

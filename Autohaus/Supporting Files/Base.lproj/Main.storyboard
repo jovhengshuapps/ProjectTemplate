@@ -16,13 +16,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="wAh-fQ-qat" kind="relationship" relationship="viewControllers" id="dqp-7Y-pyX"/>
-                        <segue destination="UNk-n9-WA7" kind="relationship" relationship="viewControllers" id="Onl-yq-qdf"/>
-                        <segue destination="BhJ-Q2-xRH" kind="relationship" relationship="viewControllers" id="Sww-BI-dNZ"/>
-                        <segue destination="cd5-NI-9Vi" kind="relationship" relationship="viewControllers" id="1aS-GG-Yda"/>
-                        <segue destination="jic-6v-SwY" kind="relationship" relationship="viewControllers" id="bpJ-ml-M4U"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +83,7 @@
                                             <constraint firstAttribute="width" constant="334" id="JkI-nf-siL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -867,7 +860,7 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
                                             <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -905,7 +898,7 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
                                                 <constraint firstAttribute="height" constant="21" id="abl-cN-zOP"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -925,7 +918,7 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
                                                 <constraint firstAttribute="height" constant="21" id="Sv2-o8-4om"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -947,7 +940,7 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
                                                 <constraint firstAttribute="height" constant="21" id="z8B-9A-tzp"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -1469,7 +1462,7 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9IE-KF-0Q9">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -2041,7 +2034,7 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Table View HEre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWe-7M-wAF">
                                         <rect key="frame" x="98" y="120" width="124" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -2081,7 +2074,7 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="XgM-GY-It3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="325" id="Jp8-ej-Q5j"/>
                                 </constraints>
@@ -2179,7 +2172,7 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="prj-0s-rxu">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -2188,7 +2181,7 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XoX-LF-i4h">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -2360,11 +2353,11 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
             </objects>
             <point key="canvasLocation" x="1182" y="935.25"/>
         </scene>
-        <!--Testimonials-->
+        <!--Navigation Controller-->
         <scene sceneID="BHh-Vv-Ra1">
             <objects>
                 <navigationController storyboardIdentifier="navAbout" automaticallyAdjustsScrollViewInsets="NO" id="cd5-NI-9Vi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Testimonials" image="tab_testimonials_iPhone" id="Aa5-XT-lS0"/>
+                    <tabBarItem key="tabBarItem" title="" id="Aa5-XT-lS0"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pVn-aw-cda">
@@ -2404,7 +2397,7 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="xF7-uY-XIi"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -2442,7 +2435,7 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
                                                         <constraint firstAttribute="height" constant="21" id="FxC-Hu-xsk"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -2560,11 +2553,11 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
             </objects>
             <point key="canvasLocation" x="1206" y="-487.5"/>
         </scene>
-        <!--Shop-->
+        <!--Navigation Controller-->
         <scene sceneID="3x6-h2-JUh">
             <objects>
                 <navigationController storyboardIdentifier="navCollect" automaticallyAdjustsScrollViewInsets="NO" id="UNk-n9-WA7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shop" image="tab_shop_iPhone" id="JND-pF-L99"/>
+                    <tabBarItem key="tabBarItem" title="" id="JND-pF-L99"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WSO-Fm-wjF">
@@ -2581,11 +2574,11 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
             </objects>
             <point key="canvasLocation" x="416" y="239"/>
         </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="n16-VB-EEo">
             <objects>
                 <navigationController storyboardIdentifier="navHome" automaticallyAdjustsScrollViewInsets="NO" id="wAh-fQ-qat" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="tab_home_iPhone" id="XjH-XU-dWX"/>
+                    <tabBarItem key="tabBarItem" title="" id="XjH-XU-dWX"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eBa-bZ-Xk5">
@@ -2602,11 +2595,11 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
             </objects>
             <point key="canvasLocation" x="416" y="-1186"/>
         </scene>
-        <!--Cart-->
+        <!--Navigation Controller-->
         <scene sceneID="DvM-YZ-aIN">
             <objects>
                 <navigationController storyboardIdentifier="navCart" automaticallyAdjustsScrollViewInsets="NO" id="BhJ-Q2-xRH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cart" image="tab_cart_iPhone" id="doK-dK-QX1"/>
+                    <tabBarItem key="tabBarItem" title="" id="doK-dK-QX1"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wsr-kM-af0">
@@ -2623,11 +2616,11 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
             </objects>
             <point key="canvasLocation" x="416" y="951"/>
         </scene>
-        <!--More-->
+        <!--Navigation Controller-->
         <scene sceneID="XvM-a9-kdW">
             <objects>
                 <navigationController storyboardIdentifier="navMore" automaticallyAdjustsScrollViewInsets="NO" id="jic-6v-SwY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="More" image="tab_more_iPhone" id="nP3-aG-N3I"/>
+                    <tabBarItem key="tabBarItem" title="" id="nP3-aG-N3I"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EF8-sO-3wm">
@@ -3057,10 +3050,5 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
         <image name="login_logo_iPhone" width="1223" height="1030"/>
         <image name="navbar_button_details_iPhone" width="28" height="28"/>
         <image name="navbar_icon_images_iPhone" width="20" height="23"/>
-        <image name="tab_cart_iPhone" width="26" height="26"/>
-        <image name="tab_home_iPhone" width="27" height="25"/>
-        <image name="tab_more_iPhone" width="24" height="15"/>
-        <image name="tab_shop_iPhone" width="25" height="25"/>
-        <image name="tab_testimonials_iPhone" width="25" height="22"/>
     </resources>
 </document>

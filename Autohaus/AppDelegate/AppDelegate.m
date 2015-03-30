@@ -36,11 +36,25 @@
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
      setTitleTextAttributes:
      @{NSForegroundColorAttributeName:NAV_ITEM_COLOR,
-       NSFontAttributeName:kFONT_HelveticaNeueLight(16.0f)
+       NSFontAttributeName:NAV_ITEM_FONT
        }
      forState:UIControlStateNormal];
     
+    [[UITabBar appearance] setTintColor:NAV_ITEM_COLOR];
     
+    [[UITabBarItem appearanceWhenContainedIn:[UITabBar class], nil]
+     setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:TAB_BAR_ITEM_NORMAL,
+       NSFontAttributeName:TAB_BAR_ITEM_FONT
+       }
+     forState:UIControlStateNormal];
+    
+    [[UITabBarItem appearanceWhenContainedIn:[UITabBar class], nil]
+     setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:TAB_BAR_ITEM_SELECTED,
+       NSFontAttributeName:TAB_BAR_ITEM_FONT
+       }
+     forState:UIControlStateSelected];
     
     return YES;
 }

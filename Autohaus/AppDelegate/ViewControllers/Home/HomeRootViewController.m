@@ -69,15 +69,14 @@
 
 - (NSArray*) getData {
     
-    [[WebserviceCall new] getProductsCompletion:^(id response) {
-        NSLog(@"response:%@",response);
+    __block NSMutableArray *list = [[NSMutableArray alloc]init];
+    [[WebserviceCall new] getCategoriesCompletion:^(id response) {
+//        NSLog(@"response:%@",response);
+        for (NSDictionary *item in ((NSArray*)response)) {
+            [list addObject:item];
+        }
     }];
     
-    NSDictionary *item1 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Engine Care",@"text",@"",@"image", nil];
-    NSDictionary *item2 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Car Accessories",@"text",@"",@"image", nil];
-    NSDictionary *item3 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Car Care",@"text",@"",@"image", nil];
-    
-    NSArray *list = [NSArray arrayWithObjects:item1, item2, item3, nil];
     
     NSDictionary *section = [NSDictionary dictionaryWithObjectsAndKeys:@"Product Categories", @"title", list, @"list", nil];
     
@@ -144,6 +143,8 @@
     cell.textLabel.textColor = HOME_CELL_TEXTCOLOR;
     
     cell.backgroundColor = HOME_CELL_BGCOLOR;
+    cell.layer.borderColor = HOME_CELL_BORDERCOLOR.CGColor;
+    cell.layer.borderWidth = 2.0f;
     cell.layer.cornerRadius = HOME_CELL_CORNER;
     
     return cell;

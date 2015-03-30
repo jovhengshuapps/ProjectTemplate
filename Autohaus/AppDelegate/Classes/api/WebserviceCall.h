@@ -26,5 +26,6 @@ typedef NS_ENUM(NSInteger, APIResponse) {
 
 - (void)loginWithParameters:(NSDictionary*)parameters completion:(void (^)(id response)) completion;
 - (void)getProductsCompletion:(void (^)(id response)) completion;
+- (void)getCategoriesCompletion:(void (^)(id response)) completion;
 
 @end

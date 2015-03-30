@@ -87,7 +87,7 @@
         NSInteger index= indexPath.row + (indexPath.row + y);
         
         Utilities *convert = [Utilities new];
-        UIImage *imageProduct = [convert dataToImage:[datasource[index] valueForKey:@"images"]];
+        UIImage *imageProduct = [convert URLToImage:[datasource[index] valueForKey:@"image"]];
         imageProduct = (imageProduct)?imageProduct:[UIImage imageNamed:@"login_logo_iPhone"];
         
         NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];

@@ -67,23 +67,38 @@
     self.sectionKeys = [[NSMutableArray alloc] init];
     
     
-#warning implement webservice here
-    //Plist to Dictionary
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"ProductList" ofType:@"plist"];
-    NSDictionary *product = [[NSDictionary alloc] initWithContentsOfFile:path];
     
     
-    //Create all products
-    
-    NSMutableArray *list = [[NSMutableArray alloc] init];
-    
-    for (NSArray *category in [product allValues]) {
-        for (NSDictionary *item in category) {
-            [list addObjectsFromArray:[item objectForKey:@"list"]];
+    __block NSMutableArray *listCategory = [[NSMutableArray alloc]init];
+    [[WebserviceCall new] getCategoriesCompletion:^(id response) {
+        for (NSDictionary *item in ((NSArray*)response)) {
+            [listCategory addObject:item];
         }
+        [self.tableView reloadData];
+    }];
+    
+    __block NSMutableArray *listProducts = [[NSMutableArray alloc]init];
+    [[WebserviceCall new] getProductsCompletion:^(id response) {
+        for (NSDictionary *item in [response[@"response"] objectForKey:@"products"]) {
+            [listProducts addObject:item];
+        }
+        [self.tableView reloadData];
+    }];
+    
+    [self.sectionKeys addObjectsFromArray:listCategory];
+    
+    for (NSString *category in listCategory) {
+        NSMutableArray *list = [[NSMutableArray alloc] init];
+        for (NSDictionary *item in listProducts) {
+            if ([item[@"category"] isEqualToString:category]) {
+                [list addObject:item];
+            }
+        }
+        [self.datasource addEntriesFromDictionary:[NSDictionary dictionaryWithObjectsAndKeys:list,@"list",category,@"name", nil]];
     }
     
-    self.allProducts = [NSDictionary dictionaryWithObjectsAndKeys:list,@"list",@"All Products",@"name", nil];
+    
+    self.allProducts = [NSDictionary dictionaryWithObjectsAndKeys:listProducts,@"list",@"All Products",@"name", nil];
     
     
     //setup table header view
@@ -113,8 +128,6 @@
     [viewHeader addSubview:container];
     self.tableView.tableHeaderView = viewHeader;
     
-    [self.sectionKeys addObjectsFromArray:[product allKeys]];
-    [self.datasource addEntriesFromDictionary:product];
     
 }
 
@@ -174,6 +187,8 @@
     UIView *container = [[UIView alloc] initWithFrame:CGRectMake(15.0f, 10.0f, tableView.frame.size.width-30.0f, 44.0f)];
     container.layer.cornerRadius = SHOP_SECTION_CORNER;
     container.backgroundColor = SHOP_SECTION_BGCOLOR;
+    container.layer.borderColor = SHOP_SECTION_BORDERCOLOR.CGColor;
+    container.layer.borderWidth = 2.0f;
     container.tag = section;
     
     UILabel *labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, container.frame.size.width - 50.0f, 44.0f)];
