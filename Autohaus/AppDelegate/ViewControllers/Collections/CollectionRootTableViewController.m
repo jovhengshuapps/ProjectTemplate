@@ -7,6 +7,7 @@
 //
 
 #import "CollectionRootTableViewController.h"
+#import "WebserviceCall.h"
 
 #define kSegue_List     @"pushList"
 
@@ -66,24 +67,34 @@
     self.datasource = [[NSMutableDictionary alloc] init];
     self.sectionKeys = [[NSMutableArray alloc] init];
     
-    
-#warning implement webservice here
-    //Plist to Dictionary
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"ProductList" ofType:@"plist"];
-    NSDictionary *product = [[NSDictionary alloc] initWithContentsOfFile:path];
-    
-    
-    //Create all products
-    
-    NSMutableArray *list = [[NSMutableArray alloc] init];
-    
-    for (NSArray *category in [product allValues]) {
-        for (NSDictionary *item in category) {
-            [list addObjectsFromArray:[item objectForKey:@"list"]];
+    [[WebserviceCall new] getProductsCompletion:^(id response) {
+//        NSLog(@"response:%@",response);
+        
+        self.sectionKeys = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *products in response[@"response"][@"products"]) {
+            if (![self.sectionKeys containsObject:products[@"category"]]) {
+                [self.sectionKeys addObject:products[@"category"]];
+            }
         }
-    }
-    
-    self.allProducts = [NSDictionary dictionaryWithObjectsAndKeys:list,@"list",@"All Products",@"name", nil];
+        
+        NSMutableArray *allProductList = [[NSMutableArray alloc] init];
+        for (NSString *categoryKey in self.sectionKeys) {
+            NSMutableArray *list = [[NSMutableArray alloc] init];
+            for (NSDictionary *products in response[@"response"][@"products"]) {
+                if ([products[@"category"] isEqualToString:categoryKey]) {
+                    NSDictionary *item = [NSDictionary dictionaryWithObjectsAndKeys:products[@"name"],@"name",products[@"price"],@"price",products[@"image"],@"image",products[@"description"],@"desc", nil];
+                    [list addObject:item];
+                    [allProductList addObject:item];
+                }
+            }
+            [self.datasource setObject:list forKey:categoryKey];
+        }
+        
+        self.allProducts = [NSDictionary dictionaryWithObjectsAndKeys:allProductList,@"list",@"All Products",@"name", nil];
+        
+        [self.tableView reloadData];
+    }];
     
     
     //setup table header view
@@ -113,8 +124,6 @@
     [viewHeader addSubview:container];
     self.tableView.tableHeaderView = viewHeader;
     
-    [self.sectionKeys addObjectsFromArray:[product allKeys]];
-    [self.datasource addEntriesFromDictionary:product];
     
 }
 

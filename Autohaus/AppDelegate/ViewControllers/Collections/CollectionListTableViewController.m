@@ -40,7 +40,7 @@
     [self initAppTheme];
     
     datasource = self.selected;
-    NSLog(@"data:%@",datasource);
+//    NSLog(@"data:%@",datasource);
 
 }
 
@@ -57,13 +57,14 @@
 
 - (void)buttonPressed:(UIButton*)sender{
     objectTag = sender.tag;
-    [self performSegueWithIdentifier:kSegue_Detail sender:self];
+    [self performSegueWithIdentifier:kSegue_Detail sender:sender];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:kSegue_Detail]) {
         CollectionDetailMainViewController *detail = segue.destinationViewController;
         detail.selected = datasource[objectTag];
+        detail.imageActive.image = ((UIButton*)sender).imageView.image;
     }
 }
 #pragma mark - Delegate Methods
@@ -87,14 +88,23 @@
         NSInteger index= indexPath.row + (indexPath.row + y);
         
         Utilities *convert = [Utilities new];
-        UIImage *imageProduct = [convert dataToImage:[datasource[index] valueForKey:@"images"]];
-        imageProduct = (imageProduct)?imageProduct:[UIImage imageNamed:@"login_logo_iPhone"];
         
         NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
         [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
         
         if (y == 0) {
-            [cell.imageA setImage:imageProduct forState:UIControlStateNormal];
+            
+            [cell.imageA setImage:[UIImage imageNamed:@"login_logo_iPhone"] forState:UIControlStateNormal];
+            NSURL *imageURL = [NSURL URLWithString:[datasource[index] valueForKey:@"image"]];
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+                NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    // Update the UI
+                    [cell.imageA setImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
+                });
+            });
             
             [cell.imageA.imageView setContentMode:UIViewContentModeScaleAspectFill];
             
@@ -115,8 +125,19 @@
             if (indexPath.row + (indexPath.row + y) < [datasource count]){
                 [cell.imageB setHidden:NO];
                 
-                [cell.imageB setImage:imageProduct forState:UIControlStateNormal];
+                [cell.imageB setImage:[UIImage imageNamed:@"login_logo_iPhone"] forState:UIControlStateNormal];
+                NSURL *imageURL = [NSURL URLWithString:[datasource[index] valueForKey:@"image"]];
                 
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+                    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        // Update the UI
+                        if (imageData) {
+                            [cell.imageB setImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
+                        }
+                    });
+                });
                 [cell.imageB.imageView setContentMode:UIViewContentModeScaleAspectFill];
                 
                 [cell.imageB addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];

@@ -37,7 +37,7 @@
     [super viewDidLoad];
     [self initAppTheme];
     
-    self.arrayOfCollection = [self getData];
+    [self getData];
     
     [self setupAbout];
 }
@@ -67,25 +67,47 @@
     self.labelAbout.attributedText = string;
 }
 
-- (NSArray*) getData {
+- (void) getData {
     
+    self.arrayOfCollection = nil;
     [[WebserviceCall new] getProductsCompletion:^(id response) {
-        NSLog(@"response:%@",response);
+//            NSLog(@"response:%@",response);
+        NSMutableArray *list = [[NSMutableArray alloc] init];
+        NSMutableArray *categoryChecker = [[NSMutableArray alloc] init];
+        
+        
+        for (NSDictionary *products in response[@"response"][@"products"]) {
+            if (![categoryChecker containsObject:products[@"category"]]) {
+                [categoryChecker addObject:products[@"category"]];
+                NSDictionary *item = [[NSDictionary alloc] initWithObjectsAndKeys:products[@"category"],@"text",@"",@"image", nil];
+                [list addObject:item];
+            }
+            
+        }
+        
+        NSDictionary *section = [NSDictionary dictionaryWithObjectsAndKeys:@"Product Categories", @"title", list, @"list", nil];
+        
+        self.arrayOfCollection = [NSArray arrayWithObjects:section, nil];
+        
+        
+        [self.collectionHome reloadData];
     }];
     
-    NSDictionary *item1 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Engine Care",@"text",@"",@"image", nil];
-    NSDictionary *item2 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Car Accessories",@"text",@"",@"image", nil];
-    NSDictionary *item3 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Car Care",@"text",@"",@"image", nil];
     
-    NSArray *list = [NSArray arrayWithObjects:item1, item2, item3, nil];
-    
-    NSDictionary *section = [NSDictionary dictionaryWithObjectsAndKeys:@"Product Categories", @"title", list, @"list", nil];
-    
-    NSArray *resultArray = [NSArray arrayWithObjects:section, nil];
-    
-    
-    return resultArray;
 }
+
+//- (BOOL) doesArray:(NSArray*) array containsString:(NSString*)string {
+//    BOOL result = NO;
+//    if (array) {
+//        for (NSString *value in array) {
+//            if ([value isEqualToString:string]) {
+//                result = YES;
+//                break;
+//            }
+//        }
+//    }
+//    return result;
+//}
 
 #pragma mark - UICollection Data Source
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {

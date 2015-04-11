@@ -28,7 +28,6 @@
 		44453B821AB0FF66001A127E /* TableCellCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B3E1AB0FF66001A127E /* TableCellCollection.m */; };
 		44453B831AB0FF66001A127E /* CollectionCellImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B411AB0FF66001A127E /* CollectionCellImage.m */; };
 		44453B841AB0FF66001A127E /* CollectionHeaderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B431AB0FF66001A127E /* CollectionHeaderLabel.m */; };
-		44453B851AB0FF66001A127E /* ProductList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44453B451AB0FF66001A127E /* ProductList.plist */; };
 		44453B861AB0FF66001A127E /* CartInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B4A1AB0FF66001A127E /* CartInterface.m */; };
 		44453B871AB0FF66001A127E /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B4C1AB0FF66001A127E /* Utilities.m */; };
 		44453B881AB0FF66001A127E /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B501AB0FF66001A127E /* Cart.m */; };
@@ -88,7 +87,6 @@
 		449DD2BA1AC2327700906318 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443B1CAA1AB64A7F0090FFFA /* SystemConfiguration.framework */; };
 		449DD2BD1AC2327700906318 /* century gothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C0B1ABA2E64008A8F0E /* century gothic.ttf */; };
 		449DD2C01AC2327700906318 /* century gothic bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C0A1ABA2E64008A8F0E /* century gothic bold.ttf */; };
-		449DD2C11AC2327700906318 /* ProductList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44453B451AB0FF66001A127E /* ProductList.plist */; };
 		449DD2C21AC2327700906318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C2F1ABA2E64008A8F0E /* Main.storyboard */; };
 		449DD2C71AC23A8E00906318 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 449DD27A1AC22DF700906318 /* Info.plist */; };
 		449DD2CD1AC23D6900906318 /* app_headers in Resources */ = {isa = PBXBuildFile; fileRef = 449DD2CC1AC23D6900906318 /* app_headers */; };
@@ -153,7 +151,6 @@
 		44453B411AB0FF66001A127E /* CollectionCellImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCellImage.m; sourceTree = "<group>"; };
 		44453B421AB0FF66001A127E /* CollectionHeaderLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionHeaderLabel.h; sourceTree = "<group>"; };
 		44453B431AB0FF66001A127E /* CollectionHeaderLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionHeaderLabel.m; sourceTree = "<group>"; };
-		44453B451AB0FF66001A127E /* ProductList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProductList.plist; sourceTree = "<group>"; };
 		44453B491AB0FF66001A127E /* CartInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartInterface.h; sourceTree = "<group>"; };
 		44453B4A1AB0FF66001A127E /* CartInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartInterface.m; sourceTree = "<group>"; };
 		44453B4B1AB0FF66001A127E /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
@@ -374,7 +371,6 @@
 		44453B441AB0FF66001A127E /* datasources */ = {
 			isa = PBXGroup;
 			children = (
-				44453B451AB0FF66001A127E /* ProductList.plist */,
 			);
 			path = datasources;
 			sourceTree = "<group>";
@@ -657,7 +653,6 @@
 				449DD27F1AC2307000906318 /* app_headers in Resources */,
 				444C8C3F1ABA2E64008A8F0E /* Info.plist in Resources */,
 				444C8C331ABA2E64008A8F0E /* century gothic bold.ttf in Resources */,
-				44453B851AB0FF66001A127E /* ProductList.plist in Resources */,
 				444C8C461ABA2E64008A8F0E /* Main.storyboard in Resources */,
 				449DD2D11AC241F000906318 /* AutohausImages.xcassets in Resources */,
 			);
@@ -677,7 +672,6 @@
 				449DD2BD1AC2327700906318 /* century gothic.ttf in Resources */,
 				449DD2C01AC2327700906318 /* century gothic bold.ttf in Resources */,
 				449DD2CD1AC23D6900906318 /* app_headers in Resources */,
-				449DD2C11AC2327700906318 /* ProductList.plist in Resources */,
 				449DD2CF1AC241BA00906318 /* CST_TradingImages.xcassets in Resources */,
 				449DD2C71AC23A8E00906318 /* Info.plist in Resources */,
 				449DD2C21AC2327700906318 /* Main.storyboard in Resources */,

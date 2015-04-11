@@ -15,7 +15,6 @@
 #import "BaseConfig.h"
 
 @interface CollectionDetailMainViewController ()
-@property (strong, nonatomic) UIImageView  *imageActive;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollActive;
 @property (strong, nonatomic) IBOutlet UITableView *tableViewMain;
 @property (weak, nonatomic) IBOutlet UIView *viewActionButtons;
@@ -52,11 +51,26 @@
     [super viewDidLoad];
     [self initAppTheme];
     
-    UIImage *imageProduct = [UIImage imageNamed:[self.selected valueForKey:@"images"]];
-    imageProduct = (imageProduct)?imageProduct:[UIImage imageNamed:@"login_logo_iPhone"];
+//    self.imageActive.image = [UIImage imageNamed:@"login_logo_iPhone"];
+//    NSURL *imageURL = [NSURL URLWithString:[self.selected valueForKey:@"image"]];
+//    
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+//        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            // Update the UI
+////            if (imageData) {
+//                NSLog(@"Yes");
+//                UIImage *image = [UIImage imageWithData:imageData];
+//                self.imageActive.image = image;
+//                self.imageActive.frame = CGRectMake(0.0f, 0.0f, image.size.width, image.size.height);
+//                [self.scrollActive addSubview:self.imageActive];
+//                
+////            }
+//        });
+//    });
     
-    self.imageActive = [[UIImageView alloc] initWithImage:imageProduct];
-    self.imageActive.frame = CGRectMake(0.0f, 0.0f, imageProduct.size.width, imageProduct.size.height);
+    self.imageActive.frame = CGRectMake(0.0f, 0.0f, self.imageActive.image.size.width, self.imageActive.image.size.height);
     [self.scrollActive addSubview:self.imageActive];
 
     self.scrollActive.minimumZoomScale = 1.0;
@@ -189,6 +203,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *viewHeader = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, tableView.frame.size.width, 25.0f)];
+    viewHeader.backgroundColor = [UIColor whiteColor];
     if (section == 0) {
         CGRect frame = viewHeader.frame;
         frame.size.height = 50.0f;
@@ -263,7 +278,20 @@
     
     [cell.textLabel sizeToFit];
     
+    NSLog(@"labelHeight:%@",NSStringFromCGRect(cell.textLabel.frame));
    
+    UIWebView *webViewDescription = [[UIWebView alloc] initWithFrame:CGRectMake(5.0f, 5.0f, cell.textLabel.frame.size.width - 10.0f, cell.textLabel.frame.size.height)];
+    webViewDescription.scalesPageToFit = NO;
+    webViewDescription.userInteractionEnabled = NO;
+    [cell.contentView addSubview:webViewDescription];
+    
+    NSString *htmlString = [NSString stringWithFormat:@"<span style=\"font-family: 'HelveticaNeue-CondensedBold'; font-size: 18\">%@</span>",self.selected[@"desc"]];
+    
+    [webViewDescription loadHTMLString:htmlString baseURL:nil];
+    
+    cell.textLabel.hidden = YES;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     return cell;
 }
 
