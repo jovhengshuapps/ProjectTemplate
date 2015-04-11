@@ -29,6 +29,13 @@
     return image;
 }
 
+- (UIImage*)URLToImage:(NSString *)urlPath{
+    NSURL *url = [NSURL URLWithString:urlPath];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *image = [[UIImage alloc] initWithData:data];
+    return image;
+}
+
 -(void)setFontFamily:(NSString*)fontFamily forView:(UIView*)view andSubViews:(BOOL)isSubViews
 {
     if ([view isKindOfClass:[UILabel class]])

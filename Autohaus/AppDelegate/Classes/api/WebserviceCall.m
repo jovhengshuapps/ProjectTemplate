@@ -30,6 +30,22 @@
        
 }
 
+- (void)getCategoriesCompletion:(void (^)(id response)) completion {
+    
+    if (!_accessPoint) {
+        self.accessPoint = [[APIAccessPoint alloc] init];
+    }
+    [self.accessPoint stopAPIRequest];
+    
+    _accessPoint.willShowCustomLoadingIndicator = YES;
+    _accessPoint.url = WS_CATEGORY;
+    _accessPoint.httpMethod = @"POST";
+    
+    [_accessPoint connectWithCompletion:^(id response) {
+        completion(response);
+    }];
+}
+
 - (void)getProductsCompletion:(void (^)(id response)) completion {
     
     if (!_accessPoint) {

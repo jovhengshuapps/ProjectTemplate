@@ -47,6 +47,7 @@
 		444C8C461ABA2E64008A8F0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C2F1ABA2E64008A8F0E /* Main.storyboard */; };
 		444C8C481ABA2E64008A8F0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 444C8C321ABA2E64008A8F0E /* main.m */; };
 		444EDF4F1AB24F9E007B8354 /* CollectionCellText.m in Sources */ = {isa = PBXBuildFile; fileRef = 444EDF4E1AB24F9E007B8354 /* CollectionCellText.m */; };
+		447EBE2F1AC909D30044F033 /* CST_TradingImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449DD2CE1AC241BA00906318 /* CST_TradingImages.xcassets */; };
 		449DD27F1AC2307000906318 /* app_headers in Resources */ = {isa = PBXBuildFile; fileRef = 449DD27E1AC2307000906318 /* app_headers */; };
 		449DD2841AC2327700906318 /* CollectionCellText.m in Sources */ = {isa = PBXBuildFile; fileRef = 444EDF4E1AB24F9E007B8354 /* CollectionCellText.m */; };
 		449DD2861AC2327700906318 /* CartRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44453B6B1AB0FF66001A127E /* CartRootViewController.m */; };
@@ -90,7 +91,6 @@
 		449DD2C21AC2327700906318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444C8C2F1ABA2E64008A8F0E /* Main.storyboard */; };
 		449DD2C71AC23A8E00906318 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 449DD27A1AC22DF700906318 /* Info.plist */; };
 		449DD2CD1AC23D6900906318 /* app_headers in Resources */ = {isa = PBXBuildFile; fileRef = 449DD2CC1AC23D6900906318 /* app_headers */; };
-		449DD2CF1AC241BA00906318 /* CST_TradingImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449DD2CE1AC241BA00906318 /* CST_TradingImages.xcassets */; };
 		449DD2D11AC241F000906318 /* AutohausImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449DD2D01AC241F000906318 /* AutohausImages.xcassets */; };
 		44EEC4AC1AB1101300DA1CA9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EEC4AB1AB1101300DA1CA9 /* LoginViewController.m */; };
 		44EEC4AF1AB111BE00DA1CA9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EEC4AE1AB111BE00DA1CA9 /* RegisterViewController.m */; };
@@ -669,6 +669,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				447EBE2F1AC909D30044F033 /* CST_TradingImages.xcassets in Resources */,
 				449DD2BD1AC2327700906318 /* century gothic.ttf in Resources */,
 				449DD2C01AC2327700906318 /* century gothic bold.ttf in Resources */,
 				449DD2CD1AC23D6900906318 /* app_headers in Resources */,

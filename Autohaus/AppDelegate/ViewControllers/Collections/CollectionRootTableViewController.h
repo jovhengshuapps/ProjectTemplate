@@ -10,6 +10,7 @@
 #import "CollectionRootCell.h"
 #import "CollectionListTableViewController.h"
 #import "BaseConfig.h"
+#import "WebserviceCall.h"
 
 @interface CollectionRootTableViewController : UITableViewController
 @property (strong, nonatomic) NSMutableDictionary     *datasource;

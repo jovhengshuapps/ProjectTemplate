@@ -87,8 +87,6 @@
         
         NSInteger index= indexPath.row + (indexPath.row + y);
         
-        Utilities *convert = [Utilities new];
-        
         NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
         [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
         

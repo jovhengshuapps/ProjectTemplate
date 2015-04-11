@@ -95,7 +95,7 @@
         
         [self.tableView reloadData];
     }];
-    
+      
     
     //setup table header view
     UIView *viewHeader = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.frame.size.width, 54.0f)];
@@ -183,6 +183,8 @@
     UIView *container = [[UIView alloc] initWithFrame:CGRectMake(15.0f, 10.0f, tableView.frame.size.width-30.0f, 44.0f)];
     container.layer.cornerRadius = SHOP_SECTION_CORNER;
     container.backgroundColor = SHOP_SECTION_BGCOLOR;
+    container.layer.borderColor = SHOP_SECTION_BORDERCOLOR.CGColor;
+    container.layer.borderWidth = 2.0f;
     container.tag = section;
     
     UILabel *labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, container.frame.size.width - 50.0f, 44.0f)];

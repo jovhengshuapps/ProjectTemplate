@@ -166,6 +166,8 @@
     cell.textLabel.textColor = HOME_CELL_TEXTCOLOR;
     
     cell.backgroundColor = HOME_CELL_BGCOLOR;
+    cell.layer.borderColor = HOME_CELL_BORDERCOLOR.CGColor;
+    cell.layer.borderWidth = 2.0f;
     cell.layer.cornerRadius = HOME_CELL_CORNER;
     
     return cell;

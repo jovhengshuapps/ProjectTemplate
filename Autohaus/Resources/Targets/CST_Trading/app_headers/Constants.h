@@ -76,8 +76,9 @@
 #define NAV_ITEM_COLOR                                      COLOR_RGB(45.0f,45.0f,45.0f)
 #define NAV_BAR_COLOR                                       COLOR_RGB(230.0f,230.0f,230.0f)
 #define TAB_BAR_COLOR                                       COLOR_RGB(230.0f,230.0f,230.0f)
-#define TAB_BAR_ITEM_NORMAL                                 COLOR_RGB(163.0f,98.0f,4.0f)
-#define TAB_BAR_ITEM_SELECTED                               COLOR_RGB(35.0f,32.0f,33.0f)
+#define TAB_BAR_ITEM_NORMAL                                 COLOR_RGB(35.0f,32.0f,33.0f)
+#define TAB_BAR_ITEM_SELECTED                               COLOR_RGB(163.0f,98.0f,4.0f)
+#define TAB_BAR_ITEM_FONT                                   kFONT_HelveticaNeueLight(14.0f)
 #define NAV_INFO_BUTTON                                     [UIImage imageNamed:@"navbar_button_details_iPhone"]
 #define STATUSBAR_STYLE                                     UIBarStyleDefault
 
@@ -105,18 +106,20 @@
 
 #define HOME_ABOUT_IMAGE                                    [UIImage imageNamed:@"image_about_home_iPhone"]
 #define HOME_ABOUT_TEXT                                     @"CST Trade and marketing is established in 2014 We are committed to bring the latest handphone accessories at the best price."
-#define HOME_SECTION_TEXTFONT                               kFONT_HelveticaNeueCondensedBold(18.0f)
+#define HOME_SECTION_TEXTFONT                               kFONT_HelveticaNeueMedium(18.0f)
 #define HOME_SECTION_TEXTCOLOR                              [UIColor whiteColor]
-#define HOME_SECTION_BARCOLOR                               COLOR_RGB(69.0f,178.0f,118.0f)
-#define HOME_CELL_BGCOLOR                                   COLOR_GRAY(230.0f)
+#define HOME_SECTION_BARCOLOR                               COLOR_RGB(35.0f,32.0f,33.0f)
+#define HOME_CELL_BGCOLOR                                   COLOR_GRAY(216.0f)
+#define HOME_CELL_BORDERCOLOR                               COLOR_GRAY(230.0f)
 #define HOME_CELL_TEXTFONT                                  kFONT_HelveticaNeueMedium(16.0f)
-#define HOME_CELL_TEXTCOLOR                                 COLOR_GRAY(63.0f)
+#define HOME_CELL_TEXTCOLOR                                 COLOR_RGB(35.0f,32.0f,33.0f)
 #define HOME_CELL_CORNER                                    6.0f
 
 #define SHOP_SECTION_BGCOLOR                                COLOR_GRAY(230.0f)
+#define SHOP_SECTION_BORDERCOLOR                            COLOR_GRAY(216.0f)
 #define SHOP_SECTION_CORNER                                 6.0f
 #define SHOP_SECTION_CELL_FONT                              kFONT_HelveticaNeueMedium(18.0f)
-#define SHOP_SECTION_CELL_COLOR                             COLOR_GRAY(63.0f)
+#define SHOP_SECTION_CELL_COLOR                             COLOR_RGB(35.0f,32.0f,33.0f)
 #define SHOP_SEPARATOR_COLOR                                COLOR_GRAY(230.0f)
 #define SHOP_SEPARATOR_SIZE                                 4.0f
 
