@@ -14,6 +14,7 @@
 //#define WS_INQUIRY                       @"http://autohaus.com.sg/services/?type=inquiry"
 //#define WS_UPDATE_INFO                   @"http://autohaus.com.sg/services/?type=update"
 //#define WS_CHECKOUT                      @"http://autohaus.com.sg/services/?type=checkout"
+// test code line
 #define WS_GET_CART                      @"http://www.csttrade.sg/services/?type=getcart"
 #define WS_ADD_TO_CART                   @"http://www.csttrade.sg/services/?type=add_cart"
 //#define WS_COUNTRY                       @"http://autohaus.com.sg/services/?type=Country"
