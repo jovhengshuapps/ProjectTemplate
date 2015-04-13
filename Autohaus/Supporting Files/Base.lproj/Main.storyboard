@@ -1404,7 +1404,7 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
         <!--Collection Detail Main View Controller-->
         <scene sceneID="GJI-oB-EWA">
             <objects>
-                <viewController id="Rsd-4j-4I9" customClass="CollectionDetailMainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CollectionDetailMain" id="Rsd-4j-4I9" customClass="CollectionDetailMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JZE-m8-guN"/>
                         <viewControllerLayoutGuide type="bottom" id="W4g-ey-sFG"/>

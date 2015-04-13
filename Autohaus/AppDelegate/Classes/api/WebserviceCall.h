@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "BaseConfig.h"
 #import "APIAccessPoint.h"
-#import "WebserviceCallURL.h"
 
 
 typedef NS_ENUM(NSInteger, APIResponse) {

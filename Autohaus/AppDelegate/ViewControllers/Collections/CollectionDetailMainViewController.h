@@ -11,5 +11,5 @@
 
 @interface CollectionDetailMainViewController : UIViewController <UIScrollViewDelegate, MFMailComposeViewControllerDelegate, UITableViewDataSource>
 @property (strong, nonatomic) NSDictionary *selected;
-@property (strong, nonatomic) UIImageView  *imageActive;
+//@property (strong, nonatomic) UIImage  *image;
 @end

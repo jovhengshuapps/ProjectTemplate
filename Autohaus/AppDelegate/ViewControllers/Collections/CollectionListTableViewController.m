@@ -64,7 +64,7 @@
     if ([segue.identifier isEqualToString:kSegue_Detail]) {
         CollectionDetailMainViewController *detail = segue.destinationViewController;
         detail.selected = datasource[objectTag];
-        detail.imageActive.image = ((UIButton*)sender).imageView.image;
+//        detail.image = ((UIButton*)sender).imageView.image;
     }
 }
 #pragma mark - Delegate Methods

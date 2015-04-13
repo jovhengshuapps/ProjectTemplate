@@ -71,24 +71,23 @@
     
     self.arrayOfCollection = nil;
     [[WebserviceCall new] getProductsCompletion:^(id response) {
-//            NSLog(@"response:%@",response);
+        
         NSMutableArray *list = [[NSMutableArray alloc] init];
         NSMutableArray *categoryChecker = [[NSMutableArray alloc] init];
         
+        NSArray *responseProduct = ([response isKindOfClass:[NSDictionary class]])?[[response objectForKey:@"response"] objectForKey:@"products"]:response;
         
-        for (NSDictionary *products in response[@"response"][@"products"]) {
+        for (NSDictionary *products in responseProduct) {
             if (![categoryChecker containsObject:products[@"category"]]) {
                 [categoryChecker addObject:products[@"category"]];
                 NSDictionary *item = [[NSDictionary alloc] initWithObjectsAndKeys:products[@"category"],@"text",@"",@"image", nil];
                 [list addObject:item];
             }
-            
         }
         
         NSDictionary *section = [NSDictionary dictionaryWithObjectsAndKeys:@"Product Categories", @"title", list, @"list", nil];
         
         self.arrayOfCollection = [NSArray arrayWithObjects:section, nil];
-        
         
         [self.collectionHome reloadData];
     }];

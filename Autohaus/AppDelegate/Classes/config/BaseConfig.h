@@ -24,6 +24,8 @@
 
 #ifdef AUTOHAUS
 #import <Autohaus/app_headers/Constants.h>
+#import <Autohaus/app_headers/WebserviceCallURL.h>
 #elif CST
 #import <CST_Trading/app_headers/Constants.h>
+#import <CST_Trading/app_headers/WebserviceCallURL.h>
 #endif

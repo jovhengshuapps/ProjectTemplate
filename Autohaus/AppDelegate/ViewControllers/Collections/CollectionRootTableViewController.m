@@ -8,6 +8,7 @@
 
 #import "CollectionRootTableViewController.h"
 #import "WebserviceCall.h"
+#import "CollectionDetailMainViewController.h"
 
 #define kSegue_List     @"pushList"
 
@@ -67,12 +68,15 @@
     self.datasource = [[NSMutableDictionary alloc] init];
     self.sectionKeys = [[NSMutableArray alloc] init];
     
+    
     [[WebserviceCall new] getProductsCompletion:^(id response) {
 //        NSLog(@"response:%@",response);
         
         self.sectionKeys = [[NSMutableArray alloc] init];
         
-        for (NSDictionary *products in response[@"response"][@"products"]) {
+        NSArray *responseProduct = ([response isKindOfClass:[NSDictionary class]])?[[response objectForKey:@"response"] objectForKey:@"products"]:response;
+        
+        for (NSDictionary *products in responseProduct) {
             if (![self.sectionKeys containsObject:products[@"category"]]) {
                 [self.sectionKeys addObject:products[@"category"]];
             }
@@ -81,7 +85,7 @@
         NSMutableArray *allProductList = [[NSMutableArray alloc] init];
         for (NSString *categoryKey in self.sectionKeys) {
             NSMutableArray *list = [[NSMutableArray alloc] init];
-            for (NSDictionary *products in response[@"response"][@"products"]) {
+            for (NSDictionary *products in responseProduct) {
                 if ([products[@"category"] isEqualToString:categoryKey]) {
                     NSDictionary *item = [NSDictionary dictionaryWithObjectsAndKeys:products[@"name"],@"name",products[@"price"],@"price",products[@"image"],@"image",products[@"description"],@"desc", nil];
                     [list addObject:item];
@@ -104,6 +108,8 @@
     UIView *container = [[UIView alloc] initWithFrame:CGRectMake(15.0f, 10.0f, self.tableView.frame.size.width-30.0f, 44.0f)];
     container.layer.cornerRadius = SHOP_SECTION_CORNER;
     container.backgroundColor = SHOP_SECTION_BGCOLOR;
+    container.layer.borderColor = SHOP_SECTION_BORDERCOLOR.CGColor;
+    container.layer.borderWidth = 2.0f;
     
     UILabel *labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 0.0f, container.frame.size.width - 50.0f, 44.0f)];
     labelTitle.text = @"All Products";
@@ -265,12 +271,11 @@
         
         [self.navigationController pushViewController:list animated:YES];
     }else{
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kAppName
-//                                                        message:@"Collection is empty. Please try something else"
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"Okay"
-//                                              otherButtonTitles:nil, nil];
-//        [alert show];
+        NSLog(@"data:%@",[[self.datasource objectForKey:key] objectAtIndex:objectTag]);
+        CollectionDetailMainViewController *detail = kStoryboard(@"CollectionDetailMain");
+        detail.selected = [[self.datasource objectForKey:key] objectAtIndex:objectTag];
+        
+        [self.navigationController pushViewController:detail animated:YES];
     }
     
 }

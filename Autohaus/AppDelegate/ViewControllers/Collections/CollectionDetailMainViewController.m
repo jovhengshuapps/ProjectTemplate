@@ -16,6 +16,7 @@
 
 @interface CollectionDetailMainViewController ()
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollActive;
+@property (strong, nonatomic) UIImageView  *imageActive;
 @property (strong, nonatomic) IBOutlet UITableView *tableViewMain;
 @property (weak, nonatomic) IBOutlet UIView *viewActionButtons;
 @property (weak, nonatomic) IBOutlet UIButton *buttonAddCart;
@@ -28,6 +29,8 @@
 @end
 
 @implementation CollectionDetailMainViewController
+//@synthesize image;
+@synthesize selected;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,27 +54,33 @@
     [super viewDidLoad];
     [self initAppTheme];
     
-//    self.imageActive.image = [UIImage imageNamed:@"login_logo_iPhone"];
-//    NSURL *imageURL = [NSURL URLWithString:[self.selected valueForKey:@"image"]];
-//    
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-//        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            // Update the UI
-////            if (imageData) {
-//                NSLog(@"Yes");
-//                UIImage *image = [UIImage imageWithData:imageData];
-//                self.imageActive.image = image;
-//                self.imageActive.frame = CGRectMake(0.0f, 0.0f, image.size.width, image.size.height);
-//                [self.scrollActive addSubview:self.imageActive];
-//                
-////            }
-//        });
-//    });
+    if (self.imageActive == nil) {
+        self.imageActive = [[UIImageView alloc] initWithFrame:self.scrollActive.frame];
+        self.imageActive.contentMode = UIViewContentModeScaleAspectFit;
+    }
     
-    self.imageActive.frame = CGRectMake(0.0f, 0.0f, self.imageActive.image.size.width, self.imageActive.image.size.height);
-    [self.scrollActive addSubview:self.imageActive];
+//    self.imageActive.image = self.image;
+    
+    NSURL *imageURL = [NSURL URLWithString:[self.selected valueForKey:@"image"]];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // Update the UI
+            if (imageData) {
+                
+                UIImage *image2 = [UIImage imageWithData:imageData];
+                self.imageActive.image = image2;
+//                self.imageActive.frame = CGRectMake(0.0f, 0.0f, image2.size.width, image2.size.height);
+                [self.scrollActive addSubview:self.imageActive];
+                
+            }
+        });
+    });
+    
+//    self.imageActive.frame = CGRectMake(0.0f, 0.0f, self.image.size.width, self.image.size.height);
+//    [self.scrollActive addSubview:self.imageActive];
 
     self.scrollActive.minimumZoomScale = 1.0;
     self.scrollActive.maximumZoomScale = 6.0;
@@ -257,7 +266,7 @@
     
     CGRect labelSize = [self.selected[@"desc"] boundingRectWithSize:CGSizeMake(self.tableViewMain.frame.size.width, 9999.0f) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObjectsAndKeys:SHOP_ITEM_DESC_TITLECOLOR,NSForegroundColorAttributeName,SHOP_ITEM_DESC_TITLEFONT,NSFontAttributeName, nil] context:nil];
     
-    return labelSize.size.height;
+    return labelSize.size.height + 50.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -266,28 +275,44 @@
     UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:identifier];
    
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+//    }
+    
+    
+//    cell.textLabel.text = self.selected[@"desc"];
+//    cell.textLabel.font = SHOP_ITEM_DESC_TITLEFONT;
+//    cell.textLabel.textColor = SHOP_ITEM_DESC_TITLECOLOR;
+//    cell.textLabel.numberOfLines = 0;
+//    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+//    
+//    [cell.textLabel sizeToFit];
+    
+    
+    UIWebView *webView = (UIWebView*)[cell viewWithTag:1111];
+    
+    if (webView == nil) {
+        webView = [[UIWebView alloc] initWithFrame:CGRectZero];
+        webView.scalesPageToFit = NO;
+        webView.userInteractionEnabled = NO;
+        webView.tag = 1111;
+        [cell.contentView addSubview:webView];
+        
+        webView.backgroundColor = [UIColor clearColor];
+        webView.opaque = NO;
+        
     }
     
-    cell.textLabel.text = self.selected[@"desc"];
-    cell.textLabel.font = SHOP_ITEM_DESC_TITLEFONT;
-    cell.textLabel.textColor = SHOP_ITEM_DESC_TITLECOLOR;
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    CGRect labelSize = [self.selected[@"desc"] boundingRectWithSize:CGSizeMake(self.tableViewMain.frame.size.width, 9999.0f) options:NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObjectsAndKeys:SHOP_ITEM_DESC_TITLECOLOR,NSForegroundColorAttributeName,SHOP_ITEM_DESC_TITLEFONT,NSFontAttributeName, nil] context:nil];
     
-    [cell.textLabel sizeToFit];
-    
-    NSLog(@"labelHeight:%@",NSStringFromCGRect(cell.textLabel.frame));
-   
-    UIWebView *webViewDescription = [[UIWebView alloc] initWithFrame:CGRectMake(5.0f, 5.0f, cell.textLabel.frame.size.width - 10.0f, cell.textLabel.frame.size.height)];
-    webViewDescription.scalesPageToFit = NO;
-    webViewDescription.userInteractionEnabled = NO;
-    [cell.contentView addSubview:webViewDescription];
+    webView.frame = CGRectMake(5.0f, 5.0f, labelSize.size.width - 10.0f, labelSize.size.height + 50.0f);
     
     NSString *htmlString = [NSString stringWithFormat:@"<span style=\"font-family: 'HelveticaNeue-CondensedBold'; font-size: 18\">%@</span>",self.selected[@"desc"]];
     
-    [webViewDescription loadHTMLString:htmlString baseURL:nil];
+    [webView loadHTMLString:htmlString baseURL:nil];
+    
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"WebKitDiskImageCacheEnabled"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     cell.textLabel.hidden = YES;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
