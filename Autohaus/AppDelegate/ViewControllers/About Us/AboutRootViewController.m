@@ -54,6 +54,8 @@
     self.content.font = ABOUTUS_CONTENTFONT;
     self.content.textColor = ABOUTUS_CONTENTCOLOR;
     
+    //get text for content about us
+    self.content.text = [NSString stringWithFormat:@"%@ is an automotive parts and accessories retailer that is dedicated in bringing both value and quality to its customers.\nOur range of products includes Shell engine oil, Denso spark plugs, Bosch wipers and Nisshinbo brake pads just to name a few.\n%@ is a reg- istered business entity in Singapore (Registration No: 53271667A). We are in the business of online retail for automo- bile lubricants, additives, accessories",kAppName,kAppName];
     
 }
 #pragma mark - Delegate Methods

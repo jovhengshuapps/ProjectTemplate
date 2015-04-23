@@ -442,9 +442,6 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1d-nh-bd7">
                                 <rect key="frame" x="20" y="301" width="560" height="218"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Autohaus is an automotive parts and accessories retailer that is dedicated in bringing both value and quality to its customers.
-Our range of products includes Shell engine oil, Denso spark plugs, Bosch wipers and Nisshinbo brake pads just to name a few.
-Autohaus Trading and Services is a reg- istered business entity in Singapore (Registration No: 53271667A). We are in the business of online retail for automo- bile lubricants, additives, accessories</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" ambiguous="YES">

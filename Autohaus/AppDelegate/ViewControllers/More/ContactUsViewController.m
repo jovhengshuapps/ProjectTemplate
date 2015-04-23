@@ -120,8 +120,6 @@
      */
     //popTipView.disableTapToDismiss = YES;
     //popTipView.hasGradientBackground = NO;
-    popTipView.sidePadding = 30.0f;
-    popTipView.topMargin = 20.0f;
     //popTipView.pointerSize = 50.0f;
     
     popTipView.sidePadding = 5.0f;
