@@ -92,6 +92,8 @@
 		449DD2C71AC23A8E00906318 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 449DD27A1AC22DF700906318 /* Info.plist */; };
 		449DD2CD1AC23D6900906318 /* app_headers in Resources */ = {isa = PBXBuildFile; fileRef = 449DD2CC1AC23D6900906318 /* app_headers */; };
 		449DD2D11AC241F000906318 /* AutohausImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449DD2D01AC241F000906318 /* AutohausImages.xcassets */; };
+		44CC24B31AE85AC8001D53CD /* CMPopTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CC24B21AE85AC8001D53CD /* CMPopTipView.swift */; };
+		44CC24B41AE85AC8001D53CD /* CMPopTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CC24B21AE85AC8001D53CD /* CMPopTipView.swift */; };
 		44EEC4AC1AB1101300DA1CA9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EEC4AB1AB1101300DA1CA9 /* LoginViewController.m */; };
 		44EEC4AF1AB111BE00DA1CA9 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44EEC4AE1AB111BE00DA1CA9 /* RegisterViewController.m */; };
 /* End PBXBuildFile section */
@@ -190,6 +192,9 @@
 		449DD2CC1AC23D6900906318 /* app_headers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app_headers; sourceTree = "<group>"; };
 		449DD2CE1AC241BA00906318 /* CST_TradingImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CST_TradingImages.xcassets; sourceTree = "<group>"; };
 		449DD2D01AC241F000906318 /* AutohausImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AutohausImages.xcassets; sourceTree = "<group>"; };
+		44CC24B01AE85AC8001D53CD /* Autohaus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Autohaus-Bridging-Header.h"; sourceTree = "<group>"; };
+		44CC24B11AE85AC8001D53CD /* CST Trading-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CST Trading-Bridging-Header.h"; sourceTree = "<group>"; };
+		44CC24B21AE85AC8001D53CD /* CMPopTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMPopTipView.swift; sourceTree = "<group>"; };
 		44EEC4AA1AB1101300DA1CA9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		44EEC4AB1AB1101300DA1CA9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		44EEC4AD1AB111BE00DA1CA9 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -332,6 +337,9 @@
 				44453B331AB0FF66001A127E /* BlurringView.m */,
 				44453B341AB0FF66001A127E /* UIImage+ImageEffects.h */,
 				44453B351AB0FF66001A127E /* UIImage+ImageEffects.m */,
+				44CC24B21AE85AC8001D53CD /* CMPopTipView.swift */,
+				44CC24B01AE85AC8001D53CD /* Autohaus-Bridging-Header.h */,
+				44CC24B11AE85AC8001D53CD /* CST Trading-Bridging-Header.h */,
 			);
 			path = categories;
 			sourceTree = "<group>";
@@ -673,7 +681,6 @@
 				449DD2BD1AC2327700906318 /* century gothic.ttf in Resources */,
 				449DD2C01AC2327700906318 /* century gothic bold.ttf in Resources */,
 				449DD2CD1AC23D6900906318 /* app_headers in Resources */,
-				449DD2CF1AC241BA00906318 /* CST_TradingImages.xcassets in Resources */,
 				449DD2C71AC23A8E00906318 /* Info.plist in Resources */,
 				449DD2C21AC2327700906318 /* Main.storyboard in Resources */,
 			);
@@ -695,6 +702,7 @@
 				443B1CA91AB64A3F0090FFFA /* WebserviceCall.m in Sources */,
 				33C2B7001ABD2A1F0027EEDB /* InquiryViewController.m in Sources */,
 				44453B941AB0FF66001A127E /* AboutRootViewController.m in Sources */,
+				44CC24B31AE85AC8001D53CD /* CMPopTipView.swift in Sources */,
 				444C8C481ABA2E64008A8F0E /* main.m in Sources */,
 				44453B7E1AB0FF66001A127E /* UIImage+ImageEffects.m in Sources */,
 				44453B991AB0FF66001A127E /* CollectionListTableViewController.m in Sources */,
@@ -746,6 +754,7 @@
 				449DD2901AC2327700906318 /* WebserviceCall.m in Sources */,
 				449DD2911AC2327700906318 /* InquiryViewController.m in Sources */,
 				449DD2921AC2327700906318 /* AboutRootViewController.m in Sources */,
+				44CC24B41AE85AC8001D53CD /* CMPopTipView.swift in Sources */,
 				449DD2931AC2327700906318 /* main.m in Sources */,
 				449DD2951AC2327700906318 /* UIImage+ImageEffects.m in Sources */,
 				449DD2971AC2327700906318 /* CollectionListTableViewController.m in Sources */,
@@ -817,6 +826,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -835,6 +846,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = ProjectTemplate;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -858,6 +870,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -869,6 +883,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_MODULE_NAME = ProjectTemplate;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -880,6 +895,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -893,6 +909,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/PrivateHeaders";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Autohaus/AppDelegate/Classes/categories/Autohaus-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "./Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/app_headers";
 			};
 			name = Debug;
@@ -903,6 +921,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"\"$(SRCROOT)/../Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/app_headers\"",
@@ -911,6 +930,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/PrivateHeaders";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Autohaus/AppDelegate/Classes/categories/Autohaus-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "./Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/app_headers";
 			};
 			name = Release;
@@ -955,6 +975,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App-Icon";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Launch-Image";
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -968,6 +989,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/PrivateHeaders";
 				PRODUCT_NAME = CST_Trading;
+				SWIFT_OBJC_BRIDGING_HEADER = "Autohaus/AppDelegate/Classes/categories/CST Trading-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "./Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/app_headers";
 			};
 			name = Debug;
@@ -978,6 +1001,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App-Icon";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Launch-Image";
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
 					"\"$(SRCROOT)/../Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/app_headers\"",
@@ -986,6 +1010,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/PrivateHeaders";
 				PRODUCT_NAME = CST_Trading;
+				SWIFT_OBJC_BRIDGING_HEADER = "Autohaus/AppDelegate/Classes/categories/CST Trading-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "./Resources/Targets/$(PRODUCT_NAME:c99extidentifier)/app_headers";
 			};
 			name = Release;

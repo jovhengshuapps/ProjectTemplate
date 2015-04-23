@@ -12,6 +12,8 @@
 	<dict>
 		<key>19CDF5E92D8102745A34EFDE054B2129221A763A</key>
 		<string>https://github.com/jovhengshuapps/ProjectTemplate.git</string>
+		<key>6F977CC95E17EFDC3F5A20B3DE6ACA9914F309FF</key>
+		<string>https://github.com/jovhengshuapps/AgentBridge.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Autohaus.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>19CDF5E92D8102745A34EFDE054B2129221A763A</key>
 		<string>../..</string>
+		<key>6F977CC95E17EFDC3F5A20B3DE6ACA9914F309FF</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/jovhengshuapps/ProjectTemplate.git</string>
@@ -28,6 +32,14 @@
 	<string>19CDF5E92D8102745A34EFDE054B2129221A763A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6F977CC95E17EFDC3F5A20B3DE6ACA9914F309FF</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

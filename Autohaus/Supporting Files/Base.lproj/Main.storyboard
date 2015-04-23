@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JuO-im-MpG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JuO-im-MpG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -447,6 +447,9 @@ Our range of products includes Shell engine oil, Denso spark plugs, Bosch wipers
 Autohaus Trading and Services is a reg- istered business entity in Singapore (Registration No: 53271667A). We are in the business of online retail for automo- bile lubricants, additives, accessories</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
                             </textView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" image="image_about_home_iPhone" translatesAutoresizingMaskIntoConstraints="NO" id="VFF-V0-16L">
                                 <rect key="frame" x="0.0" y="64" width="320" height="200"/>
@@ -1027,9 +1030,29 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="L0L-Wl-Qqd">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0L-Wl-Qqd">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfT-yr-vHu" userLabel="hackCenter">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="6IL-tF-la2"/>
+                                    <constraint firstAttribute="height" constant="1" id="jtg-eA-gz5"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6IL-tF-la2"/>
+                                        <exclude reference="jtg-eA-gz5"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="6IL-tF-la2"/>
+                                        <include reference="jtg-eA-gz5"/>
+                                    </mask>
+                                </variation>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqu-FX-cUL" userLabel="ActionButtons View">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
@@ -1129,46 +1152,58 @@ Autohaus Trading and Services is a reg- istered business entity in Singapore (Re
                             <constraint firstItem="xqu-FX-cUL" firstAttribute="top" secondItem="L0L-Wl-Qqd" secondAttribute="bottom" constant="23" id="1xs-oN-Rhx"/>
                             <constraint firstItem="L0L-Wl-Qqd" firstAttribute="leading" secondItem="Ni4-3H-OBl" secondAttribute="leading" id="CDy-rU-v4d"/>
                             <constraint firstItem="xqu-FX-cUL" firstAttribute="leading" secondItem="Ni4-3H-OBl" secondAttribute="leadingMargin" id="Em1-pK-1j9"/>
+                            <constraint firstItem="L0L-Wl-Qqd" firstAttribute="centerY" secondItem="FfT-yr-vHu" secondAttribute="centerY" id="aZu-RF-Ep5">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-100"/>
+                            </constraint>
                             <constraint firstItem="TsO-Ct-jDU" firstAttribute="top" secondItem="L0L-Wl-Qqd" secondAttribute="bottom" constant="115" id="gyp-Mg-j3O"/>
                             <constraint firstAttribute="trailing" secondItem="L0L-Wl-Qqd" secondAttribute="trailing" id="jAH-Rg-stZ"/>
                             <constraint firstItem="xqu-FX-cUL" firstAttribute="trailing" secondItem="Ni4-3H-OBl" secondAttribute="trailingMargin" id="pSU-0t-Yj3"/>
+                            <constraint firstItem="L0L-Wl-Qqd" firstAttribute="centerX" secondItem="FfT-yr-vHu" secondAttribute="centerX" id="qqc-kx-pyV"/>
                             <constraint firstItem="L0L-Wl-Qqd" firstAttribute="top" secondItem="Ni4-3H-OBl" secondAttribute="top" id="w1T-p4-MJt"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="L0L-Wl-Qqd"/>
+                                <exclude reference="FfT-yr-vHu"/>
                                 <exclude reference="xqu-FX-cUL"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="gyp-Mg-j3O"/>
                                 <exclude reference="CDy-rU-v4d"/>
+                                <exclude reference="aZu-RF-Ep5"/>
                                 <exclude reference="jAH-Rg-stZ"/>
+                                <exclude reference="qqc-kx-pyV"/>
                                 <exclude reference="w1T-p4-MJt"/>
                                 <exclude reference="1xs-oN-Rhx"/>
                                 <exclude reference="Em1-pK-1j9"/>
                                 <exclude reference="pSU-0t-Yj3"/>
+                                <exclude reference="gyp-Mg-j3O"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="L0L-Wl-Qqd"/>
+                                <include reference="FfT-yr-vHu"/>
                                 <include reference="xqu-FX-cUL"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="gyp-Mg-j3O"/>
                                 <include reference="CDy-rU-v4d"/>
+                                <include reference="aZu-RF-Ep5"/>
                                 <include reference="jAH-Rg-stZ"/>
+                                <include reference="qqc-kx-pyV"/>
                                 <include reference="w1T-p4-MJt"/>
                                 <include reference="1xs-oN-Rhx"/>
                                 <include reference="Em1-pK-1j9"/>
                                 <include reference="pSU-0t-Yj3"/>
+                                <include reference="gyp-Mg-j3O"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="btnCall" destination="wRP-yi-YTo" id="TJo-Vr-3Ih"/>
                         <outlet property="btnEmail" destination="0sO-f7-65j" id="kSx-Av-30X"/>
+                        <outlet property="hackCenterView" destination="FfT-yr-vHu" id="yOR-Yw-Mhr"/>
                         <outlet property="mapView" destination="L0L-Wl-Qqd" id="yrU-HH-vC5"/>
+                        <outlet property="view" destination="Ni4-3H-OBl" id="UvW-YH-ro2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0g-iL-Eco" userLabel="First Responder" sceneMemberID="firstResponder"/>

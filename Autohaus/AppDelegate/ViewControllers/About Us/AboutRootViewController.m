@@ -50,8 +50,9 @@
 
     self.title = @"About Us";
     
-    self.header.font = kFONT_HelveticaNeue(16);
-    self.content.font = kFONT_HelveticaNeue(18);
+    self.header.font = ABOUTUS_CONTENTFONT;
+    self.content.font = ABOUTUS_CONTENTFONT;
+    self.content.textColor = ABOUTUS_CONTENTCOLOR;
     
     
 }

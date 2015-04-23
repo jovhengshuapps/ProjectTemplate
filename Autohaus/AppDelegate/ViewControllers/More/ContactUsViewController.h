@@ -10,7 +10,8 @@
 #import <MapKit/MapKit.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import "BaseConfig.h"
+#import "ProjectTemplate-Swift.h"
 
-@interface ContactUsViewController : UIViewController<MFMailComposeViewControllerDelegate>
+@interface ContactUsViewController : UIViewController<MFMailComposeViewControllerDelegate, CMPopTipViewDelegate>
 
 @end

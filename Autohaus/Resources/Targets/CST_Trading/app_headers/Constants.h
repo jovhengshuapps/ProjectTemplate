@@ -7,11 +7,11 @@
 #define Autohaus_Constants_h
 
 //APP Constants
-#define kAppName                @"CST Trade and marketing"
+#define kAppName                @"CST Trade and Marketing"
 #define kAppEmail               @[@"enquiry@gingerdoll.sg"]
 #define kAppTelNumber           @"tel://+65 9450 9516"
 #define kAppAddress_Title       kAppName
-#define kAppAddress_Subtitle    @"1 Derp Bldg. Herp Derp Road, Derpington City, Le Derp 259182"
+#define kAppAddress_Subtitle    @"00 St. Lorem Ipsum #09-79 ABCD Tower Singapore 600000"
 #define kAppLocation_lat        1.339001
 #define kAppLocation_long       103.778958
 
@@ -182,4 +182,16 @@
 #define MORE_CELL_BOX_COLOR                                 COLOR_GRAY(230.0f)
 #define MORE_CELL_COLOR                                     COLOR_GRAY(63.0f)
 #define MORE_CELL_CORNER                                    6.0f
+
+#define CONTACTUS_BUBBLECOLOR                               COLOR_RGB(35.0f,32.0f,33.0f)
+#define CONTACTUS_BUBBLETITLECOLOR                          COLOR_RGB(163.0f,98.0f,4.0f)
+#define CONTACTUS_BUBBLESUBTITLECOLOR                       COLOR_GRAY(255.0f)
+#define CONTACTUS_BUBBLETITLEFONT                           kFONT_HelveticaNeueMedium(26.0f)
+#define CONTACTUS_BUBBLESUBTITLEFONT                        kFONT_HelveticaNeueLight(18.0f)
+#define CONTACTUS_BUTTONTEXTCOLOR                           COLOR_RGB(35.0f,32.0f,33.0f)
+#define CONTACTUS_BUTTONTEXTFONT                            kFONT_HelveticaNeueMedium(18.0f)
+
+#define ABOUTUS_CONTENTFONT                                 kFONT_HelveticaNeue(18.0f)
+#define ABOUTUS_CONTENTCOLOR                                COLOR_RGB(35.0f,32.0f,33.0f)
+
 #endif
