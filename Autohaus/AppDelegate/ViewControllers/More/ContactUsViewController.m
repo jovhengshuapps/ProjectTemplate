@@ -122,8 +122,7 @@
     //popTipView.hasGradientBackground = NO;
     //popTipView.pointerSize = 50.0f;
     
-    popTipView.sidePadding = 5.0f;
-    popTipView.topMargin = 10.0f;
+    self.popTipView.contentPadding = UIEdgeInsetsMake(5.0f, 5.0f, 5.0f, 5.0f);
     
     self.popTipView.hasShadow = YES;
     self.popTipView.cornerRadius = 0.0;

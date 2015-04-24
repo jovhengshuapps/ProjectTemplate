@@ -186,12 +186,12 @@
 #define CONTACTUS_BUBBLECOLOR                               COLOR_RGB(35.0f,32.0f,33.0f)
 #define CONTACTUS_BUBBLETITLECOLOR                          COLOR_RGB(163.0f,98.0f,4.0f)
 #define CONTACTUS_BUBBLESUBTITLECOLOR                       COLOR_GRAY(255.0f)
-#define CONTACTUS_BUBBLETITLEFONT                           kFONT_HelveticaNeueMedium(26.0f)
+#define CONTACTUS_BUBBLETITLEFONT                           kFONT_HelveticaNeueMedium(24.0f)
 #define CONTACTUS_BUBBLESUBTITLEFONT                        kFONT_HelveticaNeueLight(18.0f)
 #define CONTACTUS_BUTTONTEXTCOLOR                           COLOR_RGB(35.0f,32.0f,33.0f)
 #define CONTACTUS_BUTTONTEXTFONT                            kFONT_HelveticaNeueMedium(18.0f)
 
-#define ABOUTUS_CONTENTFONT                                 kFONT_HelveticaNeue(18.0f)
+#define ABOUTUS_CONTENTFONT                                 kFONT_HelveticaNeue(16.0f)
 #define ABOUTUS_CONTENTCOLOR                                COLOR_RGB(35.0f,32.0f,33.0f)
 
 #endif

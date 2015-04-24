@@ -126,6 +126,7 @@ import QuartzCore
     
     var targetObject:AnyObject?
     
+    var contentPadding:UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
     
     // MARK: Private properties
     private var autoDismissTimer:NSTimer?
@@ -138,9 +139,9 @@ import QuartzCore
     private var bubbleFrame:CGRect {
         var bFrame:CGRect!
         if (pointDirection == CMPopTipPointDirection.Up) {
-            bFrame = CGRectMake(sidePadding, targetPoint.y+pointerSize, bubbleSize.width, bubbleSize.height);
+            bFrame = CGRectMake(sidePadding, targetPoint.y+pointerSize+contentPadding.top, bubbleSize.width - (contentPadding.left + contentPadding.right), bubbleSize.height + contentPadding.bottom);
         } else {
-            bFrame = CGRectMake(sidePadding, targetPoint.y-pointerSize-bubbleSize.height, bubbleSize.width, bubbleSize.height);
+            bFrame = CGRectMake(sidePadding, targetPoint.y-pointerSize-bubbleSize.height-contentPadding.top, bubbleSize.width - (contentPadding.left + contentPadding.right), bubbleSize.height + contentPadding.bottom);
         }
         return bFrame
     }
