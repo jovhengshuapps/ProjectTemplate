@@ -92,17 +92,25 @@
         
         if (y == 0) {
             
-            [cell.imageA setImage:[UIImage imageNamed:@"login_logo_iPhone"] forState:UIControlStateNormal];
+            UIImage *imageProduct = [UIImage imageNamed:@"login_logo_iPhone"];
+            
             NSURL *imageURL = [NSURL URLWithString:[datasource[index] valueForKey:@"image"]];
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
                 NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    // Update the UI
-                    [cell.imageA setImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
-                });
+                if (imageData) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        // Update the UI
+                        [cell.imageA setImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
+                        [cell setNeedsLayout];
+                    });
+                }
+                else {
+                    [cell.imageA setImage:imageProduct forState:UIControlStateNormal];
+                    [cell setNeedsLayout];
+                }
             });
+            
             
             [cell.imageA.imageView setContentMode:UIViewContentModeScaleAspectFill];
             
@@ -123,19 +131,26 @@
             if (indexPath.row + (indexPath.row + y) < [datasource count]){
                 [cell.imageB setHidden:NO];
                 
-                [cell.imageB setImage:[UIImage imageNamed:@"login_logo_iPhone"] forState:UIControlStateNormal];
+                UIImage *imageProduct = [UIImage imageNamed:@"login_logo_iPhone"];
+                
                 NSURL *imageURL = [NSURL URLWithString:[datasource[index] valueForKey:@"image"]];
                 
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
                     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        // Update the UI
-                        if (imageData) {
+                    if (imageData) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            // Update the UI
                             [cell.imageB setImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
-                        }
-                    });
+                            [cell setNeedsLayout];
+                        });
+                    }
+                    else {
+                        [cell.imageB setImage:imageProduct forState:UIControlStateNormal];
+                        [cell setNeedsLayout];
+                    }
                 });
+                
+                
                 [cell.imageB.imageView setContentMode:UIViewContentModeScaleAspectFill];
                 
                 [cell.imageB addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];

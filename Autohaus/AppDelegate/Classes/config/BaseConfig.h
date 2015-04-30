@@ -9,6 +9,8 @@
 #ifndef Autohaus_BaseConfig_h
 #define Autohaus_BaseConfig_h
 
+#import "WebserviceCall.h"
+
 #define _CONFIG_BOOL_(ARG, DEFAULT_VALUE)	([[NSUserDefaults standardUserDefaults] objectForKey:ARG] != nil ? [[NSUserDefaults standardUserDefaults] boolForKey:ARG] : DEFAULT_VALUE)
 
 #define _CONFIG_STRING_(ARG, DEFAULT_VALUE)	([[NSUserDefaults standardUserDefaults] objectForKey:ARG] != nil ? [[NSUserDefaults standardUserDefaults] stringForKey:ARG] : DEFAULT_VALUE)

@@ -59,28 +59,25 @@
         self.imageActive.contentMode = UIViewContentModeScaleAspectFit;
     }
     
-//    self.imageActive.image = self.image;
+    UIImage *imageProduct = [UIImage imageNamed:@"login_logo_iPhone"];
     
     NSURL *imageURL = [NSURL URLWithString:[self.selected valueForKey:@"image"]];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // Update the UI
-            if (imageData) {
-                
-                UIImage *image2 = [UIImage imageWithData:imageData];
-                self.imageActive.image = image2;
-//                self.imageActive.frame = CGRectMake(0.0f, 0.0f, image2.size.width, image2.size.height);
+        if (imageData) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Update the UI
+                [self.imageActive setImage:[UIImage imageWithData:imageData]];
                 [self.scrollActive addSubview:self.imageActive];
-                
-            }
-        });
+            });
+        }
+        else {
+            [self.imageActive setImage:imageProduct];
+            [self.scrollActive addSubview:self.imageActive];
+        }
     });
     
-//    self.imageActive.frame = CGRectMake(0.0f, 0.0f, self.image.size.width, self.image.size.height);
-//    [self.scrollActive addSubview:self.imageActive];
 
     self.scrollActive.minimumZoomScale = 1.0;
     self.scrollActive.maximumZoomScale = 6.0;

@@ -18,10 +18,13 @@
 #define WS_ADD_TO_CART                   @"http://autohaus.com.sg/services/?type=add_cart"
 #define WS_COUNTRY                       @"http://autohaus.com.sg/services/?type=Country"
 #define WS_CATEGORY                      @"http://autohaus.com.sg/services/?type=category"
-#define WS_CM_SUBCATEGORY                @"http://autohaus.com.sg/services/?type=sub_category"
+#define WS_SUBCATEGORY                   @"http://autohaus.com.sg/services/?type=sub_category"
 #define WS_REGISTER                      @"http://autohaus.com.sg/services?type=register"
 #define WS_PRODUCTS                      @"http://autohaus.com.sg/services/?type=products"
 #define WS_RESET_PASSWORD                @"http://autohaus.com.sg/services/?type=reset"
 #define WS_CHANGE_PASSWORD               @"http://autohaus.com.sg/services/?type=change_password"
+
+#define WS_BANNERS                       @"http://www.csttrade.sg/services?type=banners"
+#define WS_TESTIMONIALS                  @"http://www.csttrade.sg/services/?type=testimonials"
 
 #endif

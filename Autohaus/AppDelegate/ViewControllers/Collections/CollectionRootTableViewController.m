@@ -246,10 +246,33 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
+//    NSLog(@"imageURL:%@",[item objectForKey:@"image"]);
+    
     UIView *backgroundView = [[UIView alloc] initWithFrame:cell.frame];
     backgroundView.backgroundColor = SHOP_SECTION_BGCOLOR;
     
     cell.selectedBackgroundView = backgroundView;
+    
+    
+    UIImage *imageProduct = [UIImage imageNamed:@"login_logo_iPhone"];
+    
+    NSURL *imageURL = [NSURL URLWithString:[item objectForKey:@"image"]];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+        if (imageData) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Update the UI
+                [cell.imageView setImage:[UIImage imageWithData:imageData]];
+                [cell setNeedsLayout];
+            });
+        }
+        else {
+            [cell.imageView setImage:imageProduct];
+            [cell setNeedsLayout];
+        }
+    });
+    
     return cell;
 }
 

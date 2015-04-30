@@ -12,6 +12,7 @@
 
 
 typedef NS_ENUM(NSInteger, APIResponse) {
+    APIResponseInvalid = -1,
     APIResponseNotFound,             /*0 - action not defined or no post found*/
     APIResponseSuccessful,           /*1 - successful*/
     APIResponseDuplicateEntry,       /*2 - duplicate entry*/
@@ -24,7 +25,19 @@ typedef NS_ENUM(NSInteger, APIResponse) {
 @property (strong, nonatomic) APIAccessPoint *accessPoint;
 
 - (void)loginWithParameters:(NSDictionary*)parameters completion:(void (^)(id response)) completion;
+- (void)logoutWithParameters:(NSDictionary*)parameters completion:(void (^)(id response)) completion;
+- (void)registerWithParameters:(NSDictionary*)parameters completion:(void (^)(id response)) completion;
+- (void)resetPasswordWithParameters:(NSDictionary*)parameters completion:(void (^)(id response)) completion;
+- (void)changePasswordWithParameters:(NSDictionary*)parameters completion:(void (^)(id response)) completion;
 - (void)getProductsCompletion:(void (^)(id response)) completion;
 - (void)getCategoriesCompletion:(void (^)(id response)) completion;
-
+- (void)getSubCategoriesCompletion:(void (^)(id response)) completion;
+- (void)getTestimonialsCompletion:(void (^)(id response)) completion;
+- (void)getCartCompletion:(void (^)(id response)) completion;
+- (void)addToCartWithParameters:(NSDictionary*)parameters completion:(void (^)(id response)) completion;
+- (void)checkoutWithParameters:(NSDictionary*)parameters completion:(void (^)(id response)) completion;
+- (void)inquiryWithParameters:(NSDictionary*)parameters completion:(void (^)(id response)) completion;
+- (void)updateInfoWithParameters:(NSDictionary*)parameters completion:(void (^)(id response)) completion;
+- (void)countryCompletion:(void (^)(id response)) completion;
+- (void)bannersCompletion:(void (^)(id response)) completion;
 @end

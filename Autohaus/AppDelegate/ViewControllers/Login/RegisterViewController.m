@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "BaseConfig.h"
+#import "WebserviceCall.h"
 
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UIView *viewAccountDetails;
@@ -177,6 +178,24 @@
 
 #pragma mark - Custom Methods
 - (IBAction)signUpPressed:(id)sender {
+    
+    [[WebserviceCall new] registerWithParameters:@{@"user_email":self.textFieldEmailAddress.text,@"user_pass":self.textFieldPassword.text} completion:^(id response) {
+        
+        APIResponse responseAPI = (APIResponse)[[[response objectForKey:@"response"] objectForKey:@"status"] integerValue];
+        
+        if (responseAPI == APIResponseNotFound) {
+            NSLog(@"notfound");
+        }
+        else if (responseAPI == APIResponseWrongCredentials) {
+            NSLog(@"wrong login");
+        }
+        else if (responseAPI == APIResponseEmailFailed) {
+            NSLog(@"email not sent");
+        }
+        else if (responseAPI == APIResponseSuccessful) {
+            NSLog(@"success");
+        }
+    }];
 }
 
 - (IBAction)cancelPressed:(id)sender {

@@ -163,7 +163,7 @@
 #define CART_ACTION_CHECKOUT_TEXTFONT                       kFONT_HelveticaNeueCondensedBold(20.0f)
 #define CART_ACTION_QTY_FONT                                kFONT_HelveticaNeueMedium(16.0f)
 #define CART_ACTION_QTY_COLOR                               COLOR_GRAY(63.0f)
-#define CART_ACTION_PRICE_FONT                              kFONT_HelveticaNeueMedium(16.0f)
+#define CART_ACTION_PRICE_FONT                              kFONT_HelveticaNeueMedium(20.0f)
 #define CART_ACTION_PRICE_COLOR                             COLOR_RGB(69.0f,178.0f,118.0f)
 
 #define TESTIMONIAL_BOX_CORNER                              6.0f

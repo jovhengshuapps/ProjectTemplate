@@ -153,25 +153,25 @@
 #define SHOP_ADDCART_QTYLABEL_COLOR                         COLOR_GRAY(63.0f)
 
 #define CART_ITEM_NAME_FONT                                 kFONT_HelveticaNeueMedium(16.0f)
-#define CART_ITEM_NAME_COLOR                                COLOR_GRAY(63.0f)
+#define CART_ITEM_NAME_COLOR                                COLOR_RGB(35.0f,32.0f,33.0f)
 #define CART_ITEM_AMOUNT_FONT                               kFONT_HelveticaNeueLight(16.0f)
 #define CART_ITEM_AMOUNT_COLOR                              COLOR_GRAY(63.0f)
 #define CART_ITEM_IMAGE_BORDERCOLOR                         COLOR_GRAY(230.0f)
 #define CART_ACTION_VIEW_COLOR                              COLOR_GRAY(230.0f)
-#define CART_ACTION_CHECKOUT_BTNCOLOR                       COLOR_RGB(42.0f,65.0f,127.0f)
+#define CART_ACTION_CHECKOUT_BTNCOLOR                       COLOR_RGB(35.0f,32.0f,33.0f)
 #define CART_ACTION_CHECKOUT_TEXTCOLOR                      [UIColor whiteColor]
 #define CART_ACTION_CHECKOUT_TEXTFONT                       kFONT_HelveticaNeueCondensedBold(20.0f)
 #define CART_ACTION_QTY_FONT                                kFONT_HelveticaNeueMedium(16.0f)
-#define CART_ACTION_QTY_COLOR                               COLOR_GRAY(63.0f)
-#define CART_ACTION_PRICE_FONT                              kFONT_HelveticaNeueMedium(16.0f)
-#define CART_ACTION_PRICE_COLOR                             COLOR_RGB(69.0f,178.0f,118.0f)
+#define CART_ACTION_QTY_COLOR                               COLOR_RGB(35.0f,32.0f,33.0f)
+#define CART_ACTION_PRICE_FONT                              kFONT_HelveticaNeueMedium(20.0f)
+#define CART_ACTION_PRICE_COLOR                             COLOR_RGB(163.0f,98.0f,4.0f)
 
 #define TESTIMONIAL_BOX_CORNER                              6.0f
 #define TESTIMONIAL_BOX_COLOR                               COLOR_GRAY(230.0f)
 #define TESTIMONIAL_MSG_FONT                                kFONT_HelveticaNeueMedium(14.0f)
 #define TESTIMONIAL_MSG_COLOR                               COLOR_GRAY(63.0f)
 #define TESTIMONIAL_NAME_FONT                               kFONT_HelveticaNeueCondensedBold(16.0f)
-#define TESTIMONIAL_NAME_COLOR                              COLOR_RGB(69.0f,178.0f,118.0f)
+#define TESTIMONIAL_NAME_COLOR                              COLOR_RGB(163.0f,98.0f,4.0f)
 #define TESTIMONIAL_TITLE_FONT                              kFONT_HelveticaNeueLight(16.0f)
 #define TESTIMONIAL_TITLE_COLOR                             COLOR_GRAY(63.0f)
 

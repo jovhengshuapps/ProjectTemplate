@@ -12,6 +12,7 @@
 #import "Cart.h"
 #import "BaseConfig.h"
 
+
 static int width    = 320;
 static int height   = 147;
 
@@ -70,10 +71,28 @@ static int height   = 147;
     self.lblProductName.text    = [self.selected  objectForKey:@"name"];
     self.lblProductPrice.text   = kToPrice([self.selected objectForKey:@"price"]);
     
-    UIImage *imageProduct = [UIImage imageNamed:[self.selected objectForKey:@"images"]];
-    imageProduct = (imageProduct)?imageProduct:[UIImage imageNamed:@"login_logo_iPhone"];
+//    NSLog(@"imageURL:%@",[self.selected objectForKey:@"image"]);
     
-    self.imgProductImage.image  = imageProduct;
+    UIImage *imageProduct = [UIImage imageNamed:@"login_logo_iPhone"];
+    
+    NSURL *imageURL = [NSURL URLWithString:[self.selected objectForKey:@"image"]];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+        if (imageData) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Update the UI
+                self.imgProductImage.image  = [UIImage imageWithData:imageData];
+                
+                
+            });
+        }
+        else {
+            self.imgProductImage.image  = imageProduct;
+        }
+    });
+    
+    
     
     [self.viewAdd2Cart setHidden:YES];
     [self animateViewAdd2Cart];
@@ -142,24 +161,33 @@ static int height   = 147;
 }
 
 - (void)add2CartTapped:(UIBarButtonItem*)sender{
-    Utilities *convert = [Utilities new];
-    float price = [[self.selected valueForKey:@"price"] floatValue];
-    UIImage *image = [UIImage imageNamed:[self.selected objectForKey:@"images"]];
-    NSLog(@"price:%f[%@]",price,[self.selected valueForKey:@"price"]);
-    NSDictionary *param = @{
-                                                                  @"name" : [self.selected objectForKey:@"name"],
-                                                                  @"image": [convert imageToData:image],
-                                                                  @"price": [NSNumber numberWithFloat:price],
-                                                                  @"qty"  : [NSNumber numberWithInteger:[[NSString stringWithFormat:@"%@",self.txtQuantity.text] integerValue]],
-                                                                  };
     
     
-    CartInterface *cart = [CartInterface new];
-    
-    [cart postWithParameters:param completion:^(BOOL finished) {
-        [kNotifCenter postNotificationName:@"pop" object:self];
-        [self.navigationController popViewControllerAnimated:NO];
+    [[WebserviceCall new] addToCartWithParameters:@{@"item_id":@0001,@"qty":[NSNumber numberWithInteger:[self.txtQuantity.text integerValue]]} completion:^(id response) {
+        
+        
+        Utilities *convert = [Utilities new];
+        float price = [[self.selected valueForKey:@"price"] floatValue];
+        UIImage *image = self.imgProductImage.image;//[UIImage imageNamed:[self.selected objectForKey:@"image"]];
+        //    NSLog(@"price:%f[%@]",price,[self.selected valueForKey:@"price"]);
+        NSDictionary *param = @{
+                                @"name" : [self.selected objectForKey:@"name"],
+                                @"image": [convert imageToData:image],
+                                @"price": [NSNumber numberWithFloat:price],
+                                @"qty"  : [NSNumber numberWithInteger:[self.txtQuantity.text integerValue]],
+                                };
+        
+        
+        CartInterface *cart = [CartInterface new];
+        
+        [cart postWithParameters:param completion:^(BOOL finished) {
+            [kNotifCenter postNotificationName:@"pop" object:self];
+            [self.navigationController popViewControllerAnimated:NO];
+        }];
+        
     }];
+    
+    
 }
 
 - (IBAction)plusTapped:(id)sender{

@@ -205,8 +205,12 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if([alertView.title isEqualToString:@"Log out"]) {
         switch (buttonIndex) {
-            case 0:
-                NSLog(@"Log out");
+            case 0:{
+                [[WebserviceCall new] logoutWithParameters:@{@"user_login":@"login"} completion:^(id response) {
+                    [self dismissViewControllerAnimated:YES completion:^{
+                        
+                    }];
+                }];}
                 break;
                 
             default:

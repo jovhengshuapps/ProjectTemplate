@@ -52,8 +52,9 @@
     [super viewDidLoad];
     [self initAppTheme];
     
-    self.cart = [CartInterface new];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
+    self.cart = [CartInterface new];
     
 }
 
@@ -76,37 +77,49 @@
     [self.buttonCheckout setTitleColor:CART_ACTION_CHECKOUT_TEXTCOLOR forState:UIControlStateNormal];
     [self.buttonCheckout setBackgroundColor:CART_ACTION_CHECKOUT_BTNCOLOR];
     self.buttonCheckout.titleLabel.font = CART_ACTION_CHECKOUT_TEXTFONT;
+    self.buttonCheckout.layer.cornerRadius = 6.0f;
 }
 
 - (void)updateDatasource{
-    datasource = [NSMutableArray arrayWithArray:[self.cart getFrom:kEntityName sortBy:nil]];
-    NSLog(@"datasource:%@", datasource);
-    totalCheckoutItems = 0;
-    totalCheckoutPrice = 0.00;
-    self.tableView.backgroundView = nil;
-    for (int x = 0; x < [datasource count]; x++) {
-        totalCheckoutItems = totalCheckoutItems + [[[datasource objectAtIndex:x] valueForKey:key_quantity] integerValue];
-        totalCheckoutPrice = totalCheckoutPrice + ([[[datasource objectAtIndex:x] valueForKey:@"price"] doubleValue] * totalCheckoutItems);
-    }
-    self.labelCheckout.text = [NSString stringWithFormat:@"Total Items: %ld", (long)totalCheckoutItems];
-    self.labelTotalCheckout.text = [NSString stringWithFormat:@"Total: $ %.2f", totalCheckoutPrice];
     
-    if ([datasource count]==0) {
-        
-        UIView *backgroundView = [[UIView alloc] initWithFrame:self.tableView.frame];
-        backgroundView.backgroundColor = [UIColor clearColor];
-        
-        UILabel *labelNoResult = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.viewAction.bounds.size.width, 40.0f)];
-        labelNoResult.backgroundColor = [UIColor clearColor];
-        labelNoResult.text = @"No Items Found on Cart";
-        labelNoResult.textAlignment = NSTextAlignmentCenter;
-        
-        [backgroundView addSubview:labelNoResult];
-        
-        self.tableView.backgroundView = backgroundView;
-    }
     
-    [self.tableView reloadData];
+    [[WebserviceCall new] getCartCompletion:^(id response) {
+        
+        datasource = [NSMutableArray arrayWithArray:[self.cart getFrom:kEntityName sortBy:nil]];
+        totalCheckoutItems = 0;
+        totalCheckoutPrice = 0.00;
+        self.tableView.backgroundView = nil;
+        for (int x = 0; x < [datasource count]; x++) {
+            totalCheckoutItems = totalCheckoutItems + [[[datasource objectAtIndex:x] valueForKey:key_quantity] integerValue];
+            totalCheckoutPrice = totalCheckoutPrice + ([[[datasource objectAtIndex:x] valueForKey:@"price"] doubleValue] * totalCheckoutItems);
+        }
+        self.labelCheckout.text = [NSString stringWithFormat:@"%ld %@", (long)totalCheckoutItems,(totalCheckoutItems > 1)?@"items":@"item"];
+        
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        [formatter setCurrencyCode:@"USD"];
+        [formatter setCurrencySymbol:@"$"];
+        
+        self.labelTotalCheckout.text = [NSString stringWithFormat:@"Total: %@", [formatter stringFromNumber:[NSNumber numberWithDouble:totalCheckoutPrice]]];
+        
+        if ([datasource count]==0) {
+            
+            UIView *backgroundView = [[UIView alloc] initWithFrame:self.tableView.frame];
+            backgroundView.backgroundColor = [UIColor clearColor];
+            
+            UILabel *labelNoResult = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.bounds.size.width, 40.0f)];
+            labelNoResult.backgroundColor = [UIColor clearColor];
+            labelNoResult.text = @"No Items on Cart";
+            labelNoResult.textAlignment = NSTextAlignmentCenter;
+            
+            [backgroundView addSubview:labelNoResult];
+            
+            self.tableView.backgroundView = backgroundView;
+        }
+        
+        [self.tableView reloadData];
+    }];
+    
 }
 
 #pragma mark IBActions
@@ -140,16 +153,29 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    Utilities *convert = [Utilities new];
+//    Utilities *convert = [Utilities new];
     
-//    NSLog(@"image:%@", [convert dataToImage:[[datasource objectAtIndex:indexPath.row] valueForKey:@"image"]]);
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         
     }
-    UIImage *imageProduct = [convert dataToImage:[[datasource objectAtIndex:indexPath.row] valueForKey:@"image"]];
-    cell.imageView.image = (imageProduct)?imageProduct:[UIImage imageNamed:@"login_logo_iPhone"];
+    
+    UIImage *imageProduct = [UIImage imageNamed:@"login_logo_iPhone"];
+    NSData *imageData = [[datasource objectAtIndex:indexPath.row] valueForKey:@"image"];
+    if (imageData) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // Update the UI
+            [cell.imageView setImage:[UIImage imageWithData:imageData]];
+            [cell setNeedsLayout];
+        });
+    }
+    else {
+        [cell.imageView setImage:imageProduct];
+        [cell setNeedsLayout];
+    }
+
+    
     cell.imageView.layer.borderColor = CART_ITEM_IMAGE_BORDERCOLOR.CGColor;
     cell.imageView.layer.borderWidth = 2.0f;
     cell.textLabel.text = [[datasource objectAtIndex:indexPath.row] valueForKey:@"name"];
