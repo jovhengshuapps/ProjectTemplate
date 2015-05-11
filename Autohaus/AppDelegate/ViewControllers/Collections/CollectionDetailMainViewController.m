@@ -55,8 +55,9 @@
     [self initAppTheme];
     
     if (self.imageActive == nil) {
-        self.imageActive = [[UIImageView alloc] initWithFrame:self.scrollActive.frame];
-        self.imageActive.contentMode = UIViewContentModeScaleAspectFit;
+        self.imageActive = [[UIImageView alloc] initWithFrame:CGRectZero];
+        self.imageActive.contentMode = UIViewContentModeScaleAspectFill;
+        self.imageActive.clipsToBounds = YES;
     }
     
     UIImage *imageProduct = [UIImage imageNamed:@"login_logo_iPhone"];
@@ -82,6 +83,12 @@
     self.scrollActive.minimumZoomScale = 1.0;
     self.scrollActive.maximumZoomScale = 6.0;
     
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.imageActive.frame = CGRectMake(10.0f, 10.0f, self.scrollActive.frame.size.width - 20.0f, 253.0f);
 }
 
 - (void)didReceiveMemoryWarning
@@ -163,10 +170,10 @@
 }
 
 - (IBAction)switchTapped:(id)sender{
-//    CollectionDetailSubViewController *sub = kStoryboard(@"CollectionDetailSubViewController");
-//    sub.content = [self.selected objectForKey:@"desc"];
-//    [self.navigationController pushViewController:sub animated:NO];
-    [self.tableViewMain selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] animated:YES scrollPosition:UITableViewScrollPositionTop];
+    CollectionDetailSubViewController *sub = kStoryboard(@"CollectionDetailSubViewController");
+    sub.selected = self.selected;
+    [self.navigationController pushViewController:sub animated:YES];
+//    [self.tableViewMain selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] animated:YES scrollPosition:UITableViewScrollPositionTop];
 }
 #pragma mark Animations
 
@@ -271,20 +278,6 @@
     
     UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:identifier];
    
-    
-//    if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-//    }
-    
-    
-//    cell.textLabel.text = self.selected[@"desc"];
-//    cell.textLabel.font = SHOP_ITEM_DESC_TITLEFONT;
-//    cell.textLabel.textColor = SHOP_ITEM_DESC_TITLECOLOR;
-//    cell.textLabel.numberOfLines = 0;
-//    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-//    
-//    [cell.textLabel sizeToFit];
-    
     
     UIWebView *webView = (UIWebView*)[cell viewWithTag:1111];
     

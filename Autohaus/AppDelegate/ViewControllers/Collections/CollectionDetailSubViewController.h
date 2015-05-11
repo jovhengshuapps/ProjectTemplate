@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CollectionDetailSubViewController : UIViewController
-@property (strong, nonatomic) NSString  *content;
+@interface CollectionDetailSubViewController : UIViewController <UITableViewDataSource>
+@property (strong, nonatomic) NSDictionary *selected;
 @end
