@@ -3,6 +3,6 @@
 
 Arbie Team Project Template
 
-Autohaus 75%
+Autohaus 100%
 
-CST Trading 0%
+CST Trading 100%
